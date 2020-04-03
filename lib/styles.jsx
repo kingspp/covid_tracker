@@ -13,9 +13,11 @@ export default {
     background:"#1c1c1c",
     color:"#bcbcbc",
     fontSize: "25px",
-    lineHeight: "20px",
+    lineHeight: "30px",
     fontWeight: "800",
-    fontFamily: "'Font Awesome 5', Inter, 'm+ 1mn', consolas"
+    fontFamily: "'Font Awesome 5', Inter, 'm+ 1mn', consolas",
+    borderRadius:"10px",
+    padding:"20px",
 };
 
 // dim: "#6c6c6c",

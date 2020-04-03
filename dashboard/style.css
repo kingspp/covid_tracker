@@ -1,0 +1,323 @@
+.abc {
+    padding: 20px;
+    margin-top: -40px;
+}
+
+.row {
+    overflow: hidden;
+}
+
+.india-fin {
+    border-radius: 20px;
+    width: 850px;
+    height: 130px;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    -webkit-resize: vertical;
+    -moz-resize: vertical;
+    resize: vertical;
+    /*   -ms-zoom: 0.65;
+    -ms-transform-origin: 0 0;
+    -moz-transform: scale(0.65);
+    -moz-transform-origin: 0px 50px;
+    -o-transform: scale(0.65);
+    -o-transform-origin: 0px 50px;
+    -webkit-transform: scale(0.65);
+    -webkit-transform-origin: 0 0; */
+}
+
+iframe.india-fin-embed {
+    width: 1000px;
+    height: 500px;
+    margin-left: -0px; /* clipping left side of page */
+    margin-top: -180px; /* clipping top of page */
+    overflow: hidden;
+    -webkit-resize: none;
+    -moz-resize: none;
+    resize: none;
+}
+
+.zoomed-health {
+    border-radius: 20px;
+    width: 450px;
+    height: 400px;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    -webkit-resize: vertical;
+    -moz-resize: vertical;
+    resize: vertical;
+    -ms-zoom: 0.65;
+    -ms-transform-origin: 0 0;
+    -moz-transform: scale(0.65);
+    -moz-transform-origin: 0px 50px;
+    -o-transform: scale(0.65);
+    -o-transform-origin: 0px 50px;
+    -webkit-transform: scale(0.65);
+    -webkit-transform-origin: 0 0;
+}
+
+iframe.global-health {
+    width: 1000px;
+    height: 2000px;
+    margin-left: -280px; /* clipping left side of page */
+    margin-top: -1530px; /* clipping top of page */
+    overflow: hidden;
+    -webkit-resize: none;
+    -moz-resize: none;
+    resize: none;
+}
+
+iframe.usa-health {
+    width: 1000px;
+    height: 2000px;
+    margin-left: -283px; /* clipping left side of page */
+    margin-top: -590px; /* clipping top of page */
+    overflow: hidden;
+    -webkit-resize: none;
+    -moz-resize: none;
+    resize: none;
+}
+
+iframe.india-health {
+    width: 1000px;
+    height: 2000px;
+    margin-left: -283px; /* clipping left side of page */
+    margin-top: -610px; /* clipping top of page */
+    overflow: hidden;
+    -webkit-resize: none;
+    -moz-resize: none;
+    resize: none;
+}
+
+.india-stats {
+    border-radius: 20px;
+    width: 500px;
+    height: 250px;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    -webkit-resize: vertical;
+    -moz-resize: vertical;
+    resize: vertical;
+}
+
+.india-stats-embed {
+    width: 1000px;
+    height: 2000px;
+    margin-left: -230px; /* clipping left side of page */
+    margin-top: -150px; /* clipping top of page */
+    overflow: hidden;
+    -webkit-resize: none;
+    -moz-resize: none;
+    resize: none;
+}
+
+.us-stats {
+    padding-top: 50px;
+    border-radius: 20px;
+    width: 520px;
+    height: 95px;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    -webkit-resize: vertical;
+    -moz-resize: vertical;
+    resize: vertical;
+}
+
+.us-stats-embed {
+    width: 1000px;
+    height: 400px;
+    margin-left: -90px; /* clipping left side of page */
+    margin-top: -130px; /* clipping top of page */
+    overflow: hidden;
+    -webkit-resize: none;
+    -moz-resize: none;
+    resize: none;
+
+    -ms-zoom: 0.7;
+    -ms-transform-origin: 0 0;
+    -moz-transform: scale(0.7);
+    -moz-transform-origin: 0px 50px;
+    -o-transform: scale(0.82);
+    -o-transform-origin: 0px 50px;
+    -webkit-transform: scale(0.7);
+    -webkit-transform-origin: 0 0;
+}
+
+.india-list {
+    border-radius: 20px;
+    width: 540px;
+    height: 280px;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    -webkit-resize: vertical;
+    -moz-resize: vertical;
+    resize: vertical;
+}
+
+.us-list {
+    border-radius: 20px;
+    width: 390px;
+    height: 350px;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    -webkit-resize: vertical;
+    -moz-resize: vertical;
+    resize: vertical;
+}
+
+.india-list-embed {
+    width: 1000px;
+    height: 2000px;
+    margin-left: -230px;
+    margin-top: -440px;
+    overflow: hidden;
+    -webkit-resize: none;
+    -moz-resize: none;
+    resize: none;
+}
+
+.us-list-embed {
+    width: 2000px;
+    height: 2000px;
+    margin-left: -1580px; /* clipping left side of page */
+    margin-top: -320px; /* clipping top of page */
+    overflow: hidden;
+    -webkit-resize: none;
+    -moz-resize: none;
+    resize: none;
+}
+
+.credits {
+    font-weight: bold;
+    padding: 16px;
+}
+
+.beating-corona {
+    border-radius: 20px;
+    width: 1450px;
+    height: 1350px;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    -webkit-resize: vertical;
+    -moz-resize: vertical;
+    resize: vertical;
+    -ms-zoom: 0.65;
+    -ms-transform-origin: 0 0;
+    -moz-transform: scale(0.65);
+    -moz-transform-origin: 0px 50px;
+    -o-transform: scale(0.65);
+    -o-transform-origin: 0px 50px;
+    -webkit-transform: scale(0.65);
+    -webkit-transform-origin: 0 0;
+}
+
+iframe.beating-corona-embed {
+    width: 2000px;
+    height: 1800px;
+    margin-left: -5px; /* clipping left side of page */
+    margin-top: -330px; /* clipping top of page */
+    overflow: hidden;
+    -webkit-resize: none;
+    -moz-resize: none;
+    resize: none;
+}
+
+.index-nifty {
+    border-radius: 20px;
+    width: 700px;
+    height: 300px;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    -webkit-resize: vertical;
+    -moz-resize: vertical;
+    resize: vertical;
+}
+
+iframe.index-nifty-embed {
+    width: 750px;
+    height: 790px;
+    margin-left: -70px;
+    margin-top: -195px;
+    overflow: hidden;
+    -webkit-resize: none;
+    -moz-resize: none;
+    resize: none;
+    -ms-zoom: 0.65;
+    -ms-transform-origin: 0 0;
+    -moz-transform: scale(0.65);
+    -moz-transform-origin: 0px 50px;
+    -o-transform: scale(0.65);
+    -o-transform-origin: 0px 50px;
+    -webkit-transform: scale(0.65);
+    -webkit-transform-origin: 0 0;
+}
+
+.index-usdinr {
+    border-radius: 20px;
+    width: 700px;
+    height: 250px;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    -webkit-resize: vertical;
+    -moz-resize: vertical;
+    resize: vertical;
+}
+
+iframe.index-usdinr-embed {
+    width: 750px;
+    height: 800px;
+    margin-left: -70px;
+    margin-top: -220px;
+    overflow: hidden;
+    -webkit-resize: none;
+    -moz-resize: none;
+    resize: none;
+    -ms-zoom: 0.65;
+    -ms-transform-origin: 0 0;
+    -moz-transform: scale(0.65);
+    -moz-transform-origin: 0px 50px;
+    -o-transform: scale(0.65);
+    -o-transform-origin: 0px 50px;
+    -webkit-transform: scale(0.65);
+    -webkit-transform-origin: 0 0;
+}
+
+.index-usa {
+    border-radius: 20px;
+    width: 700px;
+    height: 340px;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    -webkit-resize: vertical;
+    -moz-resize: vertical;
+    resize: vertical;
+}
+
+iframe.index-usa-embed {
+    width: 1000px;
+    height: 1000px;
+    margin-left: -680px;
+    margin-top: -630px;
+    overflow: hidden;
+    -webkit-resize: none;
+    -moz-resize: none;
+    resize: none;
+    /*   -ms-zoom: 0.65;
+    -ms-transform-origin: 0 0;
+    -moz-transform: scale(0.65);
+    -moz-transform-origin: 0px 50px;
+    -o-transform: scale(0.65);
+    -o-transform-origin: 0px 50px;
+    -webkit-transform: scale(0.65);
+    -webkit-transform-origin: 0 0; */
+}

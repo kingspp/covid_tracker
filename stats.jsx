@@ -12,8 +12,6 @@ import { css } from "uebersicht"
 export const command = "./covid_tracker/script.sh";
 export const refreshFrequency = 30*1000*60; // widget will run command once a second
 
-console.log(command);
-
 const parse = data => {
     try {
         return JSON.parse(data);
@@ -25,22 +23,21 @@ const parse = data => {
 
 var global_data = {};
 
-
 function dataParser(data){
     data = data['all'];
     global_data['global']=new Tracker(data['totalConfirmed'], data['totalConfirmed'] - data['totalDeaths'] - data['totalRecovered'], data['totalRecovered'],  data['totalDeaths'],'GLB').generate();
     try {
         data = data['areas'];
         for (var i = 0; i < data.length; i++) {
-            if (data[i]['id'] == 'unitedstates') {
+            if (data[i]['id'] === 'unitedstates') {
                 global_data['usa'] = new Tracker(data[i]['totalConfirmed'], data[i]['totalConfirmed'] - data[i]['totalDeaths'] - data[i]['totalRecovered'], data[i]['totalDeaths'], data[i]['totalRecovered'], 'USA').generate();
                 let usData = data[i]['areas'];
                 for (var j = 0; j < usData.length; j++) {
-                    if (usData[j]['id'] == 'massachusetts_unitedstates') {
+                    if (usData[j]['id'] === 'massachusetts_unitedstates') {
                         global_data['mass'] = new Tracker(usData[j]['totalConfirmed'], usData[j]['totalConfirmed'] - usData[j]['totalDeaths'] - usData[j]['totalRecovered'], usData[j]['totalDeaths'], usData[j]['totalRecovered'], 'MAS').generate();
                         let massData = usData[j]['areas'];
                         for (var k = 0; k < massData.length; k++) {
-                            if (massData[k]['id'] == 'worcester_massachusetts_unitedstates') {
+                            if (massData[k]['id'] === 'worcester_massachusetts_unitedstates') {
                                 global_data['worcester'] = new Tracker(massData[k]['totalConfirmed'], massData[k]['totalConfirmed'] - massData[k]['totalDeaths'] - massData[k]['totalRecovered'], massData[k]['totalDeaths'], massData[k]['totalRecovered'], 'WOR').generate();
                                 break;
                             }
@@ -60,6 +57,7 @@ function dataParser(data){
 export const render = ({ output, error }) => {
     try {
         var data = parse(output);
+        console.log(data);
         dataParser(data);
         return (
             <div style={styles}>

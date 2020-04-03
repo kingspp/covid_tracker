@@ -8,7 +8,7 @@ export const render = ({ data }) => {
         for (var i = 0; i < data.length; i++) {
             if (data[i]['state'] == 'Karnataka') {
                 data = data[i];
-                return new Tracker(data.confirmed, data.critical, data.recovered, data.deaths, 'KAR').generate()
+                return new Tracker(data.confirmed, data.active, data.recovered, data.deaths, 'KAR').generate()
             }
         }
         return <div>Fetching data . . .</div>
