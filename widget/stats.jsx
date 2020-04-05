@@ -5,7 +5,7 @@ import KARStats from "./lib/kar_stats.jsx";
 import MYSStats from "./lib/mys_stats.jsx";
 import BaseLoader from "./lib/base_loader.jsx";
 import styles from "./lib/styles.jsx";
-import  "./lib/fontawesome.js";
+import "./lib/fontawesome.js";
 import { css } from "uebersicht"
 
 
