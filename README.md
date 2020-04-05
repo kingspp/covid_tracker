@@ -1,5 +1,8 @@
 # COVID19 Reseach
 
+#### Requirements:
+1. Python 3.7+
+
 ## Dashboard
 
 Monitoring Tool for Corona Virus
@@ -13,7 +16,7 @@ Monitoring Tool for Corona Virus
 
 ```bash
 # How to update the data
-covid19/data/fetch_ncbi_data.csv
+python3 covid19/data/fetch_ncbi_data.py
 ```
 
 ```python
