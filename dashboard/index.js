@@ -1,4 +1,4 @@
-interval = 5 * 60 * 1000;
+interval = 1000;//5 * 60 * 1000;
 
 function fetchMysoreData() {
     $.ajax({
@@ -30,9 +30,6 @@ function fetchWorcesterData() {
         url:
             "https://coronavirus-tracker-api.herokuapp.com/v2/locations?source=csbs&country_code=US&timelines=false",
         type: "GET",
-        // crossDomain: true,
-        // headers: {  'Access-Control-Allow-Origin': 'https://codepen.io/prathyushsp/pen/GRJzeVO' },
-        // dataType: "jsonp",
         success: function (res) {
             var data = res["locations"];
             for (let i = 0; i < data.length; i++) {
@@ -40,7 +37,6 @@ function fetchWorcesterData() {
                     data[i]["county"] == "Worcester" &&
                     data[i]["province"] == "Massachusetts"
                 ) {
-                    console.log(data[i]);
                     $("#worcester").text(data[i]["latest"]["confirmed"]);
                     break;
                 }
@@ -54,11 +50,6 @@ function fetchWorcesterData() {
 
 fetchWorcesterData();
 
-setInterval(fetchMysoreData, interval);
-setInterval(fetchWorcesterData, interval);
-
-
-
 var sc_project=12228730;
 var sc_invisible=1;
 var sc_security="bac17ab4";
@@ -69,3 +60,23 @@ document.write("<sc"+"ript type='text/javascript' src='" +
 
 
 <!-- End of Statcounter Code -->
+
+
+
+
+setInterval(fetchMysoreData, interval);
+setInterval(fetchWorcesterData, interval);
+
+// setTimeout(function(){
+// $('#india-fin-embed').
+//  contents().find("head").append(
+//   $("<style type='text/css'>"+
+//     ".midHeader {"+
+//       "display:none"
+//     "} </style>")
+// );
+//      $('#india-fin-embed').
+//     contents().find(".midHeader").empty();
+// }, 1000);
+
+// document.querySelector("body > div.wrapper > div.midHeader")

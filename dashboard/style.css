@@ -3,11 +3,15 @@
     margin-top: -40px;
 }
 
+.midHeader {
+    display: none !important;
+}
+
 .row {
     overflow: hidden;
 }
 
-.india-fin {
+.fin {
     border-radius: 20px;
     width: 850px;
     height: 130px;
@@ -27,11 +31,24 @@
     -webkit-transform-origin: 0 0; */
 }
 
-iframe.india-fin-embed {
-    width: 1000px;
-    height: 500px;
-    margin-left: -0px; /* clipping left side of page */
-    margin-top: -180px; /* clipping top of page */
+iframe.ind-fin-embed {
+    width: 670px;
+    height: 800px;
+    margin-left: 10px; /* clipping left side of page */
+    margin-top: -430px;
+    /*   -180px; */
+    overflow: hidden;
+    -webkit-resize: none;
+    -moz-resize: none;
+    resize: none;
+}
+
+iframe.us-fin-embed {
+    width: 670px;
+    height: 800px;
+    margin-left: 10px; /* clipping left side of page */
+    margin-top: -430px;
+    /*   -180px; */
     overflow: hidden;
     -webkit-resize: none;
     -moz-resize: none;
@@ -106,7 +123,7 @@ iframe.india-health {
 .india-stats-embed {
     width: 1000px;
     height: 2000px;
-    margin-left: -230px; /* clipping left side of page */
+    margin-left: -260px; /* clipping left side of page */
     margin-top: -150px; /* clipping top of page */
     overflow: hidden;
     -webkit-resize: none;
@@ -200,7 +217,7 @@ iframe.india-health {
 
 .beating-corona {
     border-radius: 20px;
-    width: 1450px;
+    width: 1680px;
     height: 1350px;
     overflow: hidden;
     overflow-x: hidden;
