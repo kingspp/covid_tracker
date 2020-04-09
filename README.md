@@ -3,6 +3,10 @@
 #### Requirements:
 1. Python 3.7+
 
+## Documents
+[Proposal](https://docs.google.com/document/d/10DEj1amBY032zPM7av0jZpFpkQ9IhZFcYuKpy6hm4qo/edit?usp=sharing)
+[BibTex]()
+
 ## Dashboard
 
 Monitoring Tool for Corona Virus
