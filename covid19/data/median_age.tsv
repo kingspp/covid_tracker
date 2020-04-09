@@ -5,8 +5,8 @@ ID |Country |Age
 4 |Germany |47.8
 5 |Italy |46.5
 6 |Andorra |46.2
-7 |Hong Kong |45.6
-8 |Saint Barthelemy |45.6
+7 |Hong Kong SAR|45.6
+8 |Saint Barthélemy |45.6
 9 |Greece |45.3
 10 |San Marino |45.2
 11 |Slovenia |44.9
@@ -27,7 +27,7 @@ ID |Country |Age
 26 |Serbia |43.4
 27 |Bosnia and Herzegovina |43.3
 28 |Czechia |43.3
-29 |Korea, South |43.2
+29 |South Korea |43.2
 30 |Saint Helena, Ascension, and Tristan da Cunha |43.2
 31 |Finland |42.8
 32 |Netherlands |42.8
@@ -40,14 +40,14 @@ ID |Country |Age
 39 |Poland |41.9
 40 |Canada |41.8
 41 |Slovakia |41.8
-42 |Virgin Islands |41.8
+42 |U.S. Virgin Islands |41.8
 43 |France |41.7
 44 |Belgium |41.6
 45 |Ukraine |41.2
 46 |Sint Maarten |41.1
 47 |Sweden |41.1
 48 |Belarus |40.9
-49 |Macau |40.8
+49 |Macao SAR |40.8
 50 |United Kingdom |40.6
 51 |Cayman Islands |40.5
 52 |Russia |40.3
@@ -56,11 +56,11 @@ ID |Country |Age
 55 |Barbados |39.5
 56 |Luxembourg |39.5
 57 |Norway |39.5
-58 |Macedonia |39.0
+58 |North Macedonia |39.0
 59 |Thailand |39.0
 60 |Georgia |38.6
 61 |United States |38.5
-62 |China |38.4
+62 |China (mainland) |38.4
 63 |United Arab Emirates |38.4
 64 |Cook Islands |38.3
 65 |Cyprus |37.9
@@ -75,7 +75,7 @@ ID |Country |Age
 74 |Iceland |37.1
 75 |Saint Lucia |36.9
 76 |Seychelles |36.8
-77 |Curacao |36.7
+77 |Curaçao |36.7
 78 |Armenia |36.6
 79 |Saint Kitts and Nevis |36.5
 80 |Mauritius |36.3
@@ -102,7 +102,7 @@ ID |Country |Age
 101 |Brazil |33.2
 102 |Bahrain |32.9
 103 |New Caledonia |32.9
-104 |Bahamas, The |32.8
+104 |Bahamas |32.8
 105 |Northern Mariana Islands |32.8
 106 |Antigua and Barbuda |32.7
 107 |Tunisia |32.7
@@ -180,7 +180,7 @@ ID |Country |Age
 179 |Vanuatu |23.0
 180 |Pakistan |22.0
 181 |West Bank |21.9
-182 |Gambia, The |21.8
+182 |Gambia |21.8
 183 |Namibia |21.8
 184 |Western Sahara |21.8
 185 |Ghana |21.4
@@ -189,7 +189,7 @@ ID |Country |Age
 188 |Mauritania |21.0
 189 |Comoros |20.9
 190 |Zimbabwe |20.5
-191 |Cote d'Ivoire |20.3
+191 |Côte d’Ivoire |20.3
 192 |Equatorial Guinea |20.3
 193 |Eritrea |20.3
 194 |Madagascar |20.3
@@ -201,9 +201,9 @@ ID |Country |Age
 200 |Rwanda |19.7
 201 |Timor-Leste |19.6
 202 |Afghanistan |19.5
-203 |Congo, Republic of the |19.5
+203 |Congo |19.5
 204 |Senegal |19.4
-205 |Sao Tome and Principe |19.3
+205 |São Tomé and Príncipe |19.3
 206 |Guinea |19.1
 207 |Sierra Leone |19.1
 208 |Nigeria |18.6
