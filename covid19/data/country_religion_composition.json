@@ -1,0 +1,2352 @@
+{
+  "All Countries": {
+    "Buddhists": 11.3,
+    "Christians": 7.2,
+    "Folk Religions": 8.6,
+    "Hindus": 26.0,
+    "Jews": 1.0,
+    "Muslims": 25.7,
+    "Other Religions": 1.2,
+    "Unaffiliated": 20.0
+  },
+  "Afghanistan": {
+    "Buddhists": 1.0,
+    "Christians": 1.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 99.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Albania": {
+    "Buddhists": 1.0,
+    "Christians": 16.7,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 82.1,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Algeria": {
+    "Buddhists": 1.0,
+    "Christians": 1.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 97.9,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.8
+  },
+  "American Samoa": {
+    "Buddhists": 1.0,
+    "Christians": 98.3,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Andorra": {
+    "Buddhists": 1.0,
+    "Christians": 89.5,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 8.8
+  },
+  "Angola": {
+    "Buddhists": 1.0,
+    "Christians": 90.5,
+    "Folk Religions": 4.2,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 5.2
+  },
+  "Anguilla": {
+    "Buddhists": 1.0,
+    "Christians": 90.6,
+    "Folk Religions": 2.9,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.6,
+    "Unaffiliated": 4.0
+  },
+  "Antigua and Barbuda": {
+    "Buddhists": 1.0,
+    "Christians": 93.0,
+    "Folk Religions": 3.6,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.7
+  },
+  "Argentina": {
+    "Buddhists": 1.0,
+    "Christians": 85.4,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 12.1
+  },
+  "Armenia": {
+    "Buddhists": 1.0,
+    "Christians": 98.3,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.3
+  },
+  "Aruba": {
+    "Buddhists": 1.0,
+    "Christians": 91.6,
+    "Folk Religions": 1.3,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 6.2
+  },
+  "Australia": {
+    "Buddhists": 2.9,
+    "Christians": 61.7,
+    "Folk Religions": 1.0,
+    "Hindus": 1.7,
+    "Jews": 1.0,
+    "Muslims": 3.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 28.6
+  },
+  "Austria": {
+    "Buddhists": 1.0,
+    "Christians": 78.4,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 6.2,
+    "Other Religions": 1.0,
+    "Unaffiliated": 14.5
+  },
+  "Azerbaijan": {
+    "Buddhists": 1.0,
+    "Christians": 2.6,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 97.3,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Bahamas": {
+    "Buddhists": 1.0,
+    "Christians": 96.2,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 3.0
+  },
+  "Bahrain": {
+    "Buddhists": 3.1,
+    "Christians": 14.1,
+    "Folk Religions": 1.0,
+    "Hindus": 10.2,
+    "Jews": 1.0,
+    "Muslims": 69.7,
+    "Other Religions": 1.0,
+    "Unaffiliated": 2.0
+  },
+  "Bangladesh": {
+    "Buddhists": 1.0,
+    "Christians": 1.0,
+    "Folk Religions": 1.0,
+    "Hindus": 8.2,
+    "Jews": 1.0,
+    "Muslims": 90.8,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Barbados": {
+    "Buddhists": 1.0,
+    "Christians": 95.2,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.4,
+    "Unaffiliated": 1.9
+  },
+  "Belarus": {
+    "Buddhists": 1.0,
+    "Christians": 70.7,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 28.6
+  },
+  "Belgium": {
+    "Buddhists": 1.0,
+    "Christians": 60.5,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 7.5,
+    "Other Religions": 1.0,
+    "Unaffiliated": 31.0
+  },
+  "Belize": {
+    "Buddhists": 1.0,
+    "Christians": 87.6,
+    "Folk Religions": 1.5,
+    "Hindus": 1.0,
+    "Jews": 1.1,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 9.0
+  },
+  "Benin": {
+    "Buddhists": 1.0,
+    "Christians": 52.2,
+    "Folk Religions": 17.9,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 24.6,
+    "Other Religions": 1.0,
+    "Unaffiliated": 5.2
+  },
+  "Bermuda": {
+    "Buddhists": 1.0,
+    "Christians": 75.0,
+    "Folk Religions": 3.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.1,
+    "Other Religions": 1.0,
+    "Unaffiliated": 19.4
+  },
+  "Bhutan": {
+    "Buddhists": 74.7,
+    "Christians": 1.0,
+    "Folk Religions": 1.9,
+    "Hindus": 22.5,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Bolivia": {
+    "Buddhists": 1.0,
+    "Christians": 94.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 4.1
+  },
+  "Bosnia-Herzegovina": {
+    "Buddhists": 1.0,
+    "Christians": 51.1,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 46.5,
+    "Other Religions": 1.0,
+    "Unaffiliated": 2.4
+  },
+  "Botswana": {
+    "Buddhists": 1.0,
+    "Christians": 76.4,
+    "Folk Religions": 4.4,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 17.5
+  },
+  "Brazil": {
+    "Buddhists": 1.0,
+    "Christians": 88.1,
+    "Folk Religions": 3.2,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 8.4
+  },
+  "Virgin Islands, British": {
+    "Buddhists": 1.0,
+    "Christians": 84.5,
+    "Folk Religions": 8.4,
+    "Hindus": 1.2,
+    "Jews": 1.0,
+    "Muslims": 1.2,
+    "Other Religions": 1.0,
+    "Unaffiliated": 3.9
+  },
+  "Brunei": {
+    "Buddhists": 8.6,
+    "Christians": 9.4,
+    "Folk Religions": 6.2,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 75.1,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Bulgaria": {
+    "Buddhists": 1.0,
+    "Christians": 81.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 14.2,
+    "Other Religions": 1.0,
+    "Unaffiliated": 4.7
+  },
+  "Burkina Faso": {
+    "Buddhists": 1.0,
+    "Christians": 21.7,
+    "Folk Religions": 15.1,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 62.7,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Burundi": {
+    "Buddhists": 1.0,
+    "Christians": 91.0,
+    "Folk Religions": 6.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 2.9,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Cambodia": {
+    "Buddhists": 96.8,
+    "Christians": 1.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 2.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Cameroon": {
+    "Buddhists": 1.0,
+    "Christians": 69.6,
+    "Folk Religions": 3.2,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 19.3,
+    "Other Religions": 2.7,
+    "Unaffiliated": 5.2
+  },
+  "Canada": {
+    "Buddhists": 1.0,
+    "Christians": 66.4,
+    "Folk Religions": 1.2,
+    "Hindus": 1.7,
+    "Jews": 1.1,
+    "Muslims": 2.8,
+    "Other Religions": 1.2,
+    "Unaffiliated": 24.5
+  },
+  "Cape Verde": {
+    "Buddhists": 1.0,
+    "Christians": 89.3,
+    "Folk Religions": 1.4,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 9.0
+  },
+  "Cayman Islands": {
+    "Buddhists": 1.0,
+    "Christians": 83.5,
+    "Folk Religions": 4.5,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 9.4
+  },
+  "Central African Republic": {
+    "Buddhists": 1.0,
+    "Christians": 89.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 9.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Chad": {
+    "Buddhists": 1.0,
+    "Christians": 41.1,
+    "Folk Religions": 1.3,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 55.1,
+    "Other Religions": 1.0,
+    "Unaffiliated": 2.4
+  },
+  "Channel Islands": {
+    "Buddhists": 1.0,
+    "Christians": 85.2,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 14.2
+  },
+  "Chile": {
+    "Buddhists": 1.0,
+    "Christians": 88.3,
+    "Folk Religions": 1.5,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 9.7
+  },
+  "China": {
+    "Buddhists": 18.3,
+    "Christians": 5.2,
+    "Folk Religions": 21.9,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 2.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 51.8
+  },
+  "Colombia": {
+    "Buddhists": 1.0,
+    "Christians": 92.3,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 6.7
+  },
+  "Comoros": {
+    "Buddhists": 1.0,
+    "Christians": 1.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 98.3,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Congo": {
+    "Buddhists": 1.0,
+    "Christians": 87.1,
+    "Folk Religions": 2.7,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.2,
+    "Other Religions": 1.0,
+    "Unaffiliated": 8.0
+  },
+  "Congo, the Democratic Republic of the": {
+    "Buddhists": 1.0,
+    "Christians": 95.8,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.5,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.7
+  },
+  "Cook Islands": {
+    "Buddhists": 1.0,
+    "Christians": 96.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 3.2
+  },
+  "Costa Rica": {
+    "Buddhists": 1.0,
+    "Christians": 90.8,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 8.0
+  },
+  "Ivory Coast": {
+    "Buddhists": 1.0,
+    "Christians": 44.0,
+    "Folk Religions": 10.5,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 37.2,
+    "Other Religions": 1.0,
+    "Unaffiliated": 8.1
+  },
+  "Croatia": {
+    "Buddhists": 1.0,
+    "Christians": 93.3,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.6,
+    "Other Religions": 1.0,
+    "Unaffiliated": 5.1
+  },
+  "Cuba": {
+    "Buddhists": 1.0,
+    "Christians": 58.9,
+    "Folk Religions": 17.6,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 23.2
+  },
+  "Cyprus": {
+    "Buddhists": 1.0,
+    "Christians": 72.3,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 25.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.9
+  },
+  "Czech Republic": {
+    "Buddhists": 1.0,
+    "Christians": 20.9,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 78.4
+  },
+  "Denmark": {
+    "Buddhists": 1.0,
+    "Christians": 81.9,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 5.1,
+    "Other Religions": 1.0,
+    "Unaffiliated": 12.0
+  },
+  "Djibouti": {
+    "Buddhists": 1.0,
+    "Christians": 2.3,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 96.9,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Dominica": {
+    "Buddhists": 1.0,
+    "Christians": 94.4,
+    "Folk Religions": 3.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.7,
+    "Unaffiliated": 1.0
+  },
+  "Dominican Republic": {
+    "Buddhists": 1.0,
+    "Christians": 88.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 10.9
+  },
+  "Ecuador": {
+    "Buddhists": 1.0,
+    "Christians": 94.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 5.6
+  },
+  "Egypt": {
+    "Buddhists": 1.0,
+    "Christians": 4.7,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 95.3,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "El Salvador": {
+    "Buddhists": 1.0,
+    "Christians": 88.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 11.2
+  },
+  "Equatorial Guinea": {
+    "Buddhists": 1.0,
+    "Christians": 88.7,
+    "Folk Religions": 1.7,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 4.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 5.0
+  },
+  "Eritrea": {
+    "Buddhists": 1.0,
+    "Christians": 62.9,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 36.6,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Estonia": {
+    "Buddhists": 1.0,
+    "Christians": 39.3,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 60.2
+  },
+  "Ethiopia": {
+    "Buddhists": 1.0,
+    "Christians": 61.9,
+    "Folk Religions": 2.1,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 35.9,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Faeroe Islands": {
+    "Buddhists": 1.0,
+    "Christians": 98.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.7
+  },
+  "Falkland Islands (Malvinas)": {
+    "Buddhists": 1.0,
+    "Christians": 67.2,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 31.5
+  },
+  "Fiji": {
+    "Buddhists": 1.0,
+    "Christians": 64.4,
+    "Folk Religions": 1.0,
+    "Hindus": 27.9,
+    "Jews": 1.0,
+    "Muslims": 6.3,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Finland": {
+    "Buddhists": 1.0,
+    "Christians": 77.7,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.3,
+    "Other Religions": 1.0,
+    "Unaffiliated": 20.8
+  },
+  "France": {
+    "Buddhists": 1.0,
+    "Christians": 58.1,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 8.3,
+    "Other Religions": 1.0,
+    "Unaffiliated": 31.9
+  },
+  "French Guiana": {
+    "Buddhists": 1.0,
+    "Christians": 84.0,
+    "Folk Religions": 8.6,
+    "Hindus": 1.4,
+    "Jews": 1.0,
+    "Muslims": 1.3,
+    "Other Religions": 1.0,
+    "Unaffiliated": 3.9
+  },
+  "French Polynesia": {
+    "Buddhists": 1.0,
+    "Christians": 94.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 4.9
+  },
+  "Gabon": {
+    "Buddhists": 1.0,
+    "Christians": 75.6,
+    "Folk Religions": 5.7,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 12.2,
+    "Other Religions": 1.0,
+    "Unaffiliated": 5.7
+  },
+  "Gambia": {
+    "Buddhists": 1.0,
+    "Christians": 4.2,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 95.3,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Georgia": {
+    "Buddhists": 1.0,
+    "Christians": 87.6,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 11.6,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Germany": {
+    "Buddhists": 1.0,
+    "Christians": 66.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 6.9,
+    "Other Religions": 1.0,
+    "Unaffiliated": 26.3
+  },
+  "Ghana": {
+    "Buddhists": 1.0,
+    "Christians": 73.6,
+    "Folk Religions": 4.9,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 17.5,
+    "Other Religions": 1.0,
+    "Unaffiliated": 3.8
+  },
+  "Gibraltar": {
+    "Buddhists": 1.0,
+    "Christians": 88.8,
+    "Folk Religions": 1.0,
+    "Hindus": 1.8,
+    "Jews": 2.1,
+    "Muslims": 4.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 2.9
+  },
+  "Greece": {
+    "Buddhists": 1.0,
+    "Christians": 87.6,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 5.9,
+    "Other Religions": 1.0,
+    "Unaffiliated": 6.1
+  },
+  "Greenland": {
+    "Buddhists": 1.0,
+    "Christians": 96.1,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 2.5
+  },
+  "Grenada": {
+    "Buddhists": 1.0,
+    "Christians": 96.6,
+    "Folk Religions": 1.3,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Guadeloupe": {
+    "Buddhists": 1.0,
+    "Christians": 95.9,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 2.5
+  },
+  "Guam": {
+    "Buddhists": 1.1,
+    "Christians": 94.2,
+    "Folk Religions": 1.5,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.6,
+    "Unaffiliated": 1.7
+  },
+  "Guatemala": {
+    "Buddhists": 1.0,
+    "Christians": 95.3,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 3.9
+  },
+  "Guinea": {
+    "Buddhists": 1.0,
+    "Christians": 10.8,
+    "Folk Religions": 2.7,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 84.6,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.8
+  },
+  "Guinea-Bissau": {
+    "Buddhists": 1.0,
+    "Christians": 18.9,
+    "Folk Religions": 30.6,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 46.1,
+    "Other Religions": 1.0,
+    "Unaffiliated": 4.4
+  },
+  "Guyana": {
+    "Buddhists": 1.0,
+    "Christians": 67.9,
+    "Folk Religions": 1.0,
+    "Hindus": 23.3,
+    "Jews": 1.0,
+    "Muslims": 6.1,
+    "Other Religions": 1.0,
+    "Unaffiliated": 2.0
+  },
+  "Haiti": {
+    "Buddhists": 1.0,
+    "Christians": 87.0,
+    "Folk Religions": 2.1,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 10.7
+  },
+  "Vatican City": {
+    "Buddhists": 1.0,
+    "Christians": 99.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Honduras": {
+    "Buddhists": 1.0,
+    "Christians": 87.5,
+    "Folk Religions": 1.1,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 10.5
+  },
+  "Hong Kong": {
+    "Buddhists": 13.3,
+    "Christians": 14.9,
+    "Folk Religions": 13.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 2.1,
+    "Other Religions": 1.5,
+    "Unaffiliated": 54.7
+  },
+  "Hungary": {
+    "Buddhists": 1.0,
+    "Christians": 79.3,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 20.3
+  },
+  "Iceland": {
+    "Buddhists": 1.0,
+    "Christians": 94.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 3.9
+  },
+  "India": {
+    "Buddhists": 1.0,
+    "Christians": 2.4,
+    "Folk Religions": 1.0,
+    "Hindus": 78.9,
+    "Jews": 1.0,
+    "Muslims": 15.4,
+    "Other Religions": 2.1,
+    "Unaffiliated": 1.0
+  },
+  "Indonesia": {
+    "Buddhists": 1.0,
+    "Christians": 10.2,
+    "Folk Religions": 1.0,
+    "Hindus": 1.6,
+    "Jews": 1.0,
+    "Muslims": 87.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Iran": {
+    "Buddhists": 1.0,
+    "Christians": 1.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 99.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Iraq": {
+    "Buddhists": 1.0,
+    "Christians": 1.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 99.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Ireland": {
+    "Buddhists": 1.0,
+    "Christians": 89.7,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.5,
+    "Other Religions": 1.0,
+    "Unaffiliated": 7.9
+  },
+  "Isle of Man": {
+    "Buddhists": 1.0,
+    "Christians": 84.1,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 15.4
+  },
+  "Israel": {
+    "Buddhists": 1.0,
+    "Christians": 2.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 74.0,
+    "Muslims": 20.1,
+    "Other Religions": 1.0,
+    "Unaffiliated": 3.2
+  },
+  "Italy": {
+    "Buddhists": 1.0,
+    "Christians": 80.8,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 4.9,
+    "Other Religions": 1.0,
+    "Unaffiliated": 13.4
+  },
+  "Jamaica": {
+    "Buddhists": 1.0,
+    "Christians": 77.3,
+    "Folk Religions": 4.6,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 17.0
+  },
+  "Japan": {
+    "Buddhists": 33.2,
+    "Christians": 1.8,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 4.5,
+    "Unaffiliated": 60.0
+  },
+  "Jordan": {
+    "Buddhists": 1.0,
+    "Christians": 2.1,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 97.1,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Kazakhstan": {
+    "Buddhists": 1.0,
+    "Christians": 23.1,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 72.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 4.0
+  },
+  "Kenya": {
+    "Buddhists": 1.0,
+    "Christians": 84.5,
+    "Folk Religions": 1.5,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 10.5,
+    "Other Religions": 1.1,
+    "Unaffiliated": 2.3
+  },
+  "Kiribati": {
+    "Buddhists": 1.0,
+    "Christians": 97.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 2.2,
+    "Unaffiliated": 1.0
+  },
+  "Kosovo": {
+    "Buddhists": 1.0,
+    "Christians": 5.6,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 94.3,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Kuwait": {
+    "Buddhists": 5.4,
+    "Christians": 13.6,
+    "Folk Religions": 1.0,
+    "Hindus": 9.9,
+    "Jews": 1.0,
+    "Muslims": 70.7,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Kyrgyzstan": {
+    "Buddhists": 1.0,
+    "Christians": 10.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 89.4,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Laos": {
+    "Buddhists": 64.0,
+    "Christians": 1.5,
+    "Folk Religions": 32.8,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Latvia": {
+    "Buddhists": 1.0,
+    "Christians": 54.3,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 45.3
+  },
+  "Lebanon": {
+    "Buddhists": 1.0,
+    "Christians": 38.4,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 61.2,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Lesotho": {
+    "Buddhists": 1.0,
+    "Christians": 97.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 2.8
+  },
+  "Liberia": {
+    "Buddhists": 1.0,
+    "Christians": 86.2,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 11.7,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.4
+  },
+  "Libya": {
+    "Buddhists": 1.0,
+    "Christians": 2.7,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 96.6,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Liechtenstein": {
+    "Buddhists": 1.0,
+    "Christians": 91.9,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 5.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 2.9
+  },
+  "Lithuania": {
+    "Buddhists": 1.0,
+    "Christians": 89.9,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 9.8
+  },
+  "Luxembourg": {
+    "Buddhists": 1.0,
+    "Christians": 70.6,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 2.3,
+    "Other Religions": 1.0,
+    "Unaffiliated": 26.7
+  },
+  "Macao": {
+    "Buddhists": 17.3,
+    "Christians": 7.2,
+    "Folk Religions": 58.9,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 15.4
+  },
+  "Republic of Macedonia": {
+    "Buddhists": 1.0,
+    "Christians": 55.1,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 43.6,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.3
+  },
+  "Madagascar": {
+    "Buddhists": 1.0,
+    "Christians": 84.7,
+    "Folk Religions": 4.7,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 3.1,
+    "Other Religions": 1.0,
+    "Unaffiliated": 7.3
+  },
+  "Malawi": {
+    "Buddhists": 1.0,
+    "Christians": 83.4,
+    "Folk Religions": 1.7,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 12.8,
+    "Other Religions": 1.0,
+    "Unaffiliated": 2.0
+  },
+  "Malaysia": {
+    "Buddhists": 15.7,
+    "Christians": 9.4,
+    "Folk Religions": 2.2,
+    "Hindus": 5.8,
+    "Jews": 1.0,
+    "Muslims": 66.1,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Maldives": {
+    "Buddhists": 1.0,
+    "Christians": 1.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 98.4,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Mali": {
+    "Buddhists": 1.0,
+    "Christians": 2.4,
+    "Folk Religions": 2.5,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 94.6,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Malta": {
+    "Buddhists": 1.0,
+    "Christians": 97.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 2.5
+  },
+  "Marshall Islands": {
+    "Buddhists": 1.0,
+    "Christians": 97.5,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.5
+  },
+  "Martinique": {
+    "Buddhists": 1.0,
+    "Christians": 96.5,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 2.3
+  },
+  "Mauritania": {
+    "Buddhists": 1.0,
+    "Christians": 1.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 99.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Mauritius": {
+    "Buddhists": 1.0,
+    "Christians": 32.8,
+    "Folk Religions": 1.0,
+    "Hindus": 48.4,
+    "Jews": 1.0,
+    "Muslims": 17.4,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Mayotte": {
+    "Buddhists": 1.0,
+    "Christians": 1.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 98.6,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Mexico": {
+    "Buddhists": 1.0,
+    "Christians": 94.1,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 5.7
+  },
+  "Federated States of Micronesia": {
+    "Buddhists": 1.0,
+    "Christians": 95.3,
+    "Folk Religions": 2.7,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Moldova": {
+    "Buddhists": 1.0,
+    "Christians": 97.4,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.3
+  },
+  "Monaco": {
+    "Buddhists": 1.0,
+    "Christians": 86.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.7,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 11.7
+  },
+  "Mongolia": {
+    "Buddhists": 54.4,
+    "Christians": 2.3,
+    "Folk Religions": 3.4,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 3.4,
+    "Other Religions": 1.0,
+    "Unaffiliated": 36.5
+  },
+  "Montenegro": {
+    "Buddhists": 1.0,
+    "Christians": 76.6,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 20.3,
+    "Other Religions": 1.0,
+    "Unaffiliated": 3.1
+  },
+  "Montserrat": {
+    "Buddhists": 1.0,
+    "Christians": 93.5,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.5,
+    "Unaffiliated": 4.8
+  },
+  "Morocco": {
+    "Buddhists": 1.0,
+    "Christians": 1.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 99.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Mozambique": {
+    "Buddhists": 1.0,
+    "Christians": 57.8,
+    "Folk Religions": 7.6,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 17.2,
+    "Other Religions": 1.0,
+    "Unaffiliated": 17.3
+  },
+  "Myanmar": {
+    "Buddhists": 79.8,
+    "Christians": 7.8,
+    "Folk Religions": 5.8,
+    "Hindus": 1.7,
+    "Jews": 1.0,
+    "Muslims": 4.2,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Namibia": {
+    "Buddhists": 1.0,
+    "Christians": 97.5,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.9
+  },
+  "Nauru": {
+    "Buddhists": 1.1,
+    "Christians": 79.0,
+    "Folk Religions": 8.1,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 7.4,
+    "Unaffiliated": 4.5
+  },
+  "Nepal": {
+    "Buddhists": 10.0,
+    "Christians": 1.0,
+    "Folk Religions": 3.6,
+    "Hindus": 80.6,
+    "Jews": 1.0,
+    "Muslims": 5.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Netherlands": {
+    "Buddhists": 1.0,
+    "Christians": 47.3,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 6.9,
+    "Other Religions": 1.0,
+    "Unaffiliated": 44.3
+  },
+  "New Caledonia": {
+    "Buddhists": 1.0,
+    "Christians": 85.2,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 2.8,
+    "Other Religions": 1.0,
+    "Unaffiliated": 10.4
+  },
+  "New Zealand": {
+    "Buddhists": 1.9,
+    "Christians": 52.9,
+    "Folk Religions": 1.0,
+    "Hindus": 2.5,
+    "Jews": 1.0,
+    "Muslims": 1.6,
+    "Other Religions": 1.0,
+    "Unaffiliated": 39.6
+  },
+  "Nicaragua": {
+    "Buddhists": 1.0,
+    "Christians": 85.3,
+    "Folk Religions": 1.4,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 13.0
+  },
+  "Niger": {
+    "Buddhists": 1.0,
+    "Christians": 1.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 98.3,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Nigeria": {
+    "Buddhists": 1.0,
+    "Christians": 46.9,
+    "Folk Religions": 1.5,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 51.1,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Niue": {
+    "Buddhists": 1.0,
+    "Christians": 96.4,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 3.3
+  },
+  "Korea, Democratic People's Republic of": {
+    "Buddhists": 1.5,
+    "Christians": 2.0,
+    "Folk Religions": 12.3,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 12.9,
+    "Unaffiliated": 71.3
+  },
+  "Northern Mariana Islands": {
+    "Buddhists": 10.6,
+    "Christians": 81.3,
+    "Folk Religions": 5.3,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.1,
+    "Unaffiliated": 1.0
+  },
+  "Norway": {
+    "Buddhists": 1.0,
+    "Christians": 81.7,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 4.9,
+    "Other Religions": 1.0,
+    "Unaffiliated": 11.6
+  },
+  "Oman": {
+    "Buddhists": 1.0,
+    "Christians": 6.4,
+    "Folk Religions": 1.0,
+    "Hindus": 5.7,
+    "Jews": 1.0,
+    "Muslims": 85.9,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Pakistan": {
+    "Buddhists": 1.0,
+    "Christians": 1.6,
+    "Folk Religions": 1.0,
+    "Hindus": 1.9,
+    "Jews": 1.0,
+    "Muslims": 96.5,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Palau": {
+    "Buddhists": 1.0,
+    "Christians": 86.7,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 10.4,
+    "Unaffiliated": 1.2
+  },
+  "Palestinian territories": {
+    "Buddhists": 1.0,
+    "Christians": 2.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 97.9,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Panama": {
+    "Buddhists": 1.0,
+    "Christians": 92.7,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 5.0
+  },
+  "Papua New Guinea": {
+    "Buddhists": 1.0,
+    "Christians": 99.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Paraguay": {
+    "Buddhists": 1.0,
+    "Christians": 96.9,
+    "Folk Religions": 1.7,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.1
+  },
+  "Peru": {
+    "Buddhists": 1.0,
+    "Christians": 95.4,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 3.1
+  },
+  "Philippines": {
+    "Buddhists": 1.0,
+    "Christians": 92.4,
+    "Folk Religions": 1.6,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 5.7,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Poland": {
+    "Buddhists": 1.0,
+    "Christians": 92.5,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 7.3
+  },
+  "Portugal": {
+    "Buddhists": 1.0,
+    "Christians": 90.5,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 8.6
+  },
+  "Puerto Rico": {
+    "Buddhists": 1.0,
+    "Christians": 96.5,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 2.1
+  },
+  "Qatar": {
+    "Buddhists": 3.8,
+    "Christians": 13.7,
+    "Folk Religions": 1.0,
+    "Hindus": 15.9,
+    "Jews": 1.0,
+    "Muslims": 65.2,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Reunion": {
+    "Buddhists": 1.0,
+    "Christians": 87.6,
+    "Folk Religions": 1.0,
+    "Hindus": 4.5,
+    "Jews": 1.0,
+    "Muslims": 4.2,
+    "Other Religions": 1.1,
+    "Unaffiliated": 2.0
+  },
+  "Romania": {
+    "Buddhists": 1.0,
+    "Christians": 99.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Russia": {
+    "Buddhists": 1.0,
+    "Christians": 72.9,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 11.4,
+    "Other Religions": 1.0,
+    "Unaffiliated": 15.2
+  },
+  "Rwanda": {
+    "Buddhists": 1.0,
+    "Christians": 93.8,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 2.2,
+    "Other Religions": 1.0,
+    "Unaffiliated": 3.0
+  },
+  "St. Helena": {
+    "Buddhists": 1.0,
+    "Christians": 96.5,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 3.3
+  },
+  "St. Kitts and Nevis": {
+    "Buddhists": 1.0,
+    "Christians": 94.6,
+    "Folk Religions": 1.3,
+    "Hindus": 1.5,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.6
+  },
+  "St. Lucia": {
+    "Buddhists": 1.0,
+    "Christians": 91.5,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.9,
+    "Unaffiliated": 5.8
+  },
+  "St. Pierre and Miquelon": {
+    "Buddhists": 1.0,
+    "Christians": 94.7,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.3,
+    "Unaffiliated": 3.8
+  },
+  "St. Vincent and the Grenadines": {
+    "Buddhists": 1.0,
+    "Christians": 88.7,
+    "Folk Religions": 2.0,
+    "Hindus": 3.4,
+    "Jews": 1.0,
+    "Muslims": 1.5,
+    "Other Religions": 2.0,
+    "Unaffiliated": 2.5
+  },
+  "Samoa": {
+    "Buddhists": 1.0,
+    "Christians": 96.9,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 2.4
+  },
+  "San Marino": {
+    "Buddhists": 1.0,
+    "Christians": 91.6,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 7.2
+  },
+  "Sao Tome and Principe": {
+    "Buddhists": 1.0,
+    "Christians": 81.1,
+    "Folk Religions": 3.1,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 2.5,
+    "Unaffiliated": 13.2
+  },
+  "Saudi Arabia": {
+    "Buddhists": 1.0,
+    "Christians": 4.4,
+    "Folk Religions": 1.0,
+    "Hindus": 1.3,
+    "Jews": 1.0,
+    "Muslims": 92.7,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Senegal": {
+    "Buddhists": 1.0,
+    "Christians": 3.3,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 96.6,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Serbia": {
+    "Buddhists": 1.0,
+    "Christians": 91.6,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 5.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 3.3
+  },
+  "Seychelles": {
+    "Buddhists": 1.0,
+    "Christians": 94.0,
+    "Folk Religions": 1.0,
+    "Hindus": 2.1,
+    "Jews": 1.0,
+    "Muslims": 1.1,
+    "Other Religions": 1.0,
+    "Unaffiliated": 2.1
+  },
+  "Sierra Leone": {
+    "Buddhists": 1.0,
+    "Christians": 20.4,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 78.5,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Singapore": {
+    "Buddhists": 32.2,
+    "Christians": 17.7,
+    "Folk Religions": 2.4,
+    "Hindus": 6.5,
+    "Jews": 1.0,
+    "Muslims": 16.1,
+    "Other Religions": 8.5,
+    "Unaffiliated": 16.5
+  },
+  "Slovakia": {
+    "Buddhists": 1.0,
+    "Christians": 83.6,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 15.8
+  },
+  "Slovenia": {
+    "Buddhists": 1.0,
+    "Christians": 77.2,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 3.9,
+    "Other Religions": 1.0,
+    "Unaffiliated": 18.8
+  },
+  "Solomon Islands": {
+    "Buddhists": 1.0,
+    "Christians": 97.4,
+    "Folk Religions": 1.3,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Somalia": {
+    "Buddhists": 1.0,
+    "Christians": 1.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 99.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "South Africa": {
+    "Buddhists": 1.0,
+    "Christians": 80.8,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.9,
+    "Other Religions": 1.0,
+    "Unaffiliated": 15.3
+  },
+  "S. Korea": {
+    "Buddhists": 21.9,
+    "Christians": 30.1,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 46.6
+  },
+  "Spain": {
+    "Buddhists": 1.0,
+    "Christians": 75.2,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 3.3,
+    "Other Religions": 1.0,
+    "Unaffiliated": 21.0
+  },
+  "Sri Lanka": {
+    "Buddhists": 68.6,
+    "Christians": 7.2,
+    "Folk Religions": 1.0,
+    "Hindus": 13.7,
+    "Jews": 1.0,
+    "Muslims": 10.4,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Sudan": {
+    "Buddhists": 1.0,
+    "Christians": 5.4,
+    "Folk Religions": 2.8,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 90.7,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Suriname": {
+    "Buddhists": 1.0,
+    "Christians": 52.3,
+    "Folk Religions": 5.6,
+    "Hindus": 18.8,
+    "Jews": 1.0,
+    "Muslims": 14.3,
+    "Other Religions": 1.9,
+    "Unaffiliated": 6.2
+  },
+  "Swaziland": {
+    "Buddhists": 1.0,
+    "Christians": 88.7,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 9.4
+  },
+  "Sweden": {
+    "Buddhists": 1.0,
+    "Christians": 63.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 6.5,
+    "Other Religions": 1.0,
+    "Unaffiliated": 29.0
+  },
+  "Switzerland": {
+    "Buddhists": 1.0,
+    "Christians": 70.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 5.6,
+    "Other Religions": 1.0,
+    "Unaffiliated": 22.8
+  },
+  "Syria": {
+    "Buddhists": 1.0,
+    "Christians": 5.2,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 92.8,
+    "Other Religions": 1.0,
+    "Unaffiliated": 2.0
+  },
+  "Taiwan, Province of China": {
+    "Buddhists": 21.2,
+    "Christians": 5.8,
+    "Folk Religions": 43.8,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 15.5,
+    "Unaffiliated": 13.7
+  },
+  "Tajikistan": {
+    "Buddhists": 1.0,
+    "Christians": 1.8,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 96.4,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.5
+  },
+  "Tanzania, United Republic of": {
+    "Buddhists": 1.0,
+    "Christians": 63.1,
+    "Folk Religions": 1.1,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 34.1,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.6
+  },
+  "Thailand": {
+    "Buddhists": 92.6,
+    "Christians": 1.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 6.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Timor-Leste": {
+    "Buddhists": 1.0,
+    "Christians": 99.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Togo": {
+    "Buddhists": 1.0,
+    "Christians": 42.3,
+    "Folk Religions": 36.9,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 14.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 6.2
+  },
+  "Tokelau": {
+    "Buddhists": 1.0,
+    "Christians": 99.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Tonga": {
+    "Buddhists": 1.0,
+    "Christians": 98.9,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Trinidad and Tobago": {
+    "Buddhists": 1.0,
+    "Christians": 66.3,
+    "Folk Religions": 2.0,
+    "Hindus": 22.3,
+    "Jews": 1.0,
+    "Muslims": 5.8,
+    "Other Religions": 1.4,
+    "Unaffiliated": 1.8
+  },
+  "Tunisia": {
+    "Buddhists": 1.0,
+    "Christians": 1.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 99.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Turkey": {
+    "Buddhists": 1.0,
+    "Christians": 1.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 98.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.2
+  },
+  "Turkmenistan": {
+    "Buddhists": 1.0,
+    "Christians": 6.4,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 93.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Turks and Caicos Islands": {
+    "Buddhists": 1.0,
+    "Christians": 92.1,
+    "Folk Religions": 2.7,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 4.6
+  },
+  "Tuvalu": {
+    "Buddhists": 1.0,
+    "Christians": 96.7,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.9,
+    "Unaffiliated": 1.3
+  },
+  "Uganda": {
+    "Buddhists": 1.0,
+    "Christians": 86.1,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 12.1,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Ukraine": {
+    "Buddhists": 1.0,
+    "Christians": 85.6,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.7,
+    "Other Religions": 1.0,
+    "Unaffiliated": 12.5
+  },
+  "United Arab Emirates": {
+    "Buddhists": 2.4,
+    "Christians": 12.9,
+    "Folk Religions": 1.0,
+    "Hindus": 7.7,
+    "Jews": 1.0,
+    "Muslims": 75.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.1
+  },
+  "UK": {
+    "Buddhists": 1.0,
+    "Christians": 59.1,
+    "Folk Religions": 1.0,
+    "Hindus": 1.6,
+    "Jews": 1.0,
+    "Muslims": 6.1,
+    "Other Religions": 1.0,
+    "Unaffiliated": 31.2
+  },
+  "USA": {
+    "Buddhists": 1.2,
+    "Christians": 75.5,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.7,
+    "Muslims": 1.1,
+    "Other Religions": 1.0,
+    "Unaffiliated": 18.6
+  },
+  "U.S. Virgin Islands": {
+    "Buddhists": 1.0,
+    "Christians": 94.8,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 3.7
+  },
+  "Uruguay": {
+    "Buddhists": 1.0,
+    "Christians": 57.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 41.5
+  },
+  "Uzbekistan": {
+    "Buddhists": 1.0,
+    "Christians": 2.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 97.1,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Vanuatu": {
+    "Buddhists": 1.0,
+    "Christians": 93.5,
+    "Folk Religions": 4.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.4,
+    "Unaffiliated": 1.2
+  },
+  "Venezuela": {
+    "Buddhists": 1.0,
+    "Christians": 89.5,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 9.7
+  },
+  "Vietnam": {
+    "Buddhists": 16.2,
+    "Christians": 8.4,
+    "Folk Religions": 45.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 29.9
+  },
+  "Wallis and Futuna": {
+    "Buddhists": 1.0,
+    "Christians": 97.4,
+    "Folk Religions": 1.2,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Western Sahara": {
+    "Buddhists": 1.0,
+    "Christians": 1.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 99.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Yemen": {
+    "Buddhists": 1.0,
+    "Christians": 1.0,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 99.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Zambia": {
+    "Buddhists": 1.0,
+    "Christians": 97.4,
+    "Folk Religions": 1.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Zimbabwe": {
+    "Buddhists": 1.0,
+    "Christians": 87.1,
+    "Folk Religions": 4.0,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 7.6
+  },
+  "South Sudan": {
+    "Buddhists": 1.0,
+    "Christians": 60.5,
+    "Folk Religions": 32.9,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 6.2,
+    "Other Religions": 1.0,
+    "Unaffiliated": 1.0
+  },
+  "Curacao": {
+    "Buddhists": 1.0,
+    "Christians": 93.9,
+    "Folk Religions": 1.2,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 3.3
+  },
+  "Sint Maarten": {
+    "Buddhists": 1.0,
+    "Christians": 93.9,
+    "Folk Religions": 1.2,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 3.3
+  },
+  "Caribbean Netherlands": {
+    "Buddhists": 1.0,
+    "Christians": 93.9,
+    "Folk Religions": 1.2,
+    "Hindus": 1.0,
+    "Jews": 1.0,
+    "Muslims": 1.0,
+    "Other Religions": 1.0,
+    "Unaffiliated": 3.3
+  }
+}
