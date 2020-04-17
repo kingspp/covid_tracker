@@ -13,7 +13,3 @@ url_nucleotide = "https://www.ncbi.nlm.nih.gov/genomes/VirusVariation/vvsearch2/
 
 fetch_data_and_save(url=url_protein, file_path='protein_latest.csv')
 fetch_data_and_save(url=url_nucleotide, file_path='nucleotide_latest.csv')
-
-
-
-
