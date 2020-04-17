@@ -200,3 +200,4 @@ typings/
 
 
 .idea/*
+/mongo_charts/data/
