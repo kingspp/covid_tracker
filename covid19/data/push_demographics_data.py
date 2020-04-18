@@ -93,8 +93,9 @@ world_demographics = WorldDemographics(number_of_continents=6, number_of_countri
 
 
 def insert():
-    client = pymongo.MongoClient(host="192.168.1.16")
-    database = client.get_database("covid19_research")
+    # client = pymongo.MongoClient(host="192.168.1.16")
+    # database = client.get_database("covid19_research")
+    from covid19 import database
 
     # Insert Country Demographics
     database.drop_collection("country_demographics")

@@ -1,0 +1,12 @@
+{
+  "mongo_db_config":{
+    "database": "covid19",
+    "use_config": "gce",
+      "configs": {
+        "gce": {
+          "host": "35.192.113.231",
+          "port": "25043"
+        }
+      }
+    }
+}

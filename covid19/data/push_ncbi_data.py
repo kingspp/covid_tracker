@@ -77,8 +77,10 @@ for row in pdf.iterrows():
 
 
 def insert():
-    client = pymongo.MongoClient(host="192.168.1.16")
-    database = client.get_database("covid19_research")
+    # client = pymongo.MongoClient(host="192.168.1.16")
+    # database = client.get_database("covid19_research")
+
+    from covid19 import database
 
     # Insert Nucleotide Collection
     database.drop_collection("ncbi_nucleotide")

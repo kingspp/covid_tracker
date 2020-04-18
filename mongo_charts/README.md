@@ -31,6 +31,7 @@
     echo mongodb://104.251.210.60:27017 | docker secret create charts-mongodb-uri -
     docker stack deploy -c charts-docker-swarm-19.12.1.yml mongodb-charts
     docker service ls
+    docker stack rm mongodb-charts
     ```
 4. Create Users
 
@@ -47,6 +48,17 @@
       --email "user@wpi.com" --password "wpi@123" \
       --role "User"
     ```
+
+### Launch / Init Scripts
+```bash
+# 1. Mongo Daemon
+mongod -f /home/prathyushsp/Git/covid19_research/mongo_charts/mongo-gce.conf &
+
+sleep 10
+
+# 2. Docker Charts Deploymnent  
+docker stack deploy -c /home/prathyushsp/Git/covid19_research/mongo_charts/charts-docker-swarm-19.12.1.yml mongodb-charts
+```
 
 ### Resources
  
