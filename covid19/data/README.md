@@ -32,5 +32,16 @@ Source Name: Religious Composition by Country 2020
 
 5. Africa Continent population is replaced by the sum of `Middle East - North Africa` and `Sub-Saharan Africa`
  
+Source : Country Government Type
 
+1 Rename countries
+| Previous | After |
+|----------|-------|
+|Cote d'Ivoire| Cote d"Ivoire|
+|Congo, Democratic Republic of the|Congo (Brazzaville)|
+|Congo, Republic of the|Congo (Kinshasa)|
+|Gambia, The| Gambia|
+|Taiwan|Taiwan*|
+|United States| US|
+|Bahamas, The|Bahamas|
 

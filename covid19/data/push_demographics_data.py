@@ -24,13 +24,20 @@ for country in COUNTRIES:
     if country not in rel_available_countries:
         print(country)
 
+print("====" * 20)
+print("Countries not found in government type . . .")
+country_gov = pd.read_csv(COVID19_DATA_PATH + "/government_type.csv", header=0)
+country_gov = dict(zip(country_gov["Country"], country_gov["GovernmentType"]))
+gov_available_countries = list(country_gov.keys())
+for country in COUNTRIES:
+    if country not in gov_available_countries:
+        print(country)
 
 def check_number(num_str):
     num_str = num_str.replace(",", "")
     num_str = num_str.replace(">", "")
     num_str = num_str.replace("<", "")
     return num_str
-
 
 for country in COUNTRIES:
     if country in median_age and country in rel_available_countries:
@@ -47,7 +54,8 @@ for country in COUNTRIES:
                                                         other_religions=float(
                                                             check_number(rel['Other Religions'].values[0])),
                                                         jews=float(check_number(rel['Jews'].values[0])),
-                                                        continent=rel["Region"].values[0]
+                                                        continent=rel["Region"].values[0],
+                                                        country_government_type=country_gov[country]
                                                         ))
 
 number_of_countries = country_religion.groupby("Region").count()['Country'].to_dict()
