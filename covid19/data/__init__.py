@@ -139,3 +139,4 @@ class NCBIProtein():
     gen_bank_title:str=""
     county:str=""
     type:str="protein"
+
