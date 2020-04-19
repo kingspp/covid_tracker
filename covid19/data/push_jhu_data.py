@@ -63,4 +63,4 @@ def insert():
     for coll in statistics_collection:
         collection.insert(coll.__dict__)
 
-# insert()
+insert()
