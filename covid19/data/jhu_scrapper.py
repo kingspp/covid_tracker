@@ -15,6 +15,8 @@ import pandas as pd
 import numpy as np
 import time
 from covid19 import database
+pd.set_option('display.max_columns', None)
+pd.set_option('display.max_rows', None)
 
 
 class JHUTimeSeries:
@@ -129,12 +131,15 @@ if __name__ == '__main__':
     deaths_us.set_index(primary_join_key, inplace=True)
     print('Iterating over US data...')
     for idx, row in confirmed_us.iterrows():
+        print(row)
         state = row['Province_State']
         country = row['Country_Region']
         fips = access_df_cell(countries_lookup, idx, 'FIPS')
         for i, datetime in enumerate(timestamps):
             schema = get_schema()
             schema['datetime'] = datetime
+            print(datetime)
+            # exit()
             schema['Confirmed'] = row[datetime]
             schema['Death'] = access_df_cell(deaths_us, idx, datetime)
             schema['Country_Region'] = country
@@ -148,11 +153,11 @@ if __name__ == '__main__':
     json.dump(county_document, open('county_level_documents.json', 'w'), indent=4)
     json.dump(status_documents, open('status_documents.json', 'w'), indent=4)
 
-    collection = database.get_collection("country_level_metadata")
-    push_json_arr(collection, country_level_document)
+    # collection = database.get_collection("country_level_metadata")
+    # push_json_arr(collection, country_level_document)
+    #
+    # collection = database.get_collection("state_level_metadata")
+    # push_json_arr(collection, county_document)
 
-    collection = database.get_collection("state_level_metadata")
-    push_json_arr(collection, county_document)
-
-    collection = database.get_collection("world_status")
-    push_json_arr(collection, status_documents)
+    # collection = database.get_collection("world_status")
+    # push_json_arr(collection, status_documents)
