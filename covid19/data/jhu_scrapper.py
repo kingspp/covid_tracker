@@ -87,12 +87,12 @@ def fetch_fips_county_level():
             features = pop_from_dict(to_pop, features)
             infographics.append(features)
     print(infographics)
-    json.dump(infographics, open('infographics.json', 'w'))
+    json.dump(infographics, open('infographics.json', 'w'), indent=4)
 
 
 if __name__ == '__main__':
-    fetch_fips_county_level()
-    exit()
+    # fetch_fips_county_level()
+    # exit()
     pd.set_option('display.max_columns', None)
 
     # COUNTRY AND COUNTY LEVEL META DATA
@@ -152,12 +152,14 @@ if __name__ == '__main__':
     """
      Notes: No recovered data is given county wise.
     """
+    confirmed_us.fillna('', inplace=True)
     confirmed_us.set_index(primary_join_key, inplace=True)
     deaths_us.set_index(primary_join_key, inplace=True)
     print('Iterating over US data...')
     for idx, row in confirmed_us.iterrows():
         state = row['Province_State']
         country = row['Country_Region']
+        county = row['Admin2']
         fips = access_df_cell(countries_lookup, idx, 'FIPS')
         for i, datetime in enumerate(timestamps_us):
             schema = get_schema()
@@ -166,6 +168,7 @@ if __name__ == '__main__':
             schema['Death'] = access_df_cell(deaths_us, idx, datetime)
             schema['Country_Region'] = country
             schema['Province_State'] = state
+            schema['County'] = county
             schema['fips'] = fips
             status_documents.append(schema)
     print('US data processed...')
