@@ -15,8 +15,6 @@ import pandas as pd
 import numpy as np
 import time
 from covid19 import database
-pd.set_option('display.max_columns', None)
-pd.set_option('display.max_rows', None)
 
 
 class JHUTimeSeries:
@@ -87,7 +85,7 @@ if __name__ == '__main__':
     primary_join_key = 'primary_key'
     print('Downloading confirmed global file...')
     confirmed_global = download_csv(JHUTimeSeries.CONFIRMED_GLOBAL)
-    timestamps = list(confirmed_global.columns)[4:]
+    timestamps_global = list(confirmed_global.columns)[4:]
     confirmed_global = create_unique_key(confirmed_global, primary_join_key)
 
     print('Downloading deaths global file...')
@@ -106,7 +104,7 @@ if __name__ == '__main__':
     print('Creating "CONFIRMED, DEATH, ACTIVE, RECOVERED" status by country and province...')
 
     for idx, row in confirmed_global.iterrows():
-        for i, datetime in enumerate(timestamps):
+        for i, datetime in enumerate(timestamps_global):
             schema = get_schema()
             schema['datetime'] = datetime
             schema['Confirmed'] = row[datetime]
@@ -121,8 +119,8 @@ if __name__ == '__main__':
     confirmed_us = download_csv(JHUTimeSeries.CONFIRMED_US)
     print('Downloading deaths US file...')
     deaths_us = download_csv(JHUTimeSeries.DEATHS_US)
-
     primary_join_key = 'Combined_Key'
+    timestamps_us = confirmed_us.columns[11:]
 
     """
      Notes: No recovered data is given county wise.
@@ -131,15 +129,12 @@ if __name__ == '__main__':
     deaths_us.set_index(primary_join_key, inplace=True)
     print('Iterating over US data...')
     for idx, row in confirmed_us.iterrows():
-        print(row)
         state = row['Province_State']
         country = row['Country_Region']
         fips = access_df_cell(countries_lookup, idx, 'FIPS')
-        for i, datetime in enumerate(timestamps):
+        for i, datetime in enumerate(timestamps_us):
             schema = get_schema()
             schema['datetime'] = datetime
-            print(datetime)
-            # exit()
             schema['Confirmed'] = row[datetime]
             schema['Death'] = access_df_cell(deaths_us, idx, datetime)
             schema['Country_Region'] = country
@@ -158,6 +153,6 @@ if __name__ == '__main__':
     #
     # collection = database.get_collection("state_level_metadata")
     # push_json_arr(collection, county_document)
-
+    #
     # collection = database.get_collection("world_status")
     # push_json_arr(collection, status_documents)
