@@ -56,7 +56,8 @@ mongod -f /home/prathyushsp/Git/covid19_research/mongo_charts/mongo-gce.conf &
 
 sleep 10
 
-# 2. Docker Charts Deploymnent  
+# 
+2. Docker Charts Deploymnent  
 docker stack deploy -c /home/prathyushsp/Git/covid19_research/mongo_charts/charts-docker-swarm-19.12.1.yml mongodb-charts
 ```
 
@@ -65,4 +66,8 @@ docker stack deploy -c /home/prathyushsp/Git/covid19_research/mongo_charts/chart
  1. [Install Docker](https://docs.docker.com/engine/install/ubuntu/)
  2. [Install Mongodb](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/)
  
+
+ http://35.192.113.231/
+ username: user@wpi.com
+ pass: wpi@123
  
