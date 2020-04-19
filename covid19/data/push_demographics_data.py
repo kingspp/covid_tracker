@@ -42,10 +42,11 @@ def check_number(num_str):
 county_demog_data = json.load(open(COVID19_DATA_PATH+"county_level_documents.json"))
 county_collection = []
 for county in county_demog_data:
-    county_collection.append(CountyDemographics(country=county["Country_Region"],county=county["Province_State"],
+    county_collection.append(CountyDemographics(country=county["Country_Region"],state=county["Province_State"],
                                                 uid=county["UID"], iso2=county["iso2"], iso3=county["iso3"],
-                                                code3=county["code3"], fips=county["FIPS"], admin2=county["Admin2"],
-                                                latitude=county["Lat"], longitude=county["Long_"],jhu_county_population=["Population"]))
+                                                code3=county["code3"], fips=county["FIPS"], county=county["Admin2"],
+                                                latitude=county["Lat"], longitude=county["Long_"],
+                                                jhu_county_population=county["Population"]))
 
 
 # Country Metrics
