@@ -47,7 +47,7 @@ county_infographics = json.load(open(COVID19_DATA_PATH+"infographics.json"))
 county_infographics = {county['FIPS']:county for county in county_infographics}
 
 for county in county_demog_data:
-    if county["FIPS"]!="":
+    if county["FIPS"]!="" and county["FIPS"] in county_infographics:
         infographics = county_infographics[county["FIPS"]]
     else:
         infographics =defaultdict(lambda:"")
@@ -68,7 +68,7 @@ for county in county_demog_data:
                                                 emergency_declaration_notes=infographics["EM_notes"],
                                                 url=infographics["url"],
                                                 staffed_beds=infographics["Beds_Staff"],
-                                                licenced_beds=infographics["licenced_beds"],
+                                                licenced_beds=infographics["Beds_Licen"],
                                                 icu_beds=infographics["Beds_ICU"],
                                                 average_ventilator_used_per_hospital=infographics["Ventilator"],
                                                 poverty_rate=infographics["POVALL_201"]
@@ -182,4 +182,4 @@ def insert():
     collection = database.get_collection("world_demographics")
     collection.insert(world_demographics.__dict__)
 
-insert()
+# insert()
