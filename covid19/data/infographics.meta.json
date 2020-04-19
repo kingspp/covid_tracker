@@ -1,0 +1,357 @@
+[
+  {
+    "name": "OBJECTID",
+    "type": "esriFieldTypeOID",
+    "alias": "OBJECTID",
+    "sqlType": "sqlTypeOther",
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "Countyname",
+    "type": "esriFieldTypeString",
+    "alias": "County Name",
+    "sqlType": "sqlTypeOther",
+    "length": 80,
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "ST_Name",
+    "type": "esriFieldTypeString",
+    "alias": "State Name",
+    "sqlType": "sqlTypeOther",
+    "length": 80,
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "ST_Abbr",
+    "type": "esriFieldTypeString",
+    "alias": "State Abbreviation",
+    "sqlType": "sqlTypeOther",
+    "length": 80,
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "ST_ID",
+    "type": "esriFieldTypeString",
+    "alias": "State ID",
+    "sqlType": "sqlTypeOther",
+    "length": 80,
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "FIPS",
+    "type": "esriFieldTypeString",
+    "alias": "FIPS Code",
+    "sqlType": "sqlTypeOther",
+    "length": 80,
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "FatalityRa",
+    "type": "esriFieldTypeDouble",
+    "alias": "County Fatality Rate",
+    "sqlType": "sqlTypeOther",
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "Confirmedb",
+    "type": "esriFieldTypeDouble",
+    "alias": "County Confirmed divided by County Population * 100,000",
+    "sqlType": "sqlTypeOther",
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "DeathsbyPo",
+    "type": "esriFieldTypeDouble",
+    "alias": "County Deaths divided by County Population * 100,000",
+    "sqlType": "sqlTypeOther",
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "PCTPOVALL_",
+    "type": "esriFieldTypeDouble",
+    "alias": "Poverty As Percent of State",
+    "sqlType": "sqlTypeOther",
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "Unemployme",
+    "type": "esriFieldTypeDouble",
+    "alias": "Unemployment Rate (ACS)",
+    "sqlType": "sqlTypeOther",
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "Med_HH_Inc",
+    "type": "esriFieldTypeDouble",
+    "alias": "Median Household Income percent of State Total(ACS)",
+    "sqlType": "sqlTypeOther",
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "State_Fata",
+    "type": "esriFieldTypeDouble",
+    "alias": "State Fatality Rate",
+    "sqlType": "sqlTypeOther",
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "DateChecke",
+    "type": "esriFieldTypeString",
+    "alias": "Date Checked for Testing",
+    "sqlType": "sqlTypeOther",
+    "length": 80,
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "EM_type",
+    "type": "esriFieldTypeString",
+    "alias": "Emergency Declaration Type",
+    "sqlType": "sqlTypeOther",
+    "length": 80,
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "EM_date",
+    "type": "esriFieldTypeString",
+    "alias": "Emergency Declaration Date",
+    "sqlType": "sqlTypeOther",
+    "length": 80,
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "EM_notes",
+    "type": "esriFieldTypeString",
+    "alias": "Emergency Declaration Notes",
+    "sqlType": "sqlTypeOther",
+    "length": 254,
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "url",
+    "type": "esriFieldTypeString",
+    "alias": "URL Link for Infographics",
+    "sqlType": "sqlTypeOther",
+    "length": 80,
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "Thumbnail",
+    "type": "esriFieldTypeString",
+    "alias": "Thumbnail Link Infographics",
+    "sqlType": "sqlTypeOther",
+    "length": 80,
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "Confirmed",
+    "type": "esriFieldTypeInteger",
+    "alias": "County Level Confirmed Cases",
+    "sqlType": "sqlTypeOther",
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "Deaths",
+    "type": "esriFieldTypeInteger",
+    "alias": "County Level Deaths",
+    "sqlType": "sqlTypeOther",
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "Age_85",
+    "type": "esriFieldTypeInteger",
+    "alias": "Population Aged 85 Plus",
+    "sqlType": "sqlTypeOther",
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "Age_80_84",
+    "type": "esriFieldTypeInteger",
+    "alias": "Population Aged 80 to 84",
+    "sqlType": "sqlTypeOther",
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "Age_75_79",
+    "type": "esriFieldTypeInteger",
+    "alias": "Population Aged 75 to 79",
+    "sqlType": "sqlTypeOther",
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "Age_70_74",
+    "type": "esriFieldTypeInteger",
+    "alias": "Population Aged 70 to 74",
+    "sqlType": "sqlTypeOther",
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "Age_65_69",
+    "type": "esriFieldTypeInteger",
+    "alias": "Population Aged 65 to 69",
+    "sqlType": "sqlTypeOther",
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "Beds_Licen",
+    "type": "esriFieldTypeInteger",
+    "alias": "Number of Licensed Beds",
+    "sqlType": "sqlTypeOther",
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "Beds_Staff",
+    "type": "esriFieldTypeInteger",
+    "alias": "Number of Staffed Beds",
+    "sqlType": "sqlTypeOther",
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "Beds_ICU",
+    "type": "esriFieldTypeInteger",
+    "alias": "Number of ICU Beds",
+    "sqlType": "sqlTypeOther",
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "Ventilator",
+    "type": "esriFieldTypeInteger",
+    "alias": "Average Ventilation Used Per Hospital",
+    "sqlType": "sqlTypeOther",
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "POP_ESTIMA",
+    "type": "esriFieldTypeInteger",
+    "alias": "Total Population (ACS)",
+    "sqlType": "sqlTypeOther",
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "POVALL_201",
+    "type": "esriFieldTypeInteger",
+    "alias": "Poverty Rate (ACS)",
+    "sqlType": "sqlTypeOther",
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "Unemployed",
+    "type": "esriFieldTypeInteger",
+    "alias": "Total Unemployed (ACS)",
+    "sqlType": "sqlTypeOther",
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "Median_Hou",
+    "type": "esriFieldTypeInteger",
+    "alias": "Median Household Income (ACS)",
+    "sqlType": "sqlTypeOther",
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "Recovered",
+    "type": "esriFieldTypeInteger",
+    "alias": "Number of Recovered Cases",
+    "sqlType": "sqlTypeOther",
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "Active",
+    "type": "esriFieldTypeInteger",
+    "alias": "Number of Active Cases",
+    "sqlType": "sqlTypeOther",
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "State_Conf",
+    "type": "esriFieldTypeInteger",
+    "alias": "State Level Confirmed Cases",
+    "sqlType": "sqlTypeOther",
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "State_Deat",
+    "type": "esriFieldTypeInteger",
+    "alias": "State Level Deaths",
+    "sqlType": "sqlTypeOther",
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "State_Reco",
+    "type": "esriFieldTypeInteger",
+    "alias": "State Level Recovered Cases",
+    "sqlType": "sqlTypeOther",
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "State_Test",
+    "type": "esriFieldTypeInteger",
+    "alias": "State Level Number of Tests",
+    "sqlType": "sqlTypeOther",
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "AgedPop",
+    "type": "esriFieldTypeInteger",
+    "alias": "Total Population Aged 65 Plus",
+    "sqlType": "sqlTypeOther",
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "Shape__Area",
+    "type": "esriFieldTypeDouble",
+    "alias": "Shape__Area",
+    "sqlType": "sqlTypeDouble",
+    "domain": null,
+    "defaultValue": null
+  },
+  {
+    "name": "Shape__Length",
+    "type": "esriFieldTypeDouble",
+    "alias": "Shape__Length",
+    "sqlType": "sqlTypeDouble",
+    "domain": null,
+    "defaultValue": null
+  }
+]
