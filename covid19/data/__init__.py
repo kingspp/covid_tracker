@@ -78,8 +78,8 @@ class CountryDemographics():
     iso3:str=""
     code3:str=""
     fips:str=""
-    admin2:str=""
-    province:str=""
+    county:str=""
+    state:str=""
     jhu_country_population:str=""
 
 @dataclass
@@ -97,53 +97,27 @@ class CountyDemographics():
     code3: str = ""
     fips: str = ""
     jhu_county_population: str = ""
-    country_abbr: str = ""
-    county_id: str = ""
-    fatality_rate: str = ""
+
+    poverty_percent_state: float = ""
     infographics_date: str = ""
-    state_fatality:str=""
+    unemployment_rate: float = ""
+    total_unemployed: float = ""
+    median_household_income_perc_of_state: float = ""
+    median_household_income: float = ""
+    emergency_declation_type:str=""
+    emergency_declaration_date:str=""
+    emergency_declaration_notes:str=""
     url:str=""
-    state_tested: str = ""
-    state_recovered: str = ""
-    state_confirmed: str = ""
-    state_deaths: str = ""
-    staffed_beds: str = ""
-    licenced_beds: str = ""
-    icu_beds: str = ""
-    ventilators: str = ""
-
-
-    # "Confirmedb": 0,
-    # "DeathsbyPo": 0,
-    # "PCTPOVALL_": 0,
-    # "Unemployme": 0,
-    # "Med_HH_Inc": 0,
-    #
-    #
-    # "EM_type": " ",
-    # "EM_date": " ",
-    # "EM_notes": " ",
-    #
-    # "Age_85": 0,
-    # "Age_80_84": 0,
-    # "Age_75_79": 0,
-    # "Age_70_74": 0,
-    # "Age_65_69": 0,
-    #
-    #
-    #
-    # "POP_ESTIMA": 0,
-    # "POVALL_201": 0,
-    # "Unemployed": 0,
-    # "Median_Hou": 0,
-    # "Recovered": 0,
-    # "Active": 0,
-    #
-    #
-    # "AgedPop": 0,
-    # "Shape__Area": null,
-    # "Shape__Length": null
-
+    # state_tested: str = ""
+    # state_recovered: str = ""
+    # state_confirmed: str = ""
+    # state_deaths: str = ""
+    infographics_population:float=""
+    staffed_beds: float = ""
+    licenced_beds: float = ""
+    icu_beds: float = ""
+    average_ventilator_used_per_hospital: float = ""
+    poverty_rate:float=""
 
 @dataclass
 class NCBINucleotide():
@@ -221,3 +195,11 @@ class Statistics():
     recovered_delta: float = ""
     death_delta: float = ""
     active_delta: float = ""
+    county: float = ""
+    recovery_rate:float=""
+    death_rate: float = ""
+    active_rate:float=""
+    confirmed_by_population: float = ""
+    deaths_by_population: float = ""
+    active_by_population: float = ""
+    recovered_by_population: float = ""

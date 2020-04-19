@@ -41,12 +41,34 @@ def check_number(num_str):
 # County Metrics
 county_demog_data = json.load(open(COVID19_DATA_PATH+"county_level_documents.json"))
 county_collection = []
+
+county_infographics = json.load(open(COVID19_DATA_PATH+"infographics.json"))
+county_infographics = {county['FIPS']:county for county in county_infographics}
+
 for county in county_demog_data:
+    infographics = county_infographics[county["FIPS"]]
     county_collection.append(CountyDemographics(country=county["Country_Region"],state=county["Province_State"],
                                                 uid=county["UID"], iso2=county["iso2"], iso3=county["iso3"],
                                                 code3=county["code3"], fips=county["FIPS"], county=county["Admin2"],
                                                 latitude=county["Lat"], longitude=county["Long_"],
-                                                jhu_county_population=county["Population"]))
+                                                jhu_county_population=county["Population"],
+                                                infographics_population= infographics["POP_ESTIMA"],
+                                                poverty_percent_state=infographics["PCTPOVALL_"],
+                                                infographics_date=infographics["DateChecke"],
+                                                unemployment_rate=infographics["Unemployme"],
+                                                total_unemployed=infographics["Unemployed"],
+                                                median_household_income_perc_of_state = infographics["Med_HH_Inc"],
+                                                median_household_income = infographics["Median_Hou"],
+                                                emergency_declaration_date=infographics["EM_date"],
+                                                emergency_declation_type=infographics["EM_type"],
+                                                emergency_declaration_notes=infographics["EM_notes"],
+                                                url=infographics["url"],
+                                                staffed_beds=infographics["Beds_Staff"],
+                                                licenced_beds=infographics["licenced_beds"],
+                                                icu_beds=infographics["Beds_ICU"],
+                                                average_ventilator_used_per_hospital=infographics["Ventilator"],
+                                                poverty_rate=infographics["POVALL_201"]
+                                                ))
 
 
 # Country Metrics
@@ -78,8 +100,8 @@ for country in COUNTRIES:
                                                         iso3=country_demog_data[country]["iso3"],
                                                         code3=country_demog_data[country]["code3"],
                                                         fips=country_demog_data[country]["FIPS"],
-                                                        admin2=country_demog_data[country]["Admin2"],
-                                                        province=country_demog_data[country]["Province_State"],
+                                                        county=country_demog_data[country]["Admin2"],
+                                                        state=country_demog_data[country]["Province_State"],
                                                         jhu_country_population=country_demog_data[country]["Population"]
                                                         ))
 
