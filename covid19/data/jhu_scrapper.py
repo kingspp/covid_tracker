@@ -85,7 +85,7 @@ if __name__ == '__main__':
     primary_join_key = 'primary_key'
     print('Downloading confirmed global file...')
     confirmed_global = download_csv(JHUTimeSeries.CONFIRMED_GLOBAL)
-    timestamps = list(confirmed_global.columns)[4:]
+    timestamps_global = list(confirmed_global.columns)[4:]
     confirmed_global = create_unique_key(confirmed_global, primary_join_key)
 
     print('Downloading deaths global file...')
@@ -104,7 +104,7 @@ if __name__ == '__main__':
     print('Creating "CONFIRMED, DEATH, ACTIVE, RECOVERED" status by country and province...')
 
     for idx, row in confirmed_global.iterrows():
-        for i, datetime in enumerate(timestamps):
+        for i, datetime in enumerate(timestamps_global):
             schema = get_schema()
             schema['datetime'] = datetime
             schema['Confirmed'] = row[datetime]
@@ -119,8 +119,8 @@ if __name__ == '__main__':
     confirmed_us = download_csv(JHUTimeSeries.CONFIRMED_US)
     print('Downloading deaths US file...')
     deaths_us = download_csv(JHUTimeSeries.DEATHS_US)
-
     primary_join_key = 'Combined_Key'
+    timestamps_us = confirmed_us.columns[11:]
 
     """
      Notes: No recovered data is given county wise.
@@ -132,7 +132,7 @@ if __name__ == '__main__':
         state = row['Province_State']
         country = row['Country_Region']
         fips = access_df_cell(countries_lookup, idx, 'FIPS')
-        for i, datetime in enumerate(timestamps):
+        for i, datetime in enumerate(timestamps_us):
             schema = get_schema()
             schema['datetime'] = datetime
             schema['Confirmed'] = row[datetime]
@@ -148,11 +148,11 @@ if __name__ == '__main__':
     json.dump(county_document, open('county_level_documents.json', 'w'), indent=4)
     json.dump(status_documents, open('status_documents.json', 'w'), indent=4)
 
-    collection = database.get_collection("country_level_metadata")
-    push_json_arr(collection, country_level_document)
-
-    collection = database.get_collection("state_level_metadata")
-    push_json_arr(collection, county_document)
-
-    collection = database.get_collection("world_status")
-    push_json_arr(collection, status_documents)
+    # collection = database.get_collection("country_level_metadata")
+    # push_json_arr(collection, country_level_document)
+    #
+    # collection = database.get_collection("state_level_metadata")
+    # push_json_arr(collection, county_document)
+    #
+    # collection = database.get_collection("world_status")
+    # push_json_arr(collection, status_documents)
