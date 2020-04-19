@@ -13,6 +13,7 @@ import json
 
 import pandas as pd
 import numpy as np
+import requests
 import time
 from covid19 import database
 
@@ -64,8 +65,34 @@ def access_df_cell(df, idx, colname):
         return 0
 
 
-if __name__ == '__main__':
+def fetch_fips_county_level():
+    def pop_from_dict(keys, dictionary):
+        for key in keys:
+            if key in dictionary:
+                dictionary.pop(key)
+        return dictionary
 
+    infographics = []
+    print('Downloading countries CSV...')
+    countries_lookup = download_csv(JHUTimeSeries.COUNTRIES_LOOKUP)
+    countries_lookup.fillna('', inplace=True)
+    country_fips = [int(x) for x in countries_lookup['FIPS'].values if x != '']
+    for i, fips in enumerate(country_fips):
+        url = JHUTimeSeries.COUNTY_LEVEL_INFOGRAPHICS(fips)
+        print('Fetching ', i, '/', len(country_fips))
+        data = requests.get(url).json()
+        if 'features' in data and len(data['features']) != 0:
+            features = data['features'][0]['attributes']
+            to_pop = ['OBJECTID', 'Countyname', 'Thumbnail']
+            features = pop_from_dict(to_pop, features)
+            infographics.append(features)
+    print(infographics)
+    json.dump(infographics, open('infographics.json', 'w'))
+
+
+if __name__ == '__main__':
+    fetch_fips_county_level()
+    exit()
     pd.set_option('display.max_columns', None)
 
     # COUNTRY AND COUNTY LEVEL META DATA
