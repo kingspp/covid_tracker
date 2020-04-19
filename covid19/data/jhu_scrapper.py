@@ -139,6 +139,7 @@ if __name__ == '__main__':
             schema['Recovered'] = access_df_cell(recovered_global, idx, datetime)
             schema['Country_Region'] = row['Country/Region']
             schema['Province_State'] = row['Province/State']
+            schema['County'] = ''
             status_documents.append(schema)
     print('Processing of global data done...')
 
