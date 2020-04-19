@@ -97,6 +97,53 @@ class CountyDemographics():
     fips: str = ""
     admin2: str = ""
     jhu_county_population: str = ""
+    country_abbr: str = ""
+    county_id: str = ""
+    fatality_rate: str = ""
+    infographics_date: str = ""
+    state_fatality:str=""
+    url:str=""
+    state_tested: str = ""
+    state_recovered: str = ""
+    state_confirmed: str = ""
+    state_deaths: str = ""
+    staffed_beds: str = ""
+    licenced_beds: str = ""
+    icu_beds: str = ""
+    ventilators: str = ""
+
+
+    # "Confirmedb": 0,
+    # "DeathsbyPo": 0,
+    # "PCTPOVALL_": 0,
+    # "Unemployme": 0,
+    # "Med_HH_Inc": 0,
+    #
+    #
+    # "EM_type": " ",
+    # "EM_date": " ",
+    # "EM_notes": " ",
+    #
+    # "Age_85": 0,
+    # "Age_80_84": 0,
+    # "Age_75_79": 0,
+    # "Age_70_74": 0,
+    # "Age_65_69": 0,
+    #
+    #
+    #
+    # "POP_ESTIMA": 0,
+    # "POVALL_201": 0,
+    # "Unemployed": 0,
+    # "Median_Hou": 0,
+    # "Recovered": 0,
+    # "Active": 0,
+    #
+    #
+    # "AgedPop": 0,
+    # "Shape__Area": null,
+    # "Shape__Length": null
+
 
 @dataclass
 class NCBINucleotide():
