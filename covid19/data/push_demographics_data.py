@@ -3,6 +3,7 @@ import json
 from covid19.data import CountryDemographics, ContinentDemographics, WorldDemographics, Religion, CountyDemographics
 from covid19 import COVID19_DATA_PATH, COUNTRIES
 import pandas as pd
+from collections import defaultdict
 
 country_demographics = []
 continent_demographics = []
@@ -46,7 +47,10 @@ county_infographics = json.load(open(COVID19_DATA_PATH+"infographics.json"))
 county_infographics = {county['FIPS']:county for county in county_infographics}
 
 for county in county_demog_data:
-    infographics = county_infographics[county["FIPS"]]
+    if county["FIPS"]!="":
+        infographics = county_infographics[county["FIPS"]]
+    else:
+        infographics =defaultdict(lambda:"")
     county_collection.append(CountyDemographics(country=county["Country_Region"],state=county["Province_State"],
                                                 uid=county["UID"], iso2=county["iso2"], iso3=county["iso3"],
                                                 code3=county["code3"], fips=county["FIPS"], county=county["Admin2"],
