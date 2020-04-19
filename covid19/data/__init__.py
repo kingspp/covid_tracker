@@ -84,12 +84,12 @@ class CountryDemographics():
 
 @dataclass
 class CountyDemographics():
-    country: str
-    county: str
-    county_population: float
-    latitude: float
-    longitude: float
-    county_r0: float
+    country: str=""
+    county: str=""
+    county_population: float=""
+    latitude: float=""
+    longitude: float=""
+    county_r0: float=""
     uid: str = ""
     iso2: str = ""
     iso3: str = ""

@@ -43,7 +43,7 @@ county_demog_data = json.load(open(COVID19_DATA_PATH+"county_level_documents.jso
 county_collection = []
 for county in county_demog_data:
     county_collection.append(CountyDemographics(country=county["Country_Region"],county=county["Province_State"],
-                                                uid=county["uid"], iso2=county["iso2"], iso3=county["iso3"],
+                                                uid=county["UID"], iso2=county["iso2"], iso3=county["iso3"],
                                                 code3=county["code3"], fips=county["FIPS"], admin2=county["Admin2"],
                                                 latitude=county["Lat"], longitude=county["Long_"],jhu_county_population=["Population"]))
 
@@ -70,16 +70,16 @@ for country in COUNTRIES:
                                                         religion=religion.__dict__,
                                                         continent=rel["Region"].values[0],
                                                         country_government_type=country_gov[country],
-                                                        uid=country_demog_data[country],
-                                                        latitude=country_demog_data["Lat"],
-                                                        longitude=country_demog_data["Long_"],
-                                                        iso2=country_demog_data["iso2"],
-                                                        iso3=country_demog_data["iso3"],
-                                                        code3=country_demog_data["code3"],
-                                                        fips=country_demog_data["FIPS"],
-                                                        admin2=country_demog_data["Admin2"],
-                                                        province=country_demog_data["Province_State"],
-                                                        jhu_country_population=country_demog_data["Population"]
+                                                        uid=country_demog_data[country]["UID"],
+                                                        latitude=country_demog_data[country]["Lat"],
+                                                        longitude=country_demog_data[country]["Long_"],
+                                                        iso2=country_demog_data[country]["iso2"],
+                                                        iso3=country_demog_data[country]["iso3"],
+                                                        code3=country_demog_data[country]["code3"],
+                                                        fips=country_demog_data[country]["FIPS"],
+                                                        admin2=country_demog_data[country]["Admin2"],
+                                                        province=country_demog_data[country]["Province_State"],
+                                                        jhu_country_population=country_demog_data[country]["Population"]
                                                         ))
 
 number_of_countries = country_religion.groupby("Region").count()['Country'].to_dict()
@@ -155,4 +155,4 @@ def insert():
     collection = database.get_collection("world_demographics")
     collection.insert(world_demographics.__dict__)
 
-insert()
+# insert()
