@@ -140,3 +140,16 @@ class NCBIProtein():
     county:str=""
     type:str="protein"
 
+@dataclass
+class GoogleMobilityRecords():
+    country_code:str=""
+    country:str=""
+    sub_region_1:str=""
+    sub_region_2:str=""
+    date:str=""
+    retail_and_recreation_percent_change_from_baseline:int=""
+    grocery_and_pharmacy_percent_change_from_baseline:int=""
+    parks_percent_change_from_baseline:int=""
+    transit_stations_percent_change_from_baseline:int=""
+    workplaces_percent_change_from_baseline:int=""
+    residential_percent_change_from_baseline:int=""
