@@ -155,4 +155,4 @@ def insert():
     collection = database.get_collection("world_demographics")
     collection.insert(world_demographics.__dict__)
 
-# insert()
+insert()
