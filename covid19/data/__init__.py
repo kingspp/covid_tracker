@@ -85,6 +85,7 @@ class CountryDemographics():
 @dataclass
 class CountyDemographics():
     country: str=""
+    state:str=""
     county: str=""
     county_population: float=""
     latitude: float=""
@@ -95,7 +96,6 @@ class CountyDemographics():
     iso3: str = ""
     code3: str = ""
     fips: str = ""
-    admin2: str = ""
     jhu_county_population: str = ""
     country_abbr: str = ""
     county_id: str = ""
