@@ -17,12 +17,12 @@ for rec in statistics:
         country = rec["Country_Region"]
 
     active = rec["Confirmed"]-rec["Recovered"]-rec["Death"]
-    ckey = rec["Country_Region"]+"_"+rec["Province_State"]+"_"+rec["county"]
-    population = county_data[ckey] if ckey in county_data else 0
+    ckey = rec["Country_Region"]+"_"+rec["Province_State"]+"_"+rec["County"]
+    population = int(county_data[ckey]['Population']) if ckey in county_data and county_data[ckey]['Population']!="" else 0
     if population>0:
         confirmed_by_population =  rec["Confirmed"]/population
         deaths_by_population = rec["Death"]/population
-        active_by_population = rec["Active"]/population
+        active_by_population = active/population
         recovered_by_population= rec["Recovered"]/population
     else:
         confirmed_by_population,deaths_by_population,active_by_population,recovered_by_population=0,0,0,0
@@ -37,10 +37,10 @@ for rec in statistics:
                                             recovered_delta=rec["Recovered"]-del_recovered,
                                             death_delta=rec["Death"]-del_death,
                                             active_delta=active-del_active,
-                                            recovery_rate=rec["Recovered"]/rec["Confirmed"],
-                                            death_rate = rec["Death"]/rec["Confirmed"],
-                                            active_rate=active / rec["Confirmed"],
-                                            county=rec["county"],
+                                            recovery_rate=rec["Recovered"]/(rec["Confirmed"]+1e-5),
+                                            death_rate = rec["Death"]/(rec["Confirmed"]+1e-5),
+                                            active_rate=active / (rec["Confirmed"]+1e-5),
+                                            county=rec["County"],
                                             confirmed_by_population=confirmed_by_population,
                                             deaths_by_population=deaths_by_population,
                                             recovered_by_population=recovered_by_population,
@@ -63,4 +63,4 @@ def insert():
     for coll in statistics_collection:
         collection.insert(coll.__dict__)
 
-insert()
+# insert()
