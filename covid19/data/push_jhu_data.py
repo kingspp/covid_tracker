@@ -41,7 +41,7 @@ def insert():
     # Insert Nucleotide Collection
     database.drop_collection("ncbi_nucleotide")
     collection = database.get_collection("ncbi_nucleotide")
-    for coll in statistics:
+    for coll in statistics_collection:
         collection.insert(coll.__dict__)
 
 insert()
