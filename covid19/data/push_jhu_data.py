@@ -38,7 +38,6 @@ print(json.dumps(statistics_collection[0], indent=2, cls=JsonEncoder))
 
 def insert():
     from covid19 import database
-    # Insert Nucleotide Collection
     database.drop_collection("statistics")
     collection = database.get_collection("statistics")
     for coll in statistics_collection:
