@@ -1,14 +1,13 @@
 # Country Median Data
 import json
-from covid19.data import CountryDemographics, ContinentDemographics, WorldDemographics
+from covid19.data import CountryDemographics, ContinentDemographics, WorldDemographics, Religion, CountyDemographics
 from covid19 import COVID19_DATA_PATH, COUNTRIES
-import pymongo
-from covid19.utils import JsonEncoder
 import pandas as pd
 
 country_demographics = []
 continent_demographics = []
 world_demographics = []
+
 print("====" * 20)
 print("Countries not found in median age . . .")
 median_age = json.load(open(COVID19_DATA_PATH + "median_age.json"))
@@ -39,12 +38,24 @@ def check_number(num_str):
     num_str = num_str.replace("<", "")
     return num_str
 
+# County Metrics
+county_demog_data = json.load(open(COVID19_DATA_PATH+"county_level_documents.json"))
+county_collection = []
+for county in county_demog_data:
+    county_collection.append(CountyDemographics(country=county["Country_Region"],county=county["Province_State"],
+                                                uid=county["uid"], iso2=county["iso2"], iso3=county["iso3"],
+                                                code3=county["code3"], fips=county["FIPS"], admin2=county["Admin2"],
+                                                latitude=county["Lat"], longitude=county["Long_"],jhu_county_population=["Population"]))
+
+
+# Country Metrics
+country_demog_data = json.load(open(COVID19_DATA_PATH+"country_level_documents.json"))
+country_demog_data = {country["Country_Region"]:country for country in country_demog_data}
+
 for country in COUNTRIES:
     if country in median_age and country in rel_available_countries:
         rel = country_religion.loc[country_religion["Country"] == country]
-        country_demographics.append(CountryDemographics(country=country,
-                                                        country_median_age=median_age[country],
-                                                        christians=float(check_number(rel['Christians'].values[0])),
+        religion = Religion( christians=float(check_number(rel['Christians'].values[0])),
                                                         buddhists=float(check_number(rel['Buddhists'].values[0])),
                                                         hindus=float(check_number(rel['Hindus'].values[0])),
                                                         muslims=float(check_number(rel['Muslims'].values[0])),
@@ -53,9 +64,22 @@ for country in COUNTRIES:
                                                             check_number(rel['Folk Religions'].values[0])),
                                                         other_religions=float(
                                                             check_number(rel['Other Religions'].values[0])),
-                                                        jews=float(check_number(rel['Jews'].values[0])),
+                                                        jews=float(check_number(rel['Jews'].values[0])))
+        country_demographics.append(CountryDemographics(country=country,
+                                                        country_median_age=median_age[country],
+                                                        religion=religion.__dict__,
                                                         continent=rel["Region"].values[0],
-                                                        country_government_type=country_gov[country]
+                                                        country_government_type=country_gov[country],
+                                                        uid=country_demog_data[country],
+                                                        latitude=country_demog_data["Lat"],
+                                                        longitude=country_demog_data["Long_"],
+                                                        iso2=country_demog_data["iso2"],
+                                                        iso3=country_demog_data["iso3"],
+                                                        code3=country_demog_data["code3"],
+                                                        fips=country_demog_data["FIPS"],
+                                                        admin2=country_demog_data["Admin2"],
+                                                        province=country_demog_data["Province_State"],
+                                                        jhu_country_population=country_demog_data["Population"]
                                                         ))
 
 number_of_countries = country_religion.groupby("Region").count()['Country'].to_dict()
@@ -63,14 +87,14 @@ world_religion_data = \
     country_religion.loc[
         (country_religion['Country'] == "All Countries") & (country_religion['Region'] == "World")].iloc[
         0].to_dict()
-# Update Continent Data
+
+
+# Continent Metrics
 for continent in country_religion.loc[
     (country_religion['Country'] == "All Countries") & (country_religion['Region'] != "World")].iterrows():
     continent = continent[1]
     continent_name = continent['Region']
-    continent_demographics.append(ContinentDemographics(continent=continent_name,
-                                                        number_of_countries=number_of_countries[continent_name],
-                                                        christians=float(check_number(continent['Christians'])),
+    religion = Religion(christians=float(check_number(continent['Christians'])),
                                                         buddhists=float(check_number(continent['Buddhists'])),
                                                         hindus=float(check_number(continent['Hindus'])),
                                                         muslims=float(check_number(continent['Muslims'])),
@@ -79,19 +103,24 @@ for continent in country_religion.loc[
                                                             check_number(continent['Folk Religions'])),
                                                         other_religions=float(
                                                             check_number(continent['Other Religions'])),
-                                                        jews=float(check_number(continent['Jews'])),
+                                                        jews=float(check_number(continent['Jews'])))
+    continent_demographics.append(ContinentDemographics(continent=continent_name,
+                                                        number_of_countries=number_of_countries[continent_name],
+                                                        religion=religion.__dict__
                                                         ))
 
-world_demographics = WorldDemographics(number_of_continents=6, number_of_countries=sum((number_of_countries.values())),
-                                       world_population=float(check_number(world_religion_data['All Religions'])),
-                                       christians=float(check_number(world_religion_data['Christians'])),
+# World Metrics
+religion = Religion(christians=float(check_number(world_religion_data['Christians'])),
                                        buddhists=float(check_number(world_religion_data['Buddhists'])),
                                        hindus=float(check_number(world_religion_data['Hindus'])),
                                        muslims=float(check_number(world_religion_data['Muslims'])),
                                        unaffiliated=float(check_number(world_religion_data['Unaffiliated'])),
                                        folk_religions=float(check_number(world_religion_data['Folk Religions'])),
                                        other_religions=float(check_number(world_religion_data['Other Religions'])),
-                                       jews=float(check_number(world_religion_data['Jews'])),
+                                       jews=float(check_number(world_religion_data['Jews'])))
+world_demographics = WorldDemographics(number_of_continents=6, number_of_countries=sum((number_of_countries.values())),
+                                       world_population=float(check_number(world_religion_data['All Religions'])),
+                                       religion=religion.__dict__
                                        )
 
 
@@ -101,9 +130,13 @@ world_demographics = WorldDemographics(number_of_continents=6, number_of_countri
 
 
 def insert():
-    # client = pymongo.MongoClient(host="192.168.1.16")
-    # database = client.get_database("covid19_research")
     from covid19 import database
+
+    # Insert County Demographics
+    database.drop_collection("county_demographics")
+    collection = database.get_collection("county_demographics")
+    for county in county_collection:
+        collection.insert(county.__dict__)
 
     # Insert Country Demographics
     database.drop_collection("country_demographics")

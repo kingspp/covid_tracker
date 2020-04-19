@@ -17,6 +17,17 @@ class ProteinData():
 
 
 @dataclass
+class Religion():
+    christians: float = ""
+    muslims: float = ""
+    unaffiliated: float = ""
+    hindus: float = ""
+    buddhists: float = ""
+    folk_religions: float = ""
+    other_religions: float = ""
+    jews: float = ""
+
+@dataclass
 class WorldDemographics():
     world_population: float = ""
     world_male_population: float = ""
@@ -26,14 +37,7 @@ class WorldDemographics():
     world_r0: float = ""
     number_of_continents: int = ""
     number_of_countries: int = ""
-    christians: float = ""
-    muslims: float = ""
-    unaffiliated: float = ""
-    hindus: float = ""
-    buddhists: float = ""
-    folk_religions: float = ""
-    other_religions: float = ""
-    jews: float = ""
+    religion:dict=""
     world_median_age: float = ""
 
 
@@ -47,15 +51,10 @@ class ContinentDemographics():
     continent_area: str = ""
     continent_r0: float = ""
     number_of_countries: int = ""
-    christians: float = ""
-    muslims: float = ""
-    unaffiliated: float = ""
-    hindus: float = ""
-    buddhists: float = ""
-    folk_religions: float = ""
-    other_religions: float = ""
-    jews: float = ""
+    religion:dict=""
     continent_median_age:float=""
+
+
 
 
 @dataclass
@@ -73,15 +72,15 @@ class CountryDemographics():
     country_population_density: float = ""
     latitude: float = ""
     longitude: float = ""
-    christians: float = ""
-    muslims: float = ""
-    unaffiliated: float = ""
-    hindus: float = ""
-    buddhists: float = ""
-    folk_religions: float = ""
-    other_religions: float = ""
-    jews: float = ""
-
+    religion:dict=""
+    uid:str=""
+    iso2:str=""
+    iso3:str=""
+    code3:str=""
+    fips:str=""
+    admin2:str=""
+    province:str=""
+    jhu_country_population:str=""
 
 @dataclass
 class CountyDemographics():
@@ -91,6 +90,13 @@ class CountyDemographics():
     latitude: float
     longitude: float
     county_r0: float
+    uid: str = ""
+    iso2: str = ""
+    iso3: str = ""
+    code3: str = ""
+    fips: str = ""
+    admin2: str = ""
+    jhu_county_population: str = ""
 
 @dataclass
 class NCBINucleotide():
