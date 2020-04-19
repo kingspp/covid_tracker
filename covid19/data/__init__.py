@@ -153,3 +153,18 @@ class GoogleMobilityRecords():
     transit_stations_percent_change_from_baseline:int=""
     workplaces_percent_change_from_baseline:int=""
     residential_percent_change_from_baseline:int=""
+
+
+@dataclass
+class Statistics():
+    country:str=""
+    province:str=""
+    date:str=""
+    confirmed:float=""
+    recovered:float=""
+    death:float=""
+    active:float=""
+    confirmed_delta:float=""
+    recovered_delta: float = ""
+    death_delta: float = ""
+    active_delta: float = ""
