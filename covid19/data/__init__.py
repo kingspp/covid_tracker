@@ -17,6 +17,17 @@ class ProteinData():
 
 
 @dataclass
+class Religion():
+    christians: float = ""
+    muslims: float = ""
+    unaffiliated: float = ""
+    hindus: float = ""
+    buddhists: float = ""
+    folk_religions: float = ""
+    other_religions: float = ""
+    jews: float = ""
+
+@dataclass
 class WorldDemographics():
     world_population: float = ""
     world_male_population: float = ""
@@ -26,14 +37,7 @@ class WorldDemographics():
     world_r0: float = ""
     number_of_continents: int = ""
     number_of_countries: int = ""
-    christians: float = ""
-    muslims: float = ""
-    unaffiliated: float = ""
-    hindus: float = ""
-    buddhists: float = ""
-    folk_religions: float = ""
-    other_religions: float = ""
-    jews: float = ""
+    religion:dict=""
     world_median_age: float = ""
 
 
@@ -47,15 +51,10 @@ class ContinentDemographics():
     continent_area: str = ""
     continent_r0: float = ""
     number_of_countries: int = ""
-    christians: float = ""
-    muslims: float = ""
-    unaffiliated: float = ""
-    hindus: float = ""
-    buddhists: float = ""
-    folk_religions: float = ""
-    other_religions: float = ""
-    jews: float = ""
+    religion:dict=""
     continent_median_age:float=""
+
+
 
 
 @dataclass
@@ -73,24 +72,78 @@ class CountryDemographics():
     country_population_density: float = ""
     latitude: float = ""
     longitude: float = ""
-    christians: float = ""
-    muslims: float = ""
-    unaffiliated: float = ""
-    hindus: float = ""
-    buddhists: float = ""
-    folk_religions: float = ""
-    other_religions: float = ""
-    jews: float = ""
-
+    religion:dict=""
+    uid:str=""
+    iso2:str=""
+    iso3:str=""
+    code3:str=""
+    fips:str=""
+    admin2:str=""
+    province:str=""
+    jhu_country_population:str=""
 
 @dataclass
 class CountyDemographics():
-    country: str
-    county: str
-    county_population: float
-    latitude: float
-    longitude: float
-    county_r0: float
+    country: str=""
+    county: str=""
+    county_population: float=""
+    latitude: float=""
+    longitude: float=""
+    county_r0: float=""
+    uid: str = ""
+    iso2: str = ""
+    iso3: str = ""
+    code3: str = ""
+    fips: str = ""
+    admin2: str = ""
+    jhu_county_population: str = ""
+    country_abbr: str = ""
+    county_id: str = ""
+    fatality_rate: str = ""
+    infographics_date: str = ""
+    state_fatality:str=""
+    url:str=""
+    state_tested: str = ""
+    state_recovered: str = ""
+    state_confirmed: str = ""
+    state_deaths: str = ""
+    staffed_beds: str = ""
+    licenced_beds: str = ""
+    icu_beds: str = ""
+    ventilators: str = ""
+
+
+    # "Confirmedb": 0,
+    # "DeathsbyPo": 0,
+    # "PCTPOVALL_": 0,
+    # "Unemployme": 0,
+    # "Med_HH_Inc": 0,
+    #
+    #
+    # "EM_type": " ",
+    # "EM_date": " ",
+    # "EM_notes": " ",
+    #
+    # "Age_85": 0,
+    # "Age_80_84": 0,
+    # "Age_75_79": 0,
+    # "Age_70_74": 0,
+    # "Age_65_69": 0,
+    #
+    #
+    #
+    # "POP_ESTIMA": 0,
+    # "POVALL_201": 0,
+    # "Unemployed": 0,
+    # "Median_Hou": 0,
+    # "Recovered": 0,
+    # "Active": 0,
+    #
+    #
+    # "AgedPop": 0,
+    # "Shape__Area": null,
+    # "Shape__Length": null
+
 
 @dataclass
 class NCBINucleotide():
@@ -153,3 +206,18 @@ class GoogleMobilityRecords():
     transit_stations_percent_change_from_baseline:int=""
     workplaces_percent_change_from_baseline:int=""
     residential_percent_change_from_baseline:int=""
+
+
+@dataclass
+class Statistics():
+    country:str=""
+    province:str=""
+    date:str=""
+    confirmed:float=""
+    recovered:float=""
+    death:float=""
+    active:float=""
+    confirmed_delta:float=""
+    recovered_delta: float = ""
+    death_delta: float = ""
+    active_delta: float = ""

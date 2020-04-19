@@ -15,7 +15,12 @@ GMR_COUNTRY_MAPPER = json.load(open(COVID19_DATA_PATH+"/google_mobility_data_cou
 SKIP_COUNTRIES = ["Tajikistan", "Zimbabwe", "RÃ©union", "Puerto Rico", "Hong Kong", "Cape Verde","Aruba"]
 df = pd.read_csv(COVID19_DATA_PATH+"/google_mobility_data_latest.csv")
 
-df.dropna(inplace=True)
+df.dropna(inplace=True,subset=["retail_and_recreation_percent_change_from_baseline",
+                               "grocery_and_pharmacy_percent_change_from_baseline",
+                               "parks_percent_change_from_baseline",
+                               "transit_stations_percent_change_from_baseline",
+                               "workplaces_percent_change_from_baseline",
+                               "residential_percent_change_from_baseline"])
 
 print("====" * 20)
 print("Countries not found in gmr data . . .")
