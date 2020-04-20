@@ -33,6 +33,16 @@ for country in COUNTRIES:
     if country not in gov_available_countries:
         print(country)
 
+print("====" * 20)
+print("Countries not Lockdown . . .")
+country_lockdown = pd.read_csv(COVID19_DATA_PATH + "/Lockdown_Dates.csv", header=0)
+lockdown_countries = country_lockdown["Country"]
+for country in lockdown_countries:
+    if country not in COUNTRIES:
+        print(country)
+
+
+
 def check_number(num_str):
     num_str = num_str.replace(",", "")
     num_str = num_str.replace(">", "")
@@ -81,6 +91,8 @@ country_demog_data = {country["Country_Region"]:country for country in country_d
 
 for country in COUNTRIES:
     if country in median_age and country in rel_available_countries:
+        lockdown_start_date = country_lockdown.loc[country_lockdown['Country'] == country]["Start Date"].values[0] if country in lockdown_countries else ""
+        lockdown_end_date = country_lockdown.loc[country_lockdown['Country'] == country]["End Date"].values[0] if country in lockdown_countries else ""
         rel = country_religion.loc[country_religion["Country"] == country]
         religion = Religion( christians=float(check_number(rel['Christians'].values[0])),
                                                         buddhists=float(check_number(rel['Buddhists'].values[0])),
@@ -106,7 +118,9 @@ for country in COUNTRIES:
                                                         fips=country_demog_data[country]["FIPS"],
                                                         county=country_demog_data[country]["Admin2"],
                                                         state=country_demog_data[country]["Province_State"],
-                                                        jhu_country_population=country_demog_data[country]["Population"]
+                                                        jhu_country_population=country_demog_data[country]["Population"],
+                                                        lockdown_start_date=lockdown_start_date,
+                                                        lockdown_end_date=lockdown_end_date
                                                         ))
 
 number_of_countries = country_religion.groupby("Region").count()['Country'].to_dict()
