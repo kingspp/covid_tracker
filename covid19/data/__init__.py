@@ -81,6 +81,8 @@ class CountryDemographics():
     county:str=""
     state:str=""
     jhu_country_population:str=""
+    lockdown_start_date:str=""
+    lockdown_end_date:str=""
 
 @dataclass
 class CountyDemographics():
@@ -97,7 +99,6 @@ class CountyDemographics():
     code3: str = ""
     fips: str = ""
     jhu_county_population: str = ""
-
     poverty_percent_state: float = ""
     infographics_date: str = ""
     unemployment_rate: float = ""
