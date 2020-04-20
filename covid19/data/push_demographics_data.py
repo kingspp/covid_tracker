@@ -36,7 +36,7 @@ for country in COUNTRIES:
 print("====" * 20)
 print("Countries not Lockdown . . .")
 country_lockdown = pd.read_csv(COVID19_DATA_PATH + "/Lockdown_Dates.csv", header=0)
-lockdown_countries = country_lockdown["Country"]
+lockdown_countries = country_lockdown["Country"].values.tolist()
 for country in lockdown_countries:
     if country not in COUNTRIES:
         print(country)
@@ -196,4 +196,4 @@ def insert():
     collection = database.get_collection("world_demographics")
     collection.insert(world_demographics.__dict__)
 
-insert()
+# insert()
