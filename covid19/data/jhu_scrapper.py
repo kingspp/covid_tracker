@@ -87,7 +87,7 @@ def fetch_fips_county_level():
             features = pop_from_dict(to_pop, features)
             infographics.append(features)
     print(infographics)
-    json.dump(infographics, open('infographics.json', 'w'), indent=4)
+    json.dump(infographics, open('county_infographics_updated.json', 'w'), indent=4)
 
 
 if __name__ == '__main__':
