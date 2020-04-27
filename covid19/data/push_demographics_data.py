@@ -87,7 +87,8 @@ for county in county_demog_data:
                                                 licenced_beds=infographics["Beds_Licen"],
                                                 icu_beds=infographics["Beds_ICU"],
                                                 average_ventilator_used_per_hospital=infographics["Ventilator"],
-                                                poverty_rate=infographics["POVALL_201"]
+                                                poverty_rate=infographics["POVALL_201"],
+                                                combined_key='|'.join([county["Admin2"],county["Province_State"],county["Country_Region"]])
                                                 ))
 
 

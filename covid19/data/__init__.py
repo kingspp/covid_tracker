@@ -121,6 +121,7 @@ class CountyDemographics():
     icu_beds: float = ""
     average_ventilator_used_per_hospital: float = ""
     poverty_rate:float=""
+    combined_key:str=""
 
 @dataclass
 class NCBINucleotide():
