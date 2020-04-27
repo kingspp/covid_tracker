@@ -2,25 +2,25 @@
   <div id="app">
     <NavBar/>
     <Header/>
-<!--    <img alt="Vue logo" src="./assets/logo.png">-->
-<!--    <HelloWorld msg="Welcome to Your Corona App"/>-->
+    <Section1/>
 
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
+
 import NavBar from './components/NavBar.vue'
 import Header from './components/Header.vue'
+import Section1 from './components/Section1.vue'
 // import { BModal, VBModal, BNavbar } from 'bootstrap-vue'
 import Vue from 'vue'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 // Install BootstrapVue
-Vue.use(BootstrapVue)
+Vue.use(BootstrapVue);
 // Optionally install the BootstrapVue icon components plugin
-Vue.use(IconsPlugin)
+Vue.use(IconsPlugin);
 
 
 
@@ -39,7 +39,8 @@ export default {
   name: 'App',
   components: {
     NavBar,
-    Header
+    Header,
+    Section1
     // HelloWorld
   }
 }
@@ -55,5 +56,17 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 0px;
+}
+
+  section {
+    padding: 100px;
+    height: 100vh;
+  }
+
+input {
+  border:0!important;
+  border-bottom: solid #42b983 5px!important;
+  outline: 0!important;
+  font-size: 40px;
 }
 </style>
