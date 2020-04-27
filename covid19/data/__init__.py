@@ -83,6 +83,8 @@ class CountryDemographics():
     jhu_country_population:str=""
     lockdown_start_date:str=""
     lockdown_end_date:str=""
+    mask_state:str=""
+    mask_enforced_date:str=""
 
 @dataclass
 class CountyDemographics():
