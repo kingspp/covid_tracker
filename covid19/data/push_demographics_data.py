@@ -48,9 +48,6 @@ mask_countries = masks_data["Country"].values.tolist()
 for country in mask_countries:
     if country not in COUNTRIES:
         print(country)
-exit()
-
-exit()
 
 def check_number(num_str):
     num_str = num_str.replace(",", "")
