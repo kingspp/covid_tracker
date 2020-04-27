@@ -67,7 +67,7 @@ for county in county_demog_data:
         infographics = county_infographics[county["FIPS"]]
     else:
         infographics =defaultdict(lambda:"")
-    if county["Admin2"]=="":
+    if county["Admin2"]in ["", "Unassigned", ""] or 'Out of' in county["Admin2"] :
         continue
     county_collection.append(CountyDemographics(country=county["Country_Region"],state=county["Province_State"],
                                                 uid=county["UID"], iso2=county["iso2"], iso3=county["iso3"],
