@@ -2,46 +2,58 @@
     <header>
         <div class="container h-100">
             <div class="row" style="text-align: center;color: white; font-size: 60px">
-                <div class="col-md-2"><font-awesome-icon icon="people-arrows"/></div>
-                <div class="col-md-2"><font-awesome-icon icon="house-user"/></div>
-                <div class="col-md-2"><font-awesome-icon icon="hands-wash"/></div>
-                <div class="col-md-2"><font-awesome-icon icon="head-side-mask"/></div>
-                <div class="col-md-2"><font-awesome-icon icon="angle-double-right"/></div>
-                <div class="col-md-2"><font-awesome-icon icon="virus-slash"/></div>
+                <div class="col-md-2">
+                    <font-awesome-icon icon="people-arrows"/>
+                </div>
+                <div class="col-md-2">
+                    <font-awesome-icon icon="house-user"/>
+                </div>
+                <div class="col-md-2">
+                    <font-awesome-icon icon="hands-wash"/>
+                </div>
+                <div class="col-md-2">
+                    <font-awesome-icon icon="head-side-mask"/>
+                </div>
+                <div class="col-md-2">
+                    <font-awesome-icon icon="angle-double-right"/>
+                </div>
+                <div class="col-md-2">
+                    <font-awesome-icon icon="virus-slash"/>
+                </div>
             </div>
             <div class="row h-100" style="margin-top:-80px">
-                    <div class="col-lg-7 my-auto">
-                        <div class="header-content mx-auto">
-                            <!--                    <h1 class="mb-5" style="color: #FFF">COVID-19 has impacted over <b>119</b> countries, infecting-->
-                            <!--                        <b>2m</b> people, of which  <b>38%</b> have recovered! <br><span style="font-size: 0.4em">- Source Github (May 02)</span>-->
-                            <!--                    </h1>-->
-                            <h1 style="color:white">COVID-19
-                                <span
-                                        class="txt-rotate"
-                                        data-period="8000"
-                                        data-rotate='[ "has impacted over 119 countries.", "has infected 2m people of which 38% have recovered!"]'></span>
-                            </h1>
+                <div class="col-lg-7 my-auto">
+                    <div class="header-content mx-auto">
+                        <!--                    <h1 class="mb-5" style="color: #FFF">COVID-19 has impacted over <b>119</b> countries, infecting-->
+                        <!--                        <b>2m</b> people, of which  <b>38%</b> have recovered! <br><span style="font-size: 0.4em">- Source Github (May 02)</span>-->
+                        <!--                    </h1>-->
+                        <h1 style="color:white">COVID-19
+                            <span
+                                    class="txt-rotate"
+                                    data-period="8000"
+                                    data-rotate='[ "has impacted over 119 countries.", "has infected 2m people of which 38% have recovered!"]'></span>
+                        </h1>
 
-                        </div>
                     </div>
-                    <div class="col-lg-5 my-auto">
-                        <div class="device-container">
-                            <div class="device-mockup iphone6_plus portrait white">
-                                <div class="device">
-                                    <div class="screen">
-                                        <font-awesome-icon icon="virus" class="brand-icon-1"
-                                                           style="padding-bottom: 45px"/>
-                                        <font-awesome-icon icon="virus" class="brand-icon-2"/>
-                                    </div>
+                </div>
+                <div class="col-lg-5 my-auto">
+                    <div class="device-container">
+                        <div class="device-mockup iphone6_plus portrait white">
+                            <div class="device">
+                                <div class="screen">
+                                    <font-awesome-icon icon="virus" class="brand-icon-1"
+                                                       style="padding-bottom: 45px"/>
+                                    <font-awesome-icon icon="virus" class="brand-icon-2"/>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
             </div>
-            <div class="row ">
-                <div class="row" style="color: white; font-size: 60px; margin-top: -20px">
-                    <div style="width:1180px; margin:0 auto;">
-                    <font-awesome-icon icon="chevron-circle-down"/>
+            <div class="row">
+                <div class="col" style="color: white; font-size: 60px; margin-top: -20px">
+                    <div style="">
+                        <font-awesome-icon icon="chevron-circle-down"/>
                     </div>
                 </div>
             </div>
