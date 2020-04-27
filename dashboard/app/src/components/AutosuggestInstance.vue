@@ -29,7 +29,9 @@
 
 <script>
     import { VueAutosuggest } from "vue-autosuggest";
+    import config from "../config";
     import axios from "axios";
+
 
     export default {
         name: "app",
@@ -49,7 +51,7 @@
                 selected: null,
                 searchText: "",
                 debounceMilliseconds: 50,
-                usersUrl: "https://jsonplaceholder.typicode.com/users",
+                fetchCountiesUrl: config.url+'counties',
                 photosUrl: "https://jsonplaceholder.typicode.com/photos",
                 inputProps: {
                     id: "autosuggest__input",
@@ -91,9 +93,14 @@
                 clearTimeout(this.timeout);
                 this.timeout = setTimeout(() => {
                     const photosPromise = axios.get(this.photosUrl);
-                    const usersPromise = axios.get(this.usersUrl);
+                    const counties = axios.get(this.fetchCountiesUrl,{
+                        crossdomain: true
+                    });
 
-                    Promise.all([photosPromise, usersPromise]).then(values => {
+
+                    Promise.all([counties]).then(values => {
+                        console.log(values);
+
                         this.suggestions = [];
                         this.selected = null;
 
