@@ -74,7 +74,7 @@ for(country in countries){
   setTxtProgressBar(pb,c)
   countryStats = getCountryConfirmedStats(country)[2]
   r0 = getR0Country(countryStats, getCountryPopulation(country))
-  # print(paste(country,':', r0))
+  print(paste(country,':', r0))
   countryDemographics$update(str_glue('{{"country":"{country}"}}'),str_glue('{{"$set":{{"country_r0":{r0}}}}}'))
   c=c+1
   }
