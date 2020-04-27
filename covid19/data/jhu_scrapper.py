@@ -105,6 +105,8 @@ if __name__ == '__main__':
 
     county_document = countries_lookup[~countries_lookup['Province_State'].isnull()]
     county_document = county_document.fillna('')
+    county_document['FIPS'] = county_document['FIPS'].astype(str)
+    county_document['FIPS'] = county_document['FIPS'].apply(lambda x: x.split(".")[0])
 
     # CONFIRMED DEATH ACTIVE RECOVERED STATUS
     status_documents = []
@@ -173,6 +175,8 @@ if __name__ == '__main__':
             schema['fips'] = fips
             status_documents.append(schema)
     print('US data processed...')
+
+
     country_level_document = country_level_document.to_dict(orient='record')
     county_document = county_document.to_dict(orient='record')
     json.dump(country_level_document, open('country_level_documents.json', 'w'), indent=4)
