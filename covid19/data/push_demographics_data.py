@@ -3,6 +3,7 @@ import json
 from covid19.data import CountryDemographics, ContinentDemographics, WorldDemographics, Religion, CountyDemographics
 from covid19 import COVID19_DATA_PATH, COUNTRIES
 import pandas as pd
+from collections import defaultdict
 
 country_demographics = []
 continent_demographics = []
@@ -32,6 +33,22 @@ for country in COUNTRIES:
     if country not in gov_available_countries:
         print(country)
 
+print("====" * 20)
+print("Countries not Lockdown . . .")
+country_lockdown = pd.read_csv(COVID19_DATA_PATH + "/Lockdown_Dates.csv", header=0)
+lockdown_countries = country_lockdown["Country"].values.tolist()
+for country in lockdown_countries:
+    if country not in COUNTRIES:
+        print(country)
+
+print("====" * 20)
+print("Countries not Masks . . .")
+masks_data = pd.read_csv(COVID19_DATA_PATH + "/masks.csv", header=0)
+mask_countries = masks_data["Country"].values.tolist()
+for country in mask_countries:
+    if country not in COUNTRIES:
+        print(country)
+
 def check_number(num_str):
     num_str = num_str.replace(",", "")
     num_str = num_str.replace(">", "")
@@ -41,11 +58,38 @@ def check_number(num_str):
 # County Metrics
 county_demog_data = json.load(open(COVID19_DATA_PATH+"county_level_documents.json"))
 county_collection = []
+
+county_infographics = json.load(open(COVID19_DATA_PATH+"infographics.json"))
+county_infographics = {county['FIPS']:county for county in county_infographics}
+
 for county in county_demog_data:
-    county_collection.append(CountyDemographics(country=county["Country_Region"],county=county["Province_State"],
+    if county["FIPS"]!="" and county["FIPS"] in county_infographics:
+        infographics = county_infographics[county["FIPS"]]
+    else:
+        infographics =defaultdict(lambda:"")
+    county_collection.append(CountyDemographics(country=county["Country_Region"],state=county["Province_State"],
                                                 uid=county["UID"], iso2=county["iso2"], iso3=county["iso3"],
-                                                code3=county["code3"], fips=county["FIPS"], admin2=county["Admin2"],
-                                                latitude=county["Lat"], longitude=county["Long_"],jhu_county_population=["Population"]))
+                                                code3=county["code3"], fips=county["FIPS"], county=county["Admin2"],
+                                                latitude=county["Lat"], longitude=county["Long_"],
+                                                jhu_county_population=county["Population"],
+                                                infographics_population= infographics["POP_ESTIMA"],
+                                                poverty_percent_state=infographics["PCTPOVALL_"],
+                                                infographics_date=infographics["DateChecke"],
+                                                unemployment_rate=infographics["Unemployme"],
+                                                total_unemployed=infographics["Unemployed"],
+                                                median_household_income_perc_of_state = infographics["Med_HH_Inc"],
+                                                median_household_income = infographics["Median_Hou"],
+                                                emergency_declaration_date=infographics["EM_date"],
+                                                emergency_declation_type=infographics["EM_type"],
+                                                emergency_declaration_notes=infographics["EM_notes"],
+                                                url=infographics["url"],
+                                                staffed_beds=infographics["Beds_Staff"],
+                                                licenced_beds=infographics["Beds_Licen"],
+                                                icu_beds=infographics["Beds_ICU"],
+                                                average_ventilator_used_per_hospital=infographics["Ventilator"],
+                                                poverty_rate=infographics["POVALL_201"],
+                                                combined_key='|'.join([county["Admin2"],county["Province_State"],county["Country_Region"]])
+                                                ))
 
 
 # Country Metrics
@@ -54,6 +98,8 @@ country_demog_data = {country["Country_Region"]:country for country in country_d
 
 for country in COUNTRIES:
     if country in median_age and country in rel_available_countries:
+        lockdown_start_date = country_lockdown.loc[country_lockdown['Country'] == country]["Start Date"].values[0] if country in lockdown_countries else ""
+        lockdown_end_date = country_lockdown.loc[country_lockdown['Country'] == country]["End Date"].values[0] if country in lockdown_countries else ""
         rel = country_religion.loc[country_religion["Country"] == country]
         religion = Religion( christians=float(check_number(rel['Christians'].values[0])),
                                                         buddhists=float(check_number(rel['Buddhists'].values[0])),
@@ -77,9 +123,11 @@ for country in COUNTRIES:
                                                         iso3=country_demog_data[country]["iso3"],
                                                         code3=country_demog_data[country]["code3"],
                                                         fips=country_demog_data[country]["FIPS"],
-                                                        admin2=country_demog_data[country]["Admin2"],
-                                                        province=country_demog_data[country]["Province_State"],
-                                                        jhu_country_population=country_demog_data[country]["Population"]
+                                                        county=country_demog_data[country]["Admin2"],
+                                                        state=country_demog_data[country]["Province_State"],
+                                                        jhu_country_population=country_demog_data[country]["Population"],
+                                                        lockdown_start_date=lockdown_start_date,
+                                                        lockdown_end_date=lockdown_end_date
                                                         ))
 
 number_of_countries = country_religion.groupby("Region").count()['Country'].to_dict()

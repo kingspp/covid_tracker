@@ -30,8 +30,6 @@ for country in df['country_region']:
             if country not in SKIP_COUNTRIES:
                 print(country)
 
-
-
 gmr = GoogleMobilityRecords()
 
 gmr_collection = []
@@ -42,6 +40,8 @@ for row in df.iterrows():
     country = row["country_region"]
     if country in SKIP_COUNTRIES:
         continue
+    dates = row['date'].split("-")
+    dates = '/'.join([dates[1],dates[-1],dates[0][2:]])
     country =  country if country in COUNTRIES else GMR_COUNTRY_MAPPER[country]
     gmr_collection.append(GoogleMobilityRecords(country_code=row['country_region_code'],
                                          country=country,
