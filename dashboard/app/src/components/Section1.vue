@@ -4,123 +4,26 @@
         <div class="autosuggest__input--open" style="display: none"></div>
         <div><span style="margin-left: -6em;">I am from </span>
             <div class="autosuggest-container" style="display: inline-block">
-                <vue-autosuggest
-                        v-model="queryCounty"
-                        :suggestions="filteredOptions"
-                        @focus="focusMe"
-                        @click="clickHandler"
-                        @input="onInputChange"
-                        @selected="onSelected"
-                        :get-suggestion-value="getSuggestionValue"
-                        :input-props="{id:'autosuggest__input', placeholder:'County'}">
-                    <div slot-scope="{countySuggestion}" style="display: flex; align-items: center;">
-                        <img :style="{ display: 'flex', width: '25px', height: '25px', borderRadius: '15px', marginRight: '10px'}"
-                             :src="countySuggestion.item.avatar"/>
-                        <div style="display: flex; color:navyblue">{{countySuggestion.item.name}}</div>
-                    </div>
-                </vue-autosuggest>
+                <autosuggest-instance :key="1" auto-type="County" />
             </div>
             <span style="margin-left: 11em;">aged </span>
             <b-form-input type="number" style="width:3em; display: inline-block"/>
             <span> belonging to</span> <div class="autosuggest-container" style="display: inline-block">
-                <vue-autosuggest
-                        v-model="query"
-                        :suggestions="filteredOptions"
-                        @focus="focusMe"
-                        @click="clickHandler"
-                        @input="onInputChange"
-                        @selected="onSelected"
-                        :get-suggestion-value="getSuggestionValue"
-                        :input-props="{id:'autosuggest__input', placeholder:'Ethnicity'}">
-                    <div slot-scope="{suggestion}" style="display: flex; align-items: center;">
-                        <img :style="{ display: 'flex', width: '25px', height: '25px', borderRadius: '15px', marginRight: '10px'}"
-                             :src="suggestion.item.avatar"/>
-                        <div style="display: flex; color:navyblue">{{suggestion.item.name}}</div>
-                    </div>
-                </vue-autosuggest>
-            </div><span> ethnicity</span>
+                <autosuggest-instance :key="2" auto-type="Ethnicity"/>
+            </div>
         </div>
     </section>
 </template>
 
 <script>
-    // import Vue from 'vue';
-    import {VueAutosuggest} from 'vue-autosuggest';
-
+    import AutosuggestInstance from "./AutosuggestInstance";
     // Vue.use(VueAutosuggest);
     export default {
         name: "Section1",
-        components: {
-            VueAutosuggest
-        },
-        data() {
-            return {
-                queryCounty: "",
-                selected: "",
-                countySuggestion: [
-                    {
-                        data: [
-                            {
-                                id: 1,
-                                name: "Frodo",
-                                race: "Hobbit",
-                                avatar: "https://upload.wikimedia.org/wikipedia/en/thumb/4/4e/Elijah_Wood_as_Frodo_Baggins.png/220px-Elijah_Wood_as_Frodo_Baggins.png"
-                            },
-                            {
-                                id: 2,
-                                name: "Samwise",
-                                race: "Hobbit",
-                                avatar: "https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/Sean_Astin_as_Samwise_Gamgee.png/200px-Sean_Astin_as_Samwise_Gamgee.png"
-                            },
-                            {
-                                id: 3,
-                                name: "Gandalf",
-                                race: "Maia",
-                                avatar: "https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/Gandalf600ppx.jpg/220px-Gandalf600ppx.jpg"
-                            },
-                            {
-                                id: 4,
-                                name: "Aragorn",
-                                race: "Human",
-                                avatar: "https://upload.wikimedia.org/wikipedia/en/thumb/3/35/Aragorn300ppx.png/150px-Aragorn300ppx.png"
-                            }
-                        ]
-                    }
-                ]
-            };
-        },
-        computed: {
-            filteredOptions() {
-                return [
-                    {
-                        data: this.countySuggestion[0].data.filter(option => {
-                            return option.name.toLowerCase().indexOf(this.queryCounty.toLowerCase()) > -1;
-                        })
-                    }
-                ];
-            }
-        },
-        methods: {
-            clickHandler(item) {
-                // event fired when clicking on the input
-            },
-            onSelected(item) {
-                this.selected = item.item;
-            },
-            onInputChange(text) {
-                // event fired when the input changes
-                console.log(text)
-            },
-            /**
-             * This is what the <input/> value is set to when you are selecting a suggestion.
-             */
-            getSuggestionValue(countySuggestion) {
-                return countySuggestion.item.name;
-            },
-            focusMe(e) {
-                console.log(e) // FocusEvent
-            }
+        components:{
+            AutosuggestInstance
         }
+
     }
 
 
