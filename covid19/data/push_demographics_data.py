@@ -41,7 +41,16 @@ for country in lockdown_countries:
     if country not in COUNTRIES:
         print(country)
 
+print("====" * 20)
+print("Countries not Masks . . .")
+masks_data = pd.read_csv(COVID19_DATA_PATH + "/masks.csv", header=0)
+mask_countries = masks_data["Country"].values.tolist()
+for country in mask_countries:
+    if country not in COUNTRIES:
+        print(country)
+exit()
 
+exit()
 
 def check_number(num_str):
     num_str = num_str.replace(",", "")
