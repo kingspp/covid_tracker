@@ -24,13 +24,13 @@
     Vue.use(IconsPlugin);
 
 
-    import VTooltip from 'v-tooltip'
+    // import VTooltip from 'v-tooltip'
 
-    Vue.use(VTooltip);
+    // Vue.use(VTooltip);
 
 
-    import ECharts from 'vue-echarts'
-    Vue.component('v-chart', ECharts);
+    // import ECharts from 'vue-echarts'
+    // Vue.component('v-chart', ECharts);
 
 
     import Axios from "axios";

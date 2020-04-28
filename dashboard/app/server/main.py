@@ -64,4 +64,4 @@ def get_global_confirmed():
     return {'data':json.load(open(COVID19_DATA_PATH+'/'+'world_count.json'))}
 
 
-# print(get_stocks())
+print(get_stocks())
