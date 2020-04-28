@@ -76,7 +76,7 @@ def forecast(userdetails: UserDetails):
 # if __name__ == "__main__":
 #     uvicorn.run(app, host="0.0.0.0", port=8000)
 
-user = UserDetails
-user.county_name = 'Worcester'
-user.state_name = 'Massachusetts'
-print(forecast(user))
+# user = UserDetails
+# user.county_name = 'Worcester'
+# user.state_name = 'Massachusetts'
+# print(forecast(user))
