@@ -49,13 +49,6 @@
 
             <h2 class="text-center" style="padding-top: 60px">Impact of Social Distancing and Masks</h2>
             <div class="row" style="padding-top: 100px">
-                <!--                <div class="col-md-4" style="font-size: 36px">-->
-                <!--                    <h2 class="text-center">Currencies and Crypto</h2>-->
-                <!--                    <li>Irrespective of increase in cases, USD remains world's reserve currency</li>-->
-                <!--                    <li>Even crypto-currencies are not spared! </li>-->
-                <!--                    <li>Hold on to your dollars $$!</li>-->
-                <!--                    [Source: Investing]-->
-                <!--                </div>-->
                 <div class="col-md-6">
                     <div class="row">
                         <div class="col"><h2 class="text-center">Google Mobility Report</h2></div>
@@ -69,7 +62,10 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col">Hellow World</div>
+                        <li>Irrespective of increase in cases, USD remains world's reserve currency</li>-->
+                                            <li>Even crypto-currencies are not spared! </li>
+                                            <li>Hold on to your dollars $$!</li>
+                                            [Source: Investing]
                     </div>
 
                 </div>
@@ -86,7 +82,53 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col">Hellow World</div>
+                        <li>Irrespective of increase in cases, USD remains world's reserve currency</li>-->
+                                            <li>Even crypto-currencies are not spared! </li>
+                                            <li>Hold on to your dollars $$!</li>
+                                            [Source: Investing]
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row" style="padding-top: 100px">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col"><h2 class="text-center">Recovery Factor</h2></div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <bar-chart
+                                    v-if="currencyChartLoaded"
+                                    :chartdata="currencyChartData"
+                                    :options="lineChartOptions"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <li>Irrespective of increase in cases, USD remains world's reserve currency</li>-->
+                        <li>Even crypto-currencies are not spared! </li>
+                        <li>Hold on to your dollars $$!</li>
+                        [Source: Investing]
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col"><h2 class="text-center;">Confirmed Deaths vs New Deaths</h2></div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <bar-chart
+                                    v-if="cryptoChartLoaded"
+                                    :chartdata="cryptoChartData"
+                                    :options="lineChartOptions"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <li>Irrespective of increase in cases, USD remains world's reserve currency</li>-->
+                        <li>Even crypto-currencies are not spared! </li>
+                        <li>Hold on to your dollars $$!</li>
+                        [Source: Investing]
                     </div>
 
                 </div>
