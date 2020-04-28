@@ -21,14 +21,15 @@ app = FastAPI()
 origins = [
     "http://localhost",
     "http://localhost:8080",
+    "http://0.0.0.0:8877",
 ]
 
 app.add_middleware(
-        CORSMiddleware,
-        allow_origins=origins,
-        allow_credentials=True,
-        allow_methods=["*"],
-        allow_headers=["*"],
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 
@@ -177,7 +178,7 @@ def forecast(userdetails: UserDetails):
         if len(ethnic_age_grps) == 0:
             print(f'No data for {fips}')
             raise ValueError(
-                    'Sorry! We have very limited data for your county. At this moment, we will not be able to forecast. Try again later')
+                'Sorry! We have very limited data for your county. At this moment, we will not be able to forecast. Try again later')
         ethnic_age_grps.drop(['STATE', 'COUNTY', 'STNAME', 'CTYNAME', 'fips'], axis=1, inplace=True)
         return ethnic_age_grps
 
@@ -214,7 +215,7 @@ def forecast(userdetails: UserDetails):
     county = county_data[county_data.index == state_county]
     if len(county) == 0:
         raise ValueError(
-                f'Sorry! We have very limited data for your {userdetails.county_name}. At this moment, we will not be able to forecast. Try again later')
+            f'Sorry! We have very limited data for your {userdetails.county_name}. At this moment, we will not be able to forecast. Try again later')
     fips = int(county['fips'])  # Use fips to fetch data from ethnic and age groups file
     county.drop('fips', axis=1, inplace=True)
     county = dynamic(county)
@@ -249,7 +250,6 @@ def get_variable_importance():
     imp_dict = {x: y for x, y in zip(columns, importances) if '/' not in x}
     imp_dict_sorted = sorted(imp_dict.items(), key=operator.itemgetter(1), reverse=True)
     return {x: y for x, y in imp_dict_sorted}
-
 
 # u = UserDetails
 # u.ethnicity = 'BA_FEMALE'
