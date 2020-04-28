@@ -16,9 +16,7 @@ import datetime
 from covid19.utils import calc_n_days_after_date, get_time_series_cols
 import itertools
 
-
 app = FastAPI()
-
 
 origins = [
     "http://localhost",
@@ -179,9 +177,20 @@ def forecast(userdetails: UserDetails):
         if len(ethnic_age_grps) == 0:
             print(f'No data for {fips}')
             raise ValueError(
-                'Sorry! We have very limited data for your county. At this moment, we will not be able to forecast. Try again later')
+                    'Sorry! We have very limited data for your county. At this moment, we will not be able to forecast. Try again later')
         ethnic_age_grps.drop(['STATE', 'COUNTY', 'STNAME', 'CTYNAME', 'fips'], axis=1, inplace=True)
         return ethnic_age_grps
+
+    def get_population_age_wise(df):
+        population_cols = [col for col in df.columns if 'MALE' in col or 'FEMALE' in col]
+        df['total'] = df[population_cols].sum(axis=1)
+        age_splits = {age: total_population for age, total_population in df[['AGEGRP', 'total']].values}
+        df.drop('total', axis=1, inplace=True)
+        return age_splits
+
+    def get_population_ethnicity_wise(df):
+        df.drop('AGEGRP', axis=1, inplace=True)
+        return df.sum(axis=0).to_dict()
 
     week_predictions = {}
     state_county = userdetails.state_name + "_" + userdetails.county_name
@@ -190,7 +199,7 @@ def forecast(userdetails: UserDetails):
     county = county_data[county_data.index == state_county]
     if len(county) == 0:
         raise ValueError(
-            f'Sorry! We have very limited data for your {userdetails.county_name}. At this moment, we will not be able to forecast. Try again later')
+                f'Sorry! We have very limited data for your {userdetails.county_name}. At this moment, we will not be able to forecast. Try again later')
     fips = int(county['fips'])  # Use fips to fetch data from ethnic and age groups file
     county.drop('fips', axis=1, inplace=True)
     county = dynamic(county)
@@ -207,7 +216,11 @@ def forecast(userdetails: UserDetails):
         date = label_col
 
     mean_pred = algorithm(week_predictions, fips, age_grp, ethnicity)
-    return {'p_score': mean_pred}
+    ethics_n_age_groups = fetch_ethnic_age_data(fips)
+    age_wise_population = get_population_age_wise(ethics_n_age_groups)
+    ethnicity_wise_population = get_population_ethnicity_wise(ethics_n_age_groups)
+
+    return {'p_score': mean_pred, 'age_splits': age_wise_population, 'ethnicity_splits': ethnicity_wise_population}
 
 
 @app.get('/v1/variable_importance')
@@ -217,3 +230,11 @@ def get_variable_importance():
     imp_dict = {x: y for x, y in zip(columns, importances) if '/' not in x}
     imp_dict_sorted = sorted(imp_dict.items(), key=operator.itemgetter(1), reverse=True)
     return {x: y for x, y in imp_dict_sorted}
+
+
+# u = UserDetails
+# u.ethnicity = 'BA_FEMALE'
+# u.age_group = '20-24'
+# u.state_name = 'Massachusetts'
+# u.county_name = 'Worcester'
+# print(forecast(u))
