@@ -1,5 +1,5 @@
 var SERVER_CONFIG =  {
-    hostname: '0.0.0.0',
+    hostname: '104.251.210.60',
         port: 1345,
         version:'v1'
 }
