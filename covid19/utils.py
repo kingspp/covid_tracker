@@ -1,6 +1,8 @@
 import json
 import numpy as np
 import enum
+import os
+import datetime
 
 class JsonEncoder(json.JSONEncoder):
     """ Special json encoder for numpy types """
@@ -25,3 +27,29 @@ class JsonEncoder(json.JSONEncoder):
             except Exception:
                 print(f'{obj} is not serializable. ')
                 return f'Object not serializable - {obj}'
+
+
+def file_exists_check(filepath: str, err_msg:str):
+    if not os.path.exists(filepath):
+        raise FileNotFoundError(err_msg)
+
+
+def calc_n_days_before_date(date_str, n_days):
+    # date_str is in the format 'm/day/year'
+    strs = date_str.split('/')
+    month, date, year = strs[0], strs[1], strs[2]
+    date = datetime.datetime(year, month, date)
+    rolled_back_date = date - datetime.timedelta(days=n_days)
+    # Return in the same format as recieved
+    return f'{rolled_back_date.month}/{rolled_back_date.day}/{rolled_back_date.year}'
+
+
+def calc_n_days_after_date(date_str, n_days):
+    # date_str is in the format 'm/day/year'
+    strs = date_str.split('/')
+    month, day, year = strs[0], strs[1], strs[2]
+    date = datetime.datetime(int(year), int(month), int(day))
+    future_date = date + datetime.timedelta(days=n_days)
+    # Return in the same format as recieved
+    return f'{future_date.month}/{future_date.day}/{future_date.year}'
+

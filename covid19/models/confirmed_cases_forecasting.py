@@ -17,7 +17,7 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 import pickle
-import datetime
+from covid19.utils import calc_n_days_after_date
 
 pd.set_option('display.max_rows', 10000)
 pd.set_option('display.max_columns', 10000)
@@ -64,7 +64,6 @@ def prepare_confirmed_cases_data():
 
 def prepare_final_data(county_demog_clean, confirmed_us_clean):
     confirmed_cases_usa = pd.merge(county_demog_clean, confirmed_us_clean, on='fips')
-    confirmed_cases_usa.drop('fips', axis=1, inplace=True)
     confirmed_cases_usa = encode_based_on_risk(confirmed_cases_usa)
     confirmed_cases_usa = encode_emergency_date(confirmed_cases_usa)
     emergency_declation_type_encoding = {'Govt Ordered Community Quarantine': 0, 'Govt Directed Social Distancing': 1}
@@ -75,8 +74,7 @@ def prepare_final_data(county_demog_clean, confirmed_us_clean):
     confirmed_cases_usa_delta = confirmed_cases_usa.copy()
     confirmed_cases_usa_delta[delta_cols] = confirmed_cases_usa[delta_cols].diff(axis=1)
     confirmed_cases_usa_delta.fillna(0, inplace=True)
-    train_features, test_features = train_test_split(confirmed_cases_usa_delta, test_size=0.2)
-    return train_features, test_features
+    return confirmed_cases_usa_delta
 
 
 def dynamic(features, end_date, label_col='', test=False):
@@ -149,28 +147,28 @@ def encode_based_on_risk(df):
     df.insert(0, 'county_rank', county_rank)
 
     # drop state, county, total_confirmed columns
-    df.drop(['state', 'county', 'total_confirmed'], axis=1, inplace=True)
+    df.drop(['total_confirmed'], axis=1, inplace=True)
     return df
 
 
-def calc_n_days_before_date(date_str, n_days):
-    # date_str is in the format 'm/day/year'
-    strs = date_str.split('/')
-    month, date, year = strs[0], strs[1], strs[2]
-    date = datetime.datetime(year, month, date)
-    rolled_back_date = date - datetime.timedelta(days=n_days)
-    # Return in the same format as recieved
-    return f'{rolled_back_date.month}/{rolled_back_date.day}/{rolled_back_date.year}'
+def save_processed_file(df):
+    df['state_county'] = df[['state', 'county']].apply(lambda x: x['state'] + '_' + x['county'], axis=1)
+    df.drop(['state', 'county'], axis=1, inplace=True)
 
+    county_ranking_json = {}
 
-def calc_n_days_after_date(date_str, n_days):
-    # date_str is in the format 'm/day/year'
-    strs = date_str.split('/')
-    month, day, year = strs[0], strs[1], strs[2]
-    date = datetime.datetime(int(year), int(month), int(day))
-    future_date = date + datetime.timedelta(days=n_days)
-    # Return in the same format as recieved
-    return f'{future_date.month}/{future_date.day}/{future_date.year}'
+    def add_to_json(x):
+        county_ranking_json[x['state_county']] = x['county_rank']
+
+    # Save county ranks in json for further lookup
+    df[['state_county', 'county_rank']].apply(lambda x: add_to_json(x), axis=1)
+    json.dump(county_ranking_json, open('../data/county_ranking_map.json', 'w'), indent=4)
+
+    col = df.pop('state_county')
+    df.insert(0, col.name, col)
+    df.to_csv('../data/processed_confirmed_cases_data_apr26th.csv', index=False)
+    df.drop('fips', axis=1, inplace=True)
+    return df
 
 
 def print_test_stats(inp_data_columns, label_column, test_error=None):
@@ -179,7 +177,7 @@ def print_test_stats(inp_data_columns, label_column, test_error=None):
             f'Data from {time_series_col[0]} to {time_series_col[-1]} was used. Predicted for {label_column}. Error: {test_error}')
 
 
-class RFModel():
+class RFModel:
     def __init__(self):
         self.rf = RandomForestRegressor(n_estimators=1000, random_state=42)
 
@@ -204,18 +202,18 @@ class RFModel():
         pickle.dump(self.rf, open(model_save_name, 'wb'))
 
 
-if __name__ == '__main__':
+def run():
     county_demog_clean = prepare_demogs_data()
     confirmed_us_clean = prepare_confirmed_cases_data()
-    train_features, test_features = prepare_final_data(county_demog_clean, confirmed_us_clean)
+    confirmed_cases_usa_delta = prepare_final_data(county_demog_clean, confirmed_us_clean)
+    confirmed_cases_usa_delta = save_processed_file(confirmed_cases_usa_delta)
 
-    model_save_name = 'rf_model_test.pk'
-    rows_to_consider = 10
+    train_features, test_features = train_test_split(confirmed_cases_usa_delta, test_size=0.2)
     train_features, test_features = train_features.head(rows_to_consider), test_features.head(
             rows_to_consider)
 
-    label_col = '4/26/20'  # train_features.columns[-1]
-    end_date = '4/25/20'  # train_features.columns[-2]
+    label_col = train_features.columns[-1]  # '4/26/20'
+    end_date = train_features.columns[-2]  # '4/25/20'
 
     train_data, train_label = dynamic(train_features, end_date, label_col)
     test_data, test_label = dynamic(test_features, end_date, label_col)
@@ -245,3 +243,9 @@ if __name__ == '__main__':
 
         today_date = label_col  # Using the predicted data to predict next day cases
         print('----' * 20)
+
+
+if __name__ == '__main__':
+    model_save_name = 'rf_model_test.pk'
+    rows_to_consider = 10
+    run()
