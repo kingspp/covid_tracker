@@ -248,6 +248,6 @@ def run():
 
 
 if __name__ == '__main__':
-    model_save_name = 'rf_model_test.pk'
+    model_save_name = 'rf_model.pk'
     rows_to_consider = 10
     run()
