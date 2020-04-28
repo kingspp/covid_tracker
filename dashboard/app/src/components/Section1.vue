@@ -1,7 +1,11 @@
 <template>
     <section>
         <div class="container-fluid">
-            <div class="row"><h1>How the World is doing?</h1></div>
+            <div class="row">
+                <div class="col">
+                <h1>How the World is doing?</h1>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-md-6">
                     <h2 class="text-center">Stock Markets</h2>
@@ -27,6 +31,7 @@
                     <li>Though the cases in US has exponentially increased, USD remains world's reserve currency</li>
                     <li>Even crypto-currencies were not spared! </li>
                     <li>Hold on to your dollars $$!</li>
+                    [Source: Investing]
                 </div>
                 <div class="col-md-4">
                     <line-chart
