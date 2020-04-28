@@ -251,9 +251,11 @@ def get_variable_importance():
     return {x: y for x, y in imp_dict_sorted}
 
 
-u = UserDetails
-u.ethnicity = 'BA_FEMALE'
-u.age_group = '20-24'
-u.state_name = 'Massachusetts'
-u.county_name = 'Worcester'
-print(forecast(u))
+# u = UserDetails
+# u.ethnicity = 'BA_FEMALE'
+# u.age_group = '20-24'
+# u.state_name = 'Massachusetts'
+# u.county_name = 'Worcester'
+# from pprint import pprint
+#
+# pprint(forecast(u), indent=4)
