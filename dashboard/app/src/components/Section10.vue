@@ -1,61 +1,77 @@
 <template>
     <section class="question">
-        <div class="row">
-            <p><b>Wanna know your chances in this pandemic?</b></p>
-        </div>
-        <div class="row">
-            <div class="col-md-2">
-                <span style="">I am from </span>
+        <div class="container-fluid h-100">
+            <div class="row">
+                <p><b>Wanna know your chances in this pandemic?</b></p>
             </div>
-            <div class="col-md-7">
-                <div class="autosuggest-container" style="">
-                    <autosuggest-instance :key="1" auto-type="County"/>
+            <div class="row">
+                <div class="col-md-2">
+                    <span style="">I am from </span>
                 </div>
-            </div>
-            <div class="col-md-2">
+                <div class="col-md-6">
+                    <div class="autosuggest-container" style="">
+                        <autosuggest-instance-county
+                                v-on:county-selected="onCountySelected($event)"
+                                :key="1" auto-type="County"/>
+                    </div>
+                </div>
                 <span style="">aged </span>
-                <b-form-input type="number" style="width:3em; display: inline-block"/>
-            </div>
-        </div>
-
-        <div class="row" style="padding-top: 50px">
-            <div class="col-md-2 offset-1">
-                <span style=""> belonging to </span>
-            </div>
-            <div class="col-md-7">
-                <div class="autosuggest-container" style="">
-                    <autosuggest-instance :key="2" auto-type="Ethnicity"/>
+                <div class="col-md-3">
+                    <div class="autosuggest-container" style="">
+                        <!--                <b-form-input type="number" style="width:3em; display: inline-block"/>-->
+                        <autosuggest-instance-age
+                                v-on:age-selected="onAgeSelected($event)"
+                                :key="3" auto-type="Age"/>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="row">
-        </div>
-
-        <div class="row" style="height: 400px">
-            <span>Variables:</span>
-            <div class="col-md-8 offset-1">
-                <vue-word-cloud
-                        style="position:absolute;"
-                        :words="words"
-                        :color="colors"
-                        :spacing="spacing"
-                        :snackbarText="''"
-                        :progressVisible="true"
-                        font-family="Roboto">
-                    <template slot-scope="{text, weight}">
-                        <div :title="text+' (W:'+ weight+')'" style="cursor: pointer;">
-                            <div style="text-align: center;">{{text}}</div>
-                        </div>
-                    </template>
-                </vue-word-cloud>
+            <div class="row" style="padding-top: 50px">
+                <div class="col-md-2 offset-1">
+                    <span style=""> belonging to </span>
+                </div>
+                <div class="col-md-7">
+                    <div class="autosuggest-container" style="">
+                        <autosuggest-instance-ethnicity
+                                v-on:ethnicity-selected="onEthnicitySelected($event)"
+                                :key="2" auto-type="Ethnicity"
+                        />
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div class="row">
-            <div class="col" style="color: black; font-size: 60px;">
-                <div style="">
-                    <font-awesome-icon icon="chevron-down"/>
+            <div class="row" style="padding-top: 100px">
+                <div class="col-md-2">
+                    <h2>Probability:</h2>
+                    <span style="font-size: 80px">{{probability}}</span>
+                </div>
+            </div>
+
+            <div class="row" style="height: 400px">
+                <span>Variables:</span>
+                <div class="col-md-8 offset-1">
+                    <vue-word-cloud
+                            style="position:absolute;"
+                            :words="words"
+                            :color="colors"
+                            :spacing="spacing"
+                            :snackbarText="''"
+                            :progressVisible="true"
+                            font-family="Roboto">
+                        <template slot-scope="{text, weight}">
+                            <div :title="text+' (W:'+ weight+')'" style="cursor: pointer;">
+                                <div style="text-align: center;">{{text}}</div>
+                            </div>
+                        </template>
+                    </vue-word-cloud>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col" style="color: black; font-size: 60px;">
+                    <div style="">
+                        <font-awesome-icon icon="chevron-down"/>
+                    </div>
                 </div>
             </div>
         </div>
@@ -64,16 +80,20 @@
 
 <script>
     import VueWordCloud from 'vuewordcloud';
-    import AutosuggestInstance from "./AutosuggestInstance";
+    import AutosuggestInstanceCounty from "./AutosuggestInstanceCounty";
+    import AutosuggestInstanceEthnicity from "./AutosuggestInstanceEthnicity";
+    import AutosuggestInstanceAge from "./AutosuggestInstanceAge";
     // import Vue from 'vue';
 
     // Vue.component(VueWordCloud.name, VueWordCloud);
 
 
     export default {
-        name: "Section1",
+        name: "Section10",
         components: {
-            AutosuggestInstance,
+            AutosuggestInstanceCounty,
+            AutosuggestInstanceEthnicity,
+            AutosuggestInstanceAge,
             VueWordCloud
         },
         data: function () {
@@ -85,7 +105,11 @@
                 // rotationItemIndex: undefined,
                 // snackbarText: '',
                 // snackbarVisible: false,
+                selectedEthnicity: '',
+                selectedCounty: '',
+                selectedAge:'',
                 spacing: 2,
+                probability:'',
                 // spacingValueIndex: 1,
                 // spacingValues: [0, 1 / 4, 1 / 2, 1, 2],
                 words: [['White', 0.6083505425400902], ['White', 0.873334764652425], ['Black', 0.9569713630340182], ['Black', 0.692588690952467], ['Ameri', 0.9232343696463737], ['Ameri', 0.2890185759097694], ['Asian', 0.10240036496155547], ['Asian', 0.20034511319586623], ['Nativ', 0.3544325155788284], ['Nativ', 0.3764106852907453], ['Not H', 0.9259030432889365], ['Not H', 0.12907901908498953], ['Not H', 0.5889146131102185], ['Not H', 0.1700541238783856], ['Not H', 0.5227741919367936], ['Not H', 0.38231429809007367], ['Not H', 0.35622667506597316], ['Not H', 0.05445444888944573], ['Not H', 0.3084309425580064], ['Not H', 0.19271706815968004], ['Not H', 0.3744384326588812], ['Not H', 0.2972297192053355], ['Hispa', 0.9242233028438677], ['Hispa', 0.9783904855518989], ['Hispa', 0.10486372234965613], ['Hispa', 0.2960361219630039], ['Hispa', 0.6243363487202025], ['Hispa', 0.30796248001651205], ['Hispa', 0.253007227205585], ['Hispa', 0.17970213881722807], ['Hispa', 0.9491128197493495], ['Hispa', 0.21508787147161834], ['Hispa', 0.6856650223772554], ['Hispa', 0.9269017784952683]],
@@ -98,11 +122,51 @@
                     this.progressVisible = false;
                 }
             },
+
+
         },
         methods: {
             onWordClick: function (word) {
                 this.snackbarVisible = true;
                 this.snackbarText = word[0];
+            },
+
+            submit: function () {
+                if (this.selectedCounty!=="" && this.selectedEthnicity!=="" && this.selectedAge!==""){
+                    let countyStr=this.selectedCounty.split(',');
+
+                    const promise = this.$http.post(this.$config.url+'forecast',
+                        {
+                            "state_name": countyStr[1].trim(),
+                            "county_name": countyStr[0].trim(),
+                            "ethnicity": this.selectedEthnicity,
+                            "age_group": this.selectedAge
+                        });
+
+                    Promise.all([promise]).then(values => {
+                        console.log(values[0]);
+                        this.probability = values[0].data.p_score
+                    });
+                }
+
+            },
+
+            onEthnicitySelected: function (ev) {
+                console.log('Parent eth selected ', ev);
+                this.selectedEthnicity = ev;
+                this.submit()
+            },
+
+            onCountySelected: function (ev) {
+                console.log('Parent county selected ', ev);
+                this.selectedCounty = ev;
+                this.submit()
+            },
+
+            onAgeSelected: function (ev) {
+                console.log('Parent Age selected ', ev);
+                this.selectedAge = ev;
+                this.submit()
             }
         }
 

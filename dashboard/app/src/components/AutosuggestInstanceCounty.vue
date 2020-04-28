@@ -1,22 +1,22 @@
 <template>
-  <div class="container">
-    <vue-autosuggest
-      class="hello"
-      ref="autosuggest"
-      v-model="query"
-      :suggestions="suggestions"
-      :input-props="inputProps"
-      :section-configs="sectionConfigs"
-      :get-suggestion-value="getSuggestionValue"
-      @input="fetchResults"
-    >
-      <template slot-scope="{ suggestion }">
-        <div>
-          {{ suggestion.item }}
-        </div>
-      </template>
-    </vue-autosuggest>
-  </div>
+    <div class="container">
+        <vue-autosuggest
+                class="hello"
+                ref="autosuggest"
+                v-model="query"
+                :suggestions="suggestions"
+                :input-props="inputProps"
+                :section-configs="sectionConfigs"
+                :get-suggestion-value="getSuggestionValue"
+                @input="fetchResults"
+        >
+            <template slot-scope="{ suggestion }">
+                <div>
+                    {{ suggestion.item }}
+                </div>
+            </template>
+        </vue-autosuggest>
+    </div>
 </template>
 
 <script>
@@ -29,8 +29,8 @@
         components: {
             VueAutosuggest
         },
-        props:{
-            autoType:String
+        props: {
+            autoType: String
         },
         data() {
             return {
@@ -40,6 +40,7 @@
                 selected: null,
                 searchText: "",
                 debounceMilliseconds: 50,
+                selectedCounty: '',
                 fetchURL: config.url + this.autoType.toLowerCase(),
 
                 inputProps: {
@@ -79,7 +80,7 @@
                         this.selected = null;
                         const data = this.filterResults(values[0].data.data, query, "name");
                         data.length &&
-                        this.suggestions.push({name: "destinations", data: data});
+                        this.suggestions.push({name: "US County", data: data});
                     });
                 }, this.debounceMilliseconds);
             },
@@ -95,7 +96,9 @@
             getSuggestionValue(suggestion) {
                 let {name, item} = suggestion;
                 // return name === "hotels" ? item.title : item.name;
-                console.log(item)
+                console.log(item);
+                this.selectedCounty= item;
+                this.$emit('county-selected', this.selectedCounty);
                 return item;
             }
         },
