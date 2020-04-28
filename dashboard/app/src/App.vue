@@ -3,7 +3,7 @@
         <NavBar/>
         <Header/>
         <Section1/>
-        <Section10/>
+<!--        <Section10/>-->
     </div>
 </template>
 
@@ -62,7 +62,7 @@
             NavBar,
             Header,
             Section1,
-            Section10
+            // Section10
         }
     }
 

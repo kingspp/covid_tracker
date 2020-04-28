@@ -53,9 +53,16 @@
     font-size: 28px;
 }
 
+
+
 .navbar-nav{
     color:white!important;
     /*display: none;*/
     /*font-weight: bold;*/
+
 }
+
+    .fixed-top{
+        position: absolute!important;
+    }
 </style>

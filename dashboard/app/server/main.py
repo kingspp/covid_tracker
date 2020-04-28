@@ -57,6 +57,7 @@ def get_variables():
 
 @app.get("/v1/stocks")
 def get_stocks():
+
     return {'data':json.load(open(COVID19_DATA_PATH+'/'+'stocks.json'))}
 
 @app.get("/v1/global_confirmed")
