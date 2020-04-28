@@ -27,7 +27,10 @@
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@fortawesome/vue-fontawesome": "^0.1.9",
     "vue-autosuggest": "^2.1.1",
-    "axios": "^0.19.2"
+    "axios": "^0.19.2",
+    "vuewordcloud": "^18.7.11",
+    "vuetify": "^2.2.25",
+    "v-tooltip": "^2.0.3"
   },
   "eslintConfig": {
     "root": true,

@@ -8,6 +8,8 @@ from covid19.data import ProteinData
 from pymongo import MongoClient
 
 COUNTRIES = json.load(open(os.path.join(COVID19_MODULE_PATH,"data", "COUNTRIES.json")))
+COUNTIES = json.load(open(os.path.join(COVID19_MODULE_PATH,"data", "COUNTIES.json")))
+ETHNICITIES = json.load(open(os.path.join(COVID19_MODULE_PATH,"data", "ETHNICITIES.json")))
 CONFIG = json.load(open(os.path.join(COVID19_MODULE_PATH, "config.json")))
 
 client = MongoClient(host=CONFIG["mongo_db_config"]["configs"][CONFIG["mongo_db_config"]["use_config"]]["host"],
