@@ -46,7 +46,9 @@
                             :options="lineChartOptions"/>
                 </div>
             </div>
+        </div>
 
+        <div class="container-fluid">
             <h2 class="text-center" style="padding-top: 60px">Impact of Social Distancing and Masks</h2>
             <div class="row" style="padding-top: 100px">
                 <div class="col-md-6">
@@ -62,10 +64,11 @@
                         </div>
                     </div>
                     <div class="row">
-                        <li>Irrespective of increase in cases, USD remains world's reserve currency</li>-->
-                                            <li>Even crypto-currencies are not spared! </li>
-                                            <li>Hold on to your dollars $$!</li>
-                                            [Source: Investing]
+                        <li>Irrespective of increase in cases, USD remains world's reserve currency</li>
+                        -->
+                        <li>Even crypto-currencies are not spared!</li>
+                        <li>Hold on to your dollars $$!</li>
+                        [Source: Investing]
                     </div>
 
                 </div>
@@ -82,10 +85,11 @@
                         </div>
                     </div>
                     <div class="row">
-                        <li>Irrespective of increase in cases, USD remains world's reserve currency</li>-->
-                                            <li>Even crypto-currencies are not spared! </li>
-                                            <li>Hold on to your dollars $$!</li>
-                                            [Source: Investing]
+                        <li>Irrespective of increase in cases, USD remains world's reserve currency</li>
+                        -->
+                        <li>Even crypto-currencies are not spared!</li>
+                        <li>Hold on to your dollars $$!</li>
+                        [Source: Investing]
                     </div>
 
                 </div>
@@ -105,8 +109,8 @@
                         </div>
                     </div>
                     <div class="row">
-                        <li>Irrespective of increase in cases, USD remains world's reserve currency</li>-->
-                        <li>Even crypto-currencies are not spared! </li>
+                        <li>Irrespective of increase in cases, USD remains world's reserve currency</li>
+                        <li>Even crypto-currencies are not spared!</li>
                         <li>Hold on to your dollars $$!</li>
                         [Source: Investing]
                     </div>
@@ -125,8 +129,9 @@
                         </div>
                     </div>
                     <div class="row">
-                        <li>Irrespective of increase in cases, USD remains world's reserve currency</li>-->
-                        <li>Even crypto-currencies are not spared! </li>
+                        <li>Irrespective of increase in cases, USD remains world's reserve currency</li>
+                        -->
+                        <li>Even crypto-currencies are not spared!</li>
                         <li>Hold on to your dollars $$!</li>
                         [Source: Investing]
                     </div>
