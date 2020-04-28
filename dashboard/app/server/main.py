@@ -192,6 +192,21 @@ def forecast(userdetails: UserDetails):
         df.drop('AGEGRP', axis=1, inplace=True)
         return df.sum(axis=0).to_dict()
 
+    def mask_keys(ethnic_dict):
+        keys = {'WA_MALE': 'White Male',
+                'WA_FEMALE': 'White Female',
+                'BA_MALE': 'Black or African Male',
+                'BA_FEMALE': 'Black or African Female',
+                'IA_MALE': 'American Indian and Alaska Native Male',
+                'IA_FEMALE': 'American Indian and Alaska Native Female ',
+                'AA_MALE': 'Asian Male',
+                'AA_FEMALE': 'Asian Female',
+                'NA_MALE': 'Native Hawaiian and Other Pacific Islander Male',
+                'NA_FEMALE': 'Native Hawaiian and Other Pacific Islander Female',
+                'H_MALE': 'Hispanic Male',
+                'H_FEMALE': 'Hispanic Female'}
+        return {keys[ethnic_group]: pop_count for ethnic_group, pop_count in ethnic_dict.items()}
+
     week_predictions = {}
     state_county = userdetails.state_name + "_" + userdetails.county_name
     age_grp = userdetails.age_group
@@ -220,7 +235,8 @@ def forecast(userdetails: UserDetails):
     age_wise_population = get_population_age_wise(ethics_n_age_groups)
     ethnicity_wise_population = get_population_ethnicity_wise(ethics_n_age_groups)
 
-    return {'p_score': mean_pred, 'age_splits': age_wise_population, 'ethnicity_splits': ethnicity_wise_population}
+    return {'p_score': mean_pred, 'age_splits': age_wise_population,
+            'ethnicity_splits': mask_keys(ethnicity_wise_population)}
 
 
 @app.get('/v1/variable_importance')
@@ -231,10 +247,9 @@ def get_variable_importance():
     imp_dict_sorted = sorted(imp_dict.items(), key=operator.itemgetter(1), reverse=True)
     return {x: y for x, y in imp_dict_sorted}
 
-
-# u = UserDetails
-# u.ethnicity = 'BA_FEMALE'
-# u.age_group = '20-24'
-# u.state_name = 'Massachusetts'
-# u.county_name = 'Worcester'
-# print(forecast(u))
+u = UserDetails
+u.ethnicity = 'BA_FEMALE'
+u.age_group = '20-24'
+u.state_name = 'Massachusetts'
+u.county_name = 'Worcester'
+print(forecast(u))
