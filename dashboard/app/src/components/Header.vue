@@ -145,7 +145,7 @@
     }
 
     .header-content h1 {
-        font-size: 75px;
+        font-size: 55px;
     }
 
     .brand-icon-1 {
