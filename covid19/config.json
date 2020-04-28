@@ -1,11 +1,15 @@
 {
   "mongo_db_config":{
     "database": "covid19",
-    "use_config": "gce",
+    "use_config": "vps",
       "configs": {
         "gce": {
           "host": "104.251.210.60",
           "port": "25043"
+        },
+        "vps":{
+          "host":"104.251.210.60",
+          "port":"25043"
         }
       }
     }

@@ -29,7 +29,9 @@
 
 <script>
     import { VueAutosuggest } from "vue-autosuggest";
+    import config from "../config";
     import axios from "axios";
+
 
     export default {
         name: "app",
@@ -49,26 +51,18 @@
                 selected: null,
                 searchText: "",
                 debounceMilliseconds: 50,
-                usersUrl: "https://jsonplaceholder.typicode.com/users",
+                fetchCountiesUrl: config.url+'counties',
                 photosUrl: "https://jsonplaceholder.typicode.com/photos",
                 inputProps: {
                     id: "autosuggest__input",
                     style: { width: "50%", fontsize:"40px"},
                     placeholder: this.autoType,
-                    // class: "form-control"
                 },
                 suggestions: [],
                 sectionConfigs: {
                     destinations: {
                         limit: 6,
                         label: "Destination",
-                        onSelected: selected => {
-                            this.selected = selected.item;
-                        }
-                    },
-                    hotels: {
-                        limit: 6,
-                        label: "Hotels",
                         onSelected: selected => {
                             this.selected = selected.item;
                         }
@@ -90,35 +84,44 @@
 
                 clearTimeout(this.timeout);
                 this.timeout = setTimeout(() => {
-                    const photosPromise = axios.get(this.photosUrl);
-                    const usersPromise = axios.get(this.usersUrl);
+                    // const photosPromise = axios.get(this.photosUrl);
+                    const countiesPromise = axios.get(this.fetchCountiesUrl);
 
-                    Promise.all([photosPromise, usersPromise]).then(values => {
+
+                    Promise.all([countiesPromise]).then(values => {
+                        // console.log(values[0].data);
+
                         this.suggestions = [];
                         this.selected = null;
 
-                        const photos = this.filterResults(values[0].data, query, "title");
-                        const users = this.filterResults(values[1].data, query, "name");
+                        const counties = this.filterResults(values[0].data.counties, query, "counties");
 
-                        users.length &&
-                        this.suggestions.push({ name: "destinations", data: users });
-                        photos.length &&
-                        this.suggestions.push({ name: "hotels", data: photos });
+                        console.log(counties);
+
+                        // const users = this.filterResults(values[1].data, query, "name");
+
+                        // users.length &&
+                        this.suggestions.push({ name: "Destination", data: counties });
+                        // photos.length &&
+                        // this.suggestions.push({ name: "hotels", data: photos });
                     });
                 }, this.debounceMilliseconds);
             },
             filterResults(data, text, field) {
                 return data
                     .filter(item => {
-                        if (item[field].toLowerCase().indexOf(text.toLowerCase()) > -1) {
-                            return item[field];
+                        if (item.toLowerCase().indexOf(text.toLowerCase()) > -1) {
+                            return item;
                         }
                     })
                     .sort();
             },
             getSuggestionValue(suggestion) {
                 let { name, item } = suggestion;
-                return name === "hotels" ? item.title : item.name;
+                // return name === "hotels" ? item.title : item.name;
+                console.log("Get Suggestion Value");
+                console.log(name, item);
+                return item
             }
         },
         watch: {
@@ -163,7 +166,6 @@
 
     .autosuggest__results-container {
         position: inline;
-
         width: 100%;
     }
 
