@@ -12,7 +12,7 @@ Description:
 
 
 class ModelConstants:
-    SAVE_PATH: str = "covid19/models/rf_model_test.pk"
+    SAVE_PATH: str = "covid19/models/rf_model.pk"
     COUNTY_RANK_MAPPING_FILE: str = "covid19/data/county_ranking_map.json"
     COUNTY_PROCESSED_DATA: str = "covid19/data/processed_confirmed_cases_data_apr26th.csv"
     TIME_SERIES_LEN = 90

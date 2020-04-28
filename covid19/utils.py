@@ -4,6 +4,7 @@ import enum
 import os
 import datetime
 
+
 class JsonEncoder(json.JSONEncoder):
     """ Special json encoder for numpy types """
 
@@ -29,7 +30,7 @@ class JsonEncoder(json.JSONEncoder):
                 return f'Object not serializable - {obj}'
 
 
-def file_exists_check(filepath: str, err_msg:str):
+def file_exists_check(filepath: str, err_msg: str):
     if not os.path.exists(filepath):
         raise FileNotFoundError(err_msg)
 
@@ -53,3 +54,6 @@ def calc_n_days_after_date(date_str, n_days):
     # Return in the same format as recieved
     return f'{future_date.month}/{future_date.day}/{future_date.year}'
 
+
+def get_time_series_cols(df):
+    return [col for col in df if '/' in col]
