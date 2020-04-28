@@ -209,8 +209,8 @@ def run():
     confirmed_cases_usa_delta = save_processed_file(confirmed_cases_usa_delta)
 
     train_features, test_features = train_test_split(confirmed_cases_usa_delta, test_size=0.2)
-    train_features, test_features = train_features.head(rows_to_consider), test_features.head(
-            rows_to_consider)
+    # train_features, test_features = train_features.head(rows_to_consider), test_features.head(
+    #         rows_to_consider)
 
     label_col = train_features.columns[-1]  # '4/26/20'
     end_date = train_features.columns[-2]  # '4/25/20'
@@ -246,6 +246,6 @@ def run():
 
 
 if __name__ == '__main__':
-    model_save_name = 'rf_model_test.pk'
+    model_save_name = 'rf_model.pk'
     rows_to_consider = 10
     run()

@@ -33,8 +33,23 @@ required_cols = ["STATE", "COUNTY", "STNAME", "CTYNAME", "AGEGRP"]
 
 data = pd.read_csv('/Users/badgod/Downloads/cc-est2018-alldata.csv', encoding='latin-1')
 
+
+def get_fips_code(row):
+    state_code = str(row['STATE'])
+    county_code = str(row['COUNTY'])
+    state_code = state_code if len(state_code) == 2 else '0' + state_code
+    if len(county_code) == 1:
+        fips_code = state_code + '00' + county_code
+    elif len(county_code) == 2:
+        fips_code = state_code + '0' + county_code
+    else:
+        fips_code = state_code + county_code
+    return fips_code
+
+
 latest = data[data['YEAR'] == 11]
 latest = latest[latest['AGEGRP'] != 0]
 latest['AGEGRP'] = latest['AGEGRP'].apply(lambda x: age_dict[x])
 latest = latest[required_cols + list(ethnic_groups.keys())]
+latest['fips'] = latest[['STATE', 'COUNTY']].apply(lambda x: get_fips_code(x), axis=1)
 latest.to_csv('latest_ethnic_age_county_level_demog.csv', index=False)
