@@ -60,5 +60,8 @@ def get_stocks():
     return {'data':json.load(open(COVID19_DATA_PATH+'/'+'stocks.json'))}
 
 @app.get("/v1/global_confirmed")
-def get_stocks():
+def get_global_confirmed():
     return {'data':json.load(open(COVID19_DATA_PATH+'/'+'world_count.json'))}
+
+
+# print(get_stocks())
