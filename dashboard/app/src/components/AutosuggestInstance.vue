@@ -1,49 +1,38 @@
 <template>
-    <div class="container">
-        <vue-autosuggest
-                class="hello"
-                ref="autosuggest"
-                v-model="query"
-                :suggestions="suggestions"
-                :inputProps="inputProps"
-                :sectionConfigs="sectionConfigs"
-                :getSuggestionValue="getSuggestionValue"
-                @input="fetchResults"
-        >
-            <template slot-scope="{ suggestion }">
-                <div v-if="suggestion.name == 'hotels'">
-                    <img :class="{ avatar: true }" :src="suggestion.item.thumbnailUrl">
-                    {{ suggestion.item.title }}
-                </div>
-                <div v-else>{{ suggestion.item.name }}</div>
-            </template>
-        </vue-autosuggest>
-<!--        <div v-if="selected" style="margin-top: 10px;">-->
-<!--            You have selected:-->
-<!--            <code>-->
-<!--                <pre>{{selected.name ? selected.name : selected.title}}</pre>-->
-<!--            </code>-->
-<!--        </div>-->
-    </div>
+  <div class="container">
+    <vue-autosuggest
+      class="hello"
+      ref="autosuggest"
+      v-model="query"
+      :suggestions="suggestions"
+      :input-props="inputProps"
+      :section-configs="sectionConfigs"
+      :get-suggestion-value="getSuggestionValue"
+      @input="fetchResults"
+    >
+      <template slot-scope="{ suggestion }">
+        <div>
+          {{ suggestion.item }}
+        </div>
+      </template>
+    </vue-autosuggest>
+  </div>
 </template>
 
 <script>
-    import { VueAutosuggest } from "vue-autosuggest";
-    import config from "../config";
+    import {VueAutosuggest} from "vue-autosuggest";
     import axios from "axios";
-
+    import config from "../config";
 
     export default {
-        name: "app",
-        props:{
-            autoType:String
-        },
+        name: "App",
         components: {
             VueAutosuggest
         },
+        props:{
+            autoType:String
+        },
         data() {
-            console.log("Auto Type");
-            console.log(this.autoType);
             return {
                 query: "",
                 results: [],
@@ -51,11 +40,11 @@
                 selected: null,
                 searchText: "",
                 debounceMilliseconds: 50,
-                fetchCountiesUrl: config.url+'counties',
-                photosUrl: "https://jsonplaceholder.typicode.com/photos",
+                fetchURL: config.url + this.autoType.toLowerCase(),
+
                 inputProps: {
                     id: "autosuggest__input",
-                    style: { width: "50%", fontsize:"40px"},
+                    style: {width: "100%"},
                     placeholder: this.autoType,
                 },
                 suggestions: [],
@@ -84,26 +73,13 @@
 
                 clearTimeout(this.timeout);
                 this.timeout = setTimeout(() => {
-                    // const photosPromise = axios.get(this.photosUrl);
-                    const countiesPromise = axios.get(this.fetchCountiesUrl);
-
-
-                    Promise.all([countiesPromise]).then(values => {
-                        // console.log(values[0].data);
-
+                    const dataPromise = axios.get(this.fetchURL);
+                    Promise.all([dataPromise]).then(values => {
                         this.suggestions = [];
                         this.selected = null;
-
-                        const counties = this.filterResults(values[0].data.counties, query, "counties");
-
-                        console.log(counties);
-
-                        // const users = this.filterResults(values[1].data, query, "name");
-
-                        // users.length &&
-                        this.suggestions.push({ name: "Destination", data: counties });
-                        // photos.length &&
-                        // this.suggestions.push({ name: "hotels", data: photos });
+                        const data = this.filterResults(values[0].data.data, query, "name");
+                        data.length &&
+                        this.suggestions.push({name: "destinations", data: data});
                     });
                 }, this.debounceMilliseconds);
             },
@@ -117,16 +93,15 @@
                     .sort();
             },
             getSuggestionValue(suggestion) {
-                let { name, item } = suggestion;
+                let {name, item} = suggestion;
                 // return name === "hotels" ? item.title : item.name;
-                console.log("Get Suggestion Value");
-                console.log(name, item);
-                return item
+                console.log(item)
+                return item;
             }
         },
         watch: {
             suggestions(n, o) {
-                console.log({ n, o });
+                // console.log({ n, o });
             }
         }
     };
@@ -147,6 +122,7 @@
         border-radius: 20px;
         margin-right: 10px;
     }
+
     #autosuggest__input {
         outline: none;
         position: relative;
@@ -166,6 +142,7 @@
 
     .autosuggest__results-container {
         position: inline;
+
         width: 100%;
     }
 
