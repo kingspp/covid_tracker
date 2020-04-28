@@ -3,7 +3,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col">
-                <h1>How the World is doing?</h1>
+                    <h1>How the World is doing?</h1>
                 </div>
             </div>
             <div class="row">
@@ -12,7 +12,7 @@
                     <line-chart
                             v-if="stockChartLoaded"
                             :chartdata="stockChartData"
-                            :options="options"/>
+                            :options="lineChartOptions"/>
                 </div>
                 <div class="col-md-6" style="font-size: 36px">
                     <li>On an average the global economy has suffered losses in excess of $36 Trillion (40% of $90
@@ -28,8 +28,8 @@
             <div class="row" style="padding-top: 100px">
                 <div class="col-md-4" style="font-size: 36px">
                     <h2 class="text-center">Currencies and Crypto</h2>
-                    <li>Though the cases in US has exponentially increased, USD remains world's reserve currency</li>
-                    <li>Even crypto-currencies were not spared! </li>
+                    <li>Irrespective of increase in cases, USD remains world's reserve currency</li>
+                    <li>Even crypto-currencies are not spared!</li>
                     <li>Hold on to your dollars $$!</li>
                     [Source: Investing]
                 </div>
@@ -37,13 +37,58 @@
                     <line-chart
                             v-if="currencyChartLoaded"
                             :chartdata="currencyChartData"
-                            :options="options"/>
+                            :options="lineChartOptions"/>
                 </div>
                 <div class="col-md-4">
                     <line-chart
                             v-if="cryptoChartLoaded"
                             :chartdata="cryptoChartData"
-                            :options="options"/>
+                            :options="lineChartOptions"/>
+                </div>
+            </div>
+
+            <h2 class="text-center" style="padding-top: 60px">Impact of Social Distancing and Masks</h2>
+            <div class="row" style="padding-top: 100px">
+                <!--                <div class="col-md-4" style="font-size: 36px">-->
+                <!--                    <h2 class="text-center">Currencies and Crypto</h2>-->
+                <!--                    <li>Irrespective of increase in cases, USD remains world's reserve currency</li>-->
+                <!--                    <li>Even crypto-currencies are not spared! </li>-->
+                <!--                    <li>Hold on to your dollars $$!</li>-->
+                <!--                    [Source: Investing]-->
+                <!--                </div>-->
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col"><h2 class="text-center">Google Mobility Report</h2></div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <bar-chart
+                                    v-if="currencyChartLoaded"
+                                    :chartdata="currencyChartData"
+                                    :options="lineChartOptions"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">Hellow World</div>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col"><h2 class="text-center;">Confirmed Cases vs New Cases</h2></div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <bar-chart
+                                    v-if="cryptoChartLoaded"
+                                    :chartdata="cryptoChartData"
+                                    :options="lineChartOptions"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">Hellow World</div>
+                    </div>
+
                 </div>
             </div>
 
@@ -53,18 +98,19 @@
 
 <script>
     import LineChart from './LineChart'
+    import BarChart from './BarChart'
 
     export default {
-        name: 'LineChartContainer',
-        components: {LineChart},
+        name: 'Section1',
+        components: {LineChart, BarChart},
         data: () => ({
             currencyChartLoaded: false,
             stockChartLoaded: false,
-            cryptoChartLoaded:false,
+            cryptoChartLoaded: false,
             stockChartData: {},
-            currencyChartData:{},
-            cryptoChartData:{},
-            options: {
+            currencyChartData: {},
+            cryptoChartData: {},
+            lineChartOptions: {
                 responsive: true,
                 maintainAspectRatio: false,
                 elements: {
@@ -143,7 +189,7 @@
                             "data": y
                         })
                     }
-                    this.currencyChartData=currencyChartData;
+                    this.currencyChartData = currencyChartData;
                     this.currencyChartLoaded = true
                 });
 
@@ -170,12 +216,12 @@
                         cryptoChartData['datasets'].push({
                             "label": values[0].data.data[coun].country,
                             fill: false,
-                            backgroundColor: values[0].data.data[coun].country==='COVID-19'? "#000000": colors[coun],
-                            borderColor: values[0].data.data[coun].country==='COVID-19'? "#000000": colors[coun],
+                            backgroundColor: values[0].data.data[coun].country === 'COVID-19' ? "#000000" : colors[coun],
+                            borderColor: values[0].data.data[coun].country === 'COVID-19' ? "#000000" : colors[coun],
                             "data": y
                         })
                     }
-                    this.cryptoChartData=cryptoChartData;
+                    this.cryptoChartData = cryptoChartData;
                     this.cryptoChartLoaded = true
                 });
 
