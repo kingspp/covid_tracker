@@ -16,9 +16,7 @@ import datetime
 from covid19.utils import calc_n_days_after_date, get_time_series_cols
 import itertools
 
-
 app = FastAPI()
-
 
 origins = [
     "http://localhost",
@@ -179,9 +177,35 @@ def forecast(userdetails: UserDetails):
         if len(ethnic_age_grps) == 0:
             print(f'No data for {fips}')
             raise ValueError(
-                'Sorry! We have very limited data for your county. At this moment, we will not be able to forecast. Try again later')
+                    'Sorry! We have very limited data for your county. At this moment, we will not be able to forecast. Try again later')
         ethnic_age_grps.drop(['STATE', 'COUNTY', 'STNAME', 'CTYNAME', 'fips'], axis=1, inplace=True)
         return ethnic_age_grps
+
+    def get_population_age_wise(df):
+        population_cols = [col for col in df.columns if 'MALE' in col or 'FEMALE' in col]
+        df['total'] = df[population_cols].sum(axis=1)
+        age_splits = {age: total_population for age, total_population in df[['AGEGRP', 'total']].values}
+        df.drop('total', axis=1, inplace=True)
+        return age_splits
+
+    def get_population_ethnicity_wise(df):
+        df.drop('AGEGRP', axis=1, inplace=True)
+        return df.sum(axis=0).to_dict()
+
+    def mask_keys(ethnic_dict):
+        keys = {'WA_MALE': 'White Male',
+                'WA_FEMALE': 'White Female',
+                'BA_MALE': 'Black or African Male',
+                'BA_FEMALE': 'Black or African Female',
+                'IA_MALE': 'American Indian and Alaska Native Male',
+                'IA_FEMALE': 'American Indian and Alaska Native Female ',
+                'AA_MALE': 'Asian Male',
+                'AA_FEMALE': 'Asian Female',
+                'NA_MALE': 'Native Hawaiian and Other Pacific Islander Male',
+                'NA_FEMALE': 'Native Hawaiian and Other Pacific Islander Female',
+                'H_MALE': 'Hispanic Male',
+                'H_FEMALE': 'Hispanic Female'}
+        return {keys[ethnic_group]: pop_count for ethnic_group, pop_count in ethnic_dict.items()}
 
     week_predictions = {}
     state_county = userdetails.state_name + "_" + userdetails.county_name
@@ -190,7 +214,7 @@ def forecast(userdetails: UserDetails):
     county = county_data[county_data.index == state_county]
     if len(county) == 0:
         raise ValueError(
-            f'Sorry! We have very limited data for your {userdetails.county_name}. At this moment, we will not be able to forecast. Try again later')
+                f'Sorry! We have very limited data for your {userdetails.county_name}. At this moment, we will not be able to forecast. Try again later')
     fips = int(county['fips'])  # Use fips to fetch data from ethnic and age groups file
     county.drop('fips', axis=1, inplace=True)
     county = dynamic(county)
@@ -201,13 +225,21 @@ def forecast(userdetails: UserDetails):
     for i in range(7):
         label_col = calc_n_days_after_date(date, n_days=1)
         test_preds = predict(county.values)
-        week_predictions[label_col] = test_preds[0]
+        week_predictions[label_col] = int(test_preds[0])
         county[label_col] = pd.Series(test_preds, dtype=int, index=county.index)
         county = dynamic(county)
         date = label_col
 
     mean_pred = algorithm(week_predictions, fips, age_grp, ethnicity)
-    return {'p_score': mean_pred}
+    ethics_n_age_groups = fetch_ethnic_age_data(fips)
+    age_wise_population = get_population_age_wise(ethics_n_age_groups)
+    ethnicity_wise_population = get_population_ethnicity_wise(ethics_n_age_groups)
+    final_json = {}
+    final_json['week_forecasts'] = week_predictions
+    final_json['p_score'] = mean_pred
+    final_json['age_splits'] = age_wise_population
+    final_json['ethnicity_splits'] = mask_keys(ethnicity_wise_population)
+    return final_json
 
 
 @app.get('/v1/variable_importance')
@@ -217,3 +249,13 @@ def get_variable_importance():
     imp_dict = {x: y for x, y in zip(columns, importances) if '/' not in x}
     imp_dict_sorted = sorted(imp_dict.items(), key=operator.itemgetter(1), reverse=True)
     return {x: y for x, y in imp_dict_sorted}
+
+
+# u = UserDetails
+# u.ethnicity = 'BA_FEMALE'
+# u.age_group = '20-24'
+# u.state_name = 'Massachusetts'
+# u.county_name = 'Worcester'
+# from pprint import pprint
+#
+# pprint(forecast(u), indent=4)
