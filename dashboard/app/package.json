@@ -29,7 +29,8 @@
     "vue-autosuggest": "^2.1.1",
     "axios": "^0.19.2",
     "vuewordcloud": "^18.7.11",
-    "vue-chartjs": "^3.5.0"
+    "vue-chartjs": "^3.5.0",
+    "chart.js": "^2.9.3"
   },
   "eslintConfig": {
     "root": true,
