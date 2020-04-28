@@ -57,12 +57,18 @@ def get_variables():
 
 @app.get("/v1/stocks")
 def get_stocks():
-
     return {'data':json.load(open(COVID19_DATA_PATH+'/'+'stocks.json'))}
 
 @app.get("/v1/global_confirmed")
 def get_global_confirmed():
     return {'data':json.load(open(COVID19_DATA_PATH+'/'+'world_count.json'))}
 
+@app.get("/v1/currencies")
+def get_currencies():
+    return {'data':json.load(open(COVID19_DATA_PATH+'/'+'currencies.json'))}
+
+@app.get("/v1/crypto")
+def get_currencies():
+    return {'data':json.load(open(COVID19_DATA_PATH+'/'+'crypto.json'))}
 
 print(get_stocks())
