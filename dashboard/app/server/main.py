@@ -1,7 +1,9 @@
 from fastapi import FastAPI
 from covid19 import database as db
 from fastapi.middleware.cors import CORSMiddleware
+from scipy.special import expit
 import json
+import operator
 from covid19 import COUNTIES, ETHNICITIES, COVID19_DATA_PATH
 import random
 from fastapi import FastAPI
@@ -14,9 +16,7 @@ import datetime
 from covid19.utils import calc_n_days_after_date, get_time_series_cols
 import itertools
 
-
 app = FastAPI()
-
 
 origins = [
     "http://localhost",
@@ -24,11 +24,11 @@ origins = [
 ]
 
 app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+        CORSMiddleware,
+        allow_origins=origins,
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
 )
 
 
@@ -45,8 +45,7 @@ def get_county():
     #     counties.append(coll["combined_key"].replace("|", ", "))
     # with open('/Users/prathyushsp/Git/covid19_research/covid19/data/COUNTIES.json', 'w') as f:
     #     json.dump(counties, f, indent=2)
-    return {'data':COUNTIES}
-
+    return {'data': COUNTIES}
 
 
 @app.get("/v1/ethnicity")
@@ -57,56 +56,37 @@ def get_ethnicity():
     #     counties.append(coll["combined_key"].replace("|", ", "))
     # with open('/Users/prathyushsp/Git/covid19_research/covid19/data/COUNTIES.json', 'w') as f:
     #     json.dump(counties, f, indent=2)
-    return {'data':ETHNICITIES}
+    return {'data': ETHNICITIES}
 
 
 @app.get("/v1/modelVariables")
 def get_variables():
-    return {'data':[[e[:5],random.uniform(0, 1)] for e in ETHNICITIES]}
+    return {'data': [[e[:5], random.uniform(0, 1)] for e in ETHNICITIES]}
+
 
 @app.get("/v1/stocks")
 def get_stocks():
-    return {'data':json.load(open(COVID19_DATA_PATH+'/'+'stocks.json'))}
+    return {'data': json.load(open(COVID19_DATA_PATH + '/' + 'stocks.json'))}
+
 
 @app.get("/v1/global_confirmed")
 def get_global_confirmed():
-    return {'data':json.load(open(COVID19_DATA_PATH+'/'+'world_count.json'))}
+    return {'data': json.load(open(COVID19_DATA_PATH + '/' + 'world_count.json'))}
+
 
 @app.get("/v1/currencies")
 def get_currencies():
-    return {'data':json.load(open(COVID19_DATA_PATH+'/'+'currencies.json'))}
+    return {'data': json.load(open(COVID19_DATA_PATH + '/' + 'currencies.json'))}
+
 
 @app.get("/v1/crypto")
 def get_currencies():
-    return {'data':json.load(open(COVID19_DATA_PATH+'/'+'crypto.json'))}
+    return {'data': json.load(open(COVID19_DATA_PATH + '/' + 'crypto.json'))}
 
 
 @app.get("/v1/mobility")
 def get_mobility():
     return {'data': json.load(open(COVID19_DATA_PATH + '/ui/' + 'mobility.json'))}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 class UserDetails(BaseModel):
@@ -193,4 +173,11 @@ def forecast(userdetails: UserDetails):
     mean_pred = algorithm(week_predictions, fips, age_grp, ethnicity)
     return {'p_score': mean_pred}
 
-# print(get_stocks())
+
+@app.get('/v1/variable_importance')
+def get_variable_importance():
+    columns = json.load(open(f'{COVID19_DATA_PATH}/columns_used.json'))['columns']
+    importances = rf_model.feature_importances_
+    imp_dict = {x: y for x, y in zip(columns, importances) if '/' not in x}
+    imp_dict_sorted = sorted(imp_dict.items(), key=operator.itemgetter(1), reverse=True)
+    return {x: y for x, y in imp_dict_sorted}
