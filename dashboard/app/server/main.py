@@ -225,7 +225,7 @@ def forecast(userdetails: UserDetails):
     for i in range(7):
         label_col = calc_n_days_after_date(date, n_days=1)
         test_preds = predict(county.values)
-        week_predictions[label_col] = test_preds[0]
+        week_predictions[label_col] = int(test_preds[0])
         county[label_col] = pd.Series(test_preds, dtype=int, index=county.index)
         county = dynamic(county)
         date = label_col
@@ -234,9 +234,12 @@ def forecast(userdetails: UserDetails):
     ethics_n_age_groups = fetch_ethnic_age_data(fips)
     age_wise_population = get_population_age_wise(ethics_n_age_groups)
     ethnicity_wise_population = get_population_ethnicity_wise(ethics_n_age_groups)
-
-    return {'p_score': mean_pred, 'age_splits': age_wise_population,
-            'ethnicity_splits': mask_keys(ethnicity_wise_population)}
+    final_json = {}
+    final_json['week_forecasts'] = week_predictions
+    final_json['p_score'] = mean_pred
+    final_json['age_splits'] = age_wise_population
+    final_json['ethnicity_splits'] = mask_keys(ethnicity_wise_population)
+    return final_json
 
 
 @app.get('/v1/variable_importance')
@@ -246,6 +249,7 @@ def get_variable_importance():
     imp_dict = {x: y for x, y in zip(columns, importances) if '/' not in x}
     imp_dict_sorted = sorted(imp_dict.items(), key=operator.itemgetter(1), reverse=True)
     return {x: y for x, y in imp_dict_sorted}
+
 
 u = UserDetails
 u.ethnicity = 'BA_FEMALE'
