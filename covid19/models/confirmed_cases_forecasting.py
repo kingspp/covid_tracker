@@ -91,8 +91,9 @@ def dynamic(features, end_date, label_col='', test=False):
 
 
 def get_history_data(df, end_date):
+    # TODO: fix the unknown bug here - end_date is being ignored
     cols = list(df.columns)
-    end_date_idx = cols.index(end_date)
+    end_date_idx = cols.index(end_date) + 1
     start_date_idx = end_date_idx - TOTAL_HISTORY
     if start_date_idx < 0:
         raise Exception(f"Invalid end date -> {end_date}. Start date index resulted in {start_date_idx}")
@@ -214,11 +215,13 @@ def run():
 
     label_col = train_features.columns[-1]  # '4/26/20'
     end_date = train_features.columns[-2]  # '4/25/20'
-
     train_data, train_label = dynamic(train_features, end_date, label_col)
     test_data, test_label = dynamic(test_features, end_date, label_col)
     print(train_data.shape, train_label.shape)
     print(test_data.shape, test_label.shape)
+
+    print(list(train_data.columns))
+    json.dump({'columns': list(train_data.columns)}, open('../data/columns_used.json', 'w'))
 
     model = RFModel()
     model._fit(train_data.values, train_label.values)
@@ -231,7 +234,6 @@ def run():
     today_date = '4/26/20'
     # Shifting by one day
     for _ in range(0, 4):
-        print('test columns', list(test_features.columns))
         # Replacing predictions with existing data
         test_features[label_col] = pd.Series(test_preds, index=test_label.index, dtype=int)
 

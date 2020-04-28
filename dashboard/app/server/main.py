@@ -1,7 +1,9 @@
 from fastapi import FastAPI
 from covid19 import database as db
 from fastapi.middleware.cors import CORSMiddleware
+from scipy.special import expit
 import json
+import operator
 from covid19 import COUNTIES, ETHNICITIES, COVID19_DATA_PATH
 import random
 from fastapi import FastAPI
@@ -14,7 +16,9 @@ import datetime
 from covid19.utils import calc_n_days_after_date, get_time_series_cols
 import itertools
 
+
 app = FastAPI()
+
 
 origins = [
     "http://localhost",
@@ -22,11 +26,11 @@ origins = [
 ]
 
 app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+        CORSMiddleware,
+        allow_origins=origins,
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
 )
 
 
@@ -205,4 +209,11 @@ def forecast(userdetails: UserDetails):
     mean_pred = algorithm(week_predictions, fips, age_grp, ethnicity)
     return {'p_score': mean_pred}
 
-# print(get_stocks())
+
+@app.get('/v1/variable_importance')
+def get_variable_importance():
+    columns = json.load(open(f'{COVID19_DATA_PATH}/columns_used.json'))['columns']
+    importances = rf_model.feature_importances_
+    imp_dict = {x: y for x, y in zip(columns, importances) if '/' not in x}
+    imp_dict_sorted = sorted(imp_dict.items(), key=operator.itemgetter(1), reverse=True)
+    return {x: y for x, y in imp_dict_sorted}
