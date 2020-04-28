@@ -29,6 +29,17 @@
     Vue.use(VTooltip);
 
 
+    import ECharts from 'vue-echarts'
+    Vue.component('v-chart', ECharts);
+
+
+    import Axios from "axios";
+    Vue.prototype.$http = Axios;
+
+    import config from "./config";
+    Vue.prototype.$config = config;
+
+
 
     import {library} from '@fortawesome/fontawesome-svg-core'
     import {
