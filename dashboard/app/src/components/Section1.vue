@@ -142,6 +142,8 @@
     import LineChart from './LineChart'
     import BarChart from './BarChart'
 
+    import * as changeCase from "change-case";
+
     export default {
         name: 'Section1',
         components: {LineChart, BarChart},

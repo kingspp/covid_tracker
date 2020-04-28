@@ -40,50 +40,60 @@
                 </div>
             </div>
 
-            <div class="row" style="padding-top: 100px">
+            <div class="row" style="padding-top: 100px; min-height: 400px">
                 <div class="col-md-2">
                     <h2>Probability:</h2>
                     <span style="font-size: 80px">{{probability}}</span>
+                </div>
+
+                <div class="col-md-4">
+                    <h2>Ethnicity Split:</h2>
+                    <pie-chart
+                            v-if="ethnicitySplitChartLoaded"
+                            :chartdata="ethnicitySplitChartData"
+                            :options="pieChartOptions"/>
                 </div>
             </div>
 
             <div class="row" style="height: 400px">
                 <span>Variables:</span>
                 <div class="col-md-8 offset-1">
-                    <vue-word-cloud
-                            style="position:absolute;"
-                            :words="words"
-                            :color="colors"
-                            :spacing="spacing"
-                            :snackbarText="''"
-                            :progressVisible="true"
-                            font-family="Roboto">
-                        <template slot-scope="{text, weight}">
-                            <div :title="text+' (W:'+ weight+')'" style="cursor: pointer;">
-                                <div style="text-align: center;">{{text}}</div>
-                            </div>
-                        </template>
-                    </vue-word-cloud>
+                    <span v-html="variablesUsed" style="font-size: 24px; text-align: justify;"></span>
+<!--                    <vue-word-cloud-->
+<!--                            style="position:absolute;"-->
+<!--                            :words="words"-->
+<!--                            :color="colors"-->
+<!--                            :spacing="spacing"-->
+<!--                            :snackbarText="''"-->
+<!--                            :progressVisible="true"-->
+<!--                            font-family="Roboto">-->
+<!--                        <template slot-scope="{text, weight}">-->
+<!--                            <div :title="text+' (W:'+ weight+')'" style="cursor: pointer;">-->
+<!--                                <div style="text-align: center;">{{text}}</div>-->
+<!--                            </div>-->
+<!--                        </template>-->
+<!--                    </vue-word-cloud>-->
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col" style="color: black; font-size: 60px;">
-                    <div style="">
-                        <font-awesome-icon icon="chevron-down"/>
-                    </div>
-                </div>
-            </div>
+<!--            <div class="row">-->
+<!--                <div class="col" style="color: black; font-size: 60px;">-->
+<!--                    <div style="">-->
+<!--                        <font-awesome-icon icon="chevron-down"/>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
         </div>
     </section>
 </template>
 
 <script>
-    import VueWordCloud from 'vuewordcloud';
+    // import VueWordCloud from 'vuewordcloud';
     import AutosuggestInstanceCounty from "./AutosuggestInstanceCounty";
     import AutosuggestInstanceEthnicity from "./AutosuggestInstanceEthnicity";
     import AutosuggestInstanceAge from "./AutosuggestInstanceAge";
-    // import Vue from 'vue';
+    import PieChart from './PieChart'
+    import {capitalCase} from "change-case";
 
     // Vue.component(VueWordCloud.name, VueWordCloud);
 
@@ -94,7 +104,8 @@
             AutosuggestInstanceCounty,
             AutosuggestInstanceEthnicity,
             AutosuggestInstanceAge,
-            VueWordCloud
+            PieChart
+            // VueWordCloud
         },
         data: function () {
             return {
@@ -105,16 +116,47 @@
                 // rotationItemIndex: undefined,
                 // snackbarText: '',
                 // snackbarVisible: false,
+                ethnicitySplitChartLoaded: false,
                 selectedEthnicity: '',
                 selectedCounty: '',
                 selectedAge:'',
                 spacing: 2,
                 probability:'',
+                variablesUsed:'',
+                ethnicitySplitChartData: {},
+                pieChartOptions: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    elements: {
+                        point: {
+                            radius: 0
+                        }
+                    }
+                },
                 // spacingValueIndex: 1,
                 // spacingValues: [0, 1 / 4, 1 / 2, 1, 2],
                 words: [['White', 0.6083505425400902], ['White', 0.873334764652425], ['Black', 0.9569713630340182], ['Black', 0.692588690952467], ['Ameri', 0.9232343696463737], ['Ameri', 0.2890185759097694], ['Asian', 0.10240036496155547], ['Asian', 0.20034511319586623], ['Nativ', 0.3544325155788284], ['Nativ', 0.3764106852907453], ['Not H', 0.9259030432889365], ['Not H', 0.12907901908498953], ['Not H', 0.5889146131102185], ['Not H', 0.1700541238783856], ['Not H', 0.5227741919367936], ['Not H', 0.38231429809007367], ['Not H', 0.35622667506597316], ['Not H', 0.05445444888944573], ['Not H', 0.3084309425580064], ['Not H', 0.19271706815968004], ['Not H', 0.3744384326588812], ['Not H', 0.2972297192053355], ['Hispa', 0.9242233028438677], ['Hispa', 0.9783904855518989], ['Hispa', 0.10486372234965613], ['Hispa', 0.2960361219630039], ['Hispa', 0.6243363487202025], ['Hispa', 0.30796248001651205], ['Hispa', 0.253007227205585], ['Hispa', 0.17970213881722807], ['Hispa', 0.9491128197493495], ['Hispa', 0.21508787147161834], ['Hispa', 0.6856650223772554], ['Hispa', 0.9269017784952683]],
                 colors: ([, weight]) => weight > 0.9 ? '#F11712' : weight > 0.75 ? '#B3384D' : weight > 0.35 ? '#6C5F90' : '#0099F7'
             }
+        },
+        mounted: function(){
+            console.log('Mounted');
+            var self=this;
+            this.$http.get(this.$config.url+'variable_importance').then(function (response) {
+                // handle success
+                let vars = Object.keys(response.data).map(u => capitalCase(u));
+                vars.push("Population Density");
+                vars = {"demog":vars};
+                vars["derived"] = ["R0", "Fatality Rate", "Confirmed Rate"];
+                vars["time"] = ["Confirmed Cases", "Active Cases", "Deaths", "Confirmed Delta", "Active Delta"];
+                self.variablesUsed = '<li><b>Demographics/Static: </b>'+vars["demog"]+'</li>'
+                +'<li><b>Derived: </b>'+vars["derived"]+'</li>'
+                    +'<li><b>Time Series: </b>'+vars["time"]+'</li>';
+            })
+                .catch(function (error) {
+                    // handle error
+                    console.log(error);
+                });
         },
         watch: {
             progress: function (currentProgress, previousProgress) {
@@ -145,7 +187,8 @@
 
                     Promise.all([promise]).then(values => {
                         console.log(values[0]);
-                        this.probability = values[0].data.p_score
+                        this.probability = values[0].data.p_score.toFixed(2) + "%";
+                        
                     });
                 }
 
