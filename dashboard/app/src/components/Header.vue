@@ -30,7 +30,7 @@
                         <h1 style="color:white">COVID-19
                             <span
                                     class="txt-rotate"
-                                    data-period="8000"
+                                    data-period="4000"
                                     data-rotate='[ "has impacted over 119 countries.", "has infected 2m people of which 38% have recovered!"]'></span>
                         </h1>
 
