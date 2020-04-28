@@ -31,7 +31,8 @@
     "vuewordcloud": "^18.7.11",
     "vue-chartjs": "^3.5.0",
     "chart.js": "^2.9.3",
-    "change-case": "^4.1.1"
+    "change-case": "^4.1.1",
+    "vue-lodash": "^2.1.2"
   },
   "eslintConfig": {
     "root": true,

@@ -116,7 +116,7 @@ def get_currencies():
 
 
 @app.get("/v1/crypto")
-def get_currencies():
+def get_crypto():
     return {'data': json.load(open(COVID19_DATA_PATH + '/' + 'crypto.json'))}
 
 

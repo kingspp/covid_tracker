@@ -46,9 +46,9 @@
                             :options="lineChartOptions"/>
                 </div>
             </div>
-        </div>
+            <!--        </div>-->
 
-        <div class="container-fluid">
+            <!--        <div class="container-fluid">-->
             <h2 class="text-center" style="padding-top: 60px">Impact of Social Distancing and Masks</h2>
             <div class="row" style="padding-top: 100px">
                 <div class="col-md-6">
@@ -58,14 +58,13 @@
                     <div class="row">
                         <div class="col">
                             <bar-chart
-                                    v-if="currencyChartLoaded"
-                                    :chartdata="currencyChartData"
+                                    v-if="mobChartLoaded"
+                                    :chartdata="mobChartData"
                                     :options="lineChartOptions"/>
                         </div>
                     </div>
                     <div class="row">
                         <li>Irrespective of increase in cases, USD remains world's reserve currency</li>
-                        -->
                         <li>Even crypto-currencies are not spared!</li>
                         <li>Hold on to your dollars $$!</li>
                         [Source: Investing]
@@ -74,19 +73,21 @@
                 </div>
                 <div class="col-md-6">
                     <div class="row">
-                        <div class="col"><h2 class="text-center;">Confirmed Cases vs New Cases</h2></div>
+                        <div class="col"><h2 class="text-center;">Recovery Factor</h2></div>
                     </div>
                     <div class="row">
-                        <div class="col">
-                            <bar-chart
-                                    v-if="cryptoChartLoaded"
-                                    :chartdata="cryptoChartData"
-                                    :options="lineChartOptions"/>
+                        <div style="width:100%;  overflow-y: scroll;">
+                            <div :style="{ height:(this.recChartData.length * 60) + 'px'}">
+                                <horizontal-bar-chart
+                                        v-if="recChartLoaded"
+                                        :chartdata="recChartData"
+                                        :options="recChartOptions"/>
+                            </div>
                         </div>
+
                     </div>
                     <div class="row">
                         <li>Irrespective of increase in cases, USD remains world's reserve currency</li>
-                        -->
                         <li>Even crypto-currencies are not spared!</li>
                         <li>Hold on to your dollars $$!</li>
                         [Source: Investing]
@@ -95,49 +96,48 @@
                 </div>
             </div>
 
-            <div class="row" style="padding-top: 100px">
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col"><h2 class="text-center">Recovery Factor</h2></div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <bar-chart
-                                    v-if="currencyChartLoaded"
-                                    :chartdata="currencyChartData"
-                                    :options="lineChartOptions"/>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <li>Irrespective of increase in cases, USD remains world's reserve currency</li>
-                        <li>Even crypto-currencies are not spared!</li>
-                        <li>Hold on to your dollars $$!</li>
-                        [Source: Investing]
-                    </div>
+            <!--            <div class="row" style="padding-top: 100px">-->
+            <!--                <div class="col-md-6">-->
+            <!--                    <div class="row">-->
+            <!--                        <div class="col"><h2 class="text-center">Recovery Factor</h2></div>-->
+            <!--                    </div>-->
+            <!--                    <div class="row">-->
+            <!--                        <div class="col">-->
+            <!--                            <bar-chart-->
+            <!--                                    v-if="currencyChartLoaded"-->
+            <!--                                    :chartdata="currencyChartData"-->
+            <!--                                    :options="lineChartOptions"/>-->
+            <!--                        </div>-->
+            <!--                    </div>-->
+            <!--                    <div class="row">-->
+            <!--                        <li>Irrespective of increase in cases, USD remains world's reserve currency</li>-->
+            <!--                        <li>Even crypto-currencies are not spared!</li>-->
+            <!--                        <li>Hold on to your dollars $$!</li>-->
+            <!--                        [Source: Investing]-->
+            <!--                    </div>-->
 
-                </div>
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col"><h2 class="text-center;">Confirmed Deaths vs New Deaths</h2></div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <bar-chart
-                                    v-if="cryptoChartLoaded"
-                                    :chartdata="cryptoChartData"
-                                    :options="lineChartOptions"/>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <li>Irrespective of increase in cases, USD remains world's reserve currency</li>
-                        -->
-                        <li>Even crypto-currencies are not spared!</li>
-                        <li>Hold on to your dollars $$!</li>
-                        [Source: Investing]
-                    </div>
+            <!--                </div>-->
+            <!--                <div class="col-md-6">-->
+            <!--                    <div class="row">-->
+            <!--                        <div class="col"><h2 class="text-center;">Confirmed Deaths vs New Deaths</h2></div>-->
+            <!--                    </div>-->
+            <!--                    <div class="row">-->
+            <!--                        <div class="col">-->
+            <!--                            <bar-chart-->
+            <!--                                    v-if="cryptoChartLoaded"-->
+            <!--                                    :chartdata="cryptoChartData"-->
+            <!--                                    :options="lineChartOptions"/>-->
+            <!--                        </div>-->
+            <!--                    </div>-->
+            <!--                    <div class="row">-->
+            <!--                        <li>Irrespective of increase in cases, USD remains world's reserve currency</li>-->
+            <!--                        <li>Even crypto-currencies are not spared!</li>-->
+            <!--                        <li>Hold on to your dollars $$!</li>-->
+            <!--                        [Source: Investing]-->
+            <!--                    </div>-->
 
-                </div>
-            </div>
+            <!--                </div>-->
+            <!--            </div>-->
 
         </div>
     </section>
@@ -146,12 +146,22 @@
 <script>
     import LineChart from './LineChart'
     import BarChart from './BarChart'
+    import HorizontalBarChart from './HorizontalBarChart'
 
     import * as changeCase from "change-case";
 
+
+    import Vue from 'vue'
+    import VueLodash from 'vue-lodash'
+    import lodash from 'lodash'
+
+    // name is optional
+    Vue.use(VueLodash, {name: 'custom', lodash: lodash});
+
+
     export default {
         name: 'Section1',
-        components: {LineChart, BarChart},
+        components: {LineChart, BarChart, HorizontalBarChart},
         data: () => ({
             currencyChartLoaded: false,
             stockChartLoaded: false,
@@ -159,12 +169,60 @@
             stockChartData: {},
             currencyChartData: {},
             cryptoChartData: {},
+            mobChartLoaded: false,
+            mobChartData: {},
+            confirmChartLoaded: false,
+            confirmChartData: {},
+            recChartLoaded: false,
+            recChartData: {},
+            chance_of_recovery: {},
             lineChartOptions: {
                 responsive: true,
                 maintainAspectRatio: false,
                 elements: {
                     point: {
                         radius: 0
+                    }
+                }
+            },
+            recChartOptions: {
+                legend: {display: false},
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    xAxes: [
+                        {
+                            type: "logarithmic"
+                        }
+                    ],
+                    yAxes: [
+                        {
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }
+                    ]
+                },
+                tooltips: {
+                    enabled: false,
+                    mode: "single",
+                    callbacks: {
+                        footer: function (tooltipItems, data) {
+                            return (
+                                "Rank: " +
+                                (tooltipItems[0].index + 1) +
+                                "\nConfirmed: " +
+                                this.chance_of_recovery[tooltipItems[0].index].confirmed +
+                                "\nRecovered: " +
+                                this.chance_of_recovery[tooltipItems[0].index].recovered +
+                                "\nDeaths: " +
+                                this.chance_of_recovery[tooltipItems[0].index].deaths +
+                                "\nMedian Age: " +
+                                this.chance_of_recovery[tooltipItems[0].index].medianAge +
+                                "\nPopulation: " +
+                                this.chance_of_recovery[tooltipItems[0].index].population
+                            );
+                        }
                     }
                 }
             }
@@ -176,7 +234,11 @@
                 const stockDataPromise = this.$http.get(this.$config.url + 'stocks');
                 const currencyDataPromise = this.$http.get(this.$config.url + 'currencies');
                 const cryptoDataPromise = this.$http.get(this.$config.url + 'crypto');
+                const mobilityDataPromise = this.$http.get(this.$config.url + 'mobility');
                 // {"red":"","orange":"","yellow":"","green":"","blue":"","purple":"","grey":""}"
+
+                const medianAgePromise = this.$http.get("https://raw.githubusercontent.com/kingspp/covid19_research/master/covid19/data/medianAgeDashboard.json");
+                const covidCountries = this.$http.get("https://corona-api.com/countries");
                 Promise.all([stockDataPromise]).then(values => {
 
                     let x = [];
@@ -273,6 +335,77 @@
                     this.cryptoChartData = cryptoChartData;
                     this.cryptoChartLoaded = true
                 });
+
+                Promise.all([mobilityDataPromise]).then(values => {
+                    let s = values[0].data.data[2].mob;
+                    let x = Object.keys(s);
+                    let mobChartData = {labels: x, datasets: []};
+                    let colors = ['rgb(255, 99, 132)', 'rgb(255, 159, 64)', 'rgb(255, 205, 86)', 'rgb(75, 192, 192)',
+                        'rgb(54, 162, 235)', 'rgb(153, 102, 255)', "#000000"];
+                    for (let coun = 0; coun < values[0].data.data.length; coun++) {
+                        const data = values[0].data.data[coun].mob;
+                        mobChartData['datasets'].push({
+                            "label": values[0].data.data[coun].country,
+                            fill: false,
+                            backgroundColor: values[0].data.data[coun].country === 'COVID-19' ? "#000000" : colors[coun],
+                            borderColor: values[0].data.data[coun].country === 'COVID-19' ? "#000000" : colors[coun],
+                            "data": Object.values(data)
+                        })
+                    }
+                    this.mobChartData = mobChartData;
+                    this.mobChartLoaded = true
+                });
+
+                Promise.all([medianAgePromise, covidCountries]).then(value => {
+
+                    function updateRelComp(covidData, i, medianAge, factor, origFactor) {
+                        let countryName = covidData.data[i].name.trim();
+                        return {
+                            population: covidData.data[i].population,
+                            country: covidData.data[i].name.trim(),
+                            medianAge: medianAge[countryName],
+                            deaths: covidData.data[i].latest_data["deaths"],
+                            confirmed: covidData.data[i].latest_data["confirmed"],
+                            recovered: covidData.data[i].latest_data["recovered"],
+                            factor: factor,
+                        };
+                    }
+
+                    console.log(value);
+                    var medianAge = value[0].data;
+                    var chance_of_recovery = {};
+
+                    let covidData = value[1].data;
+                    for (let i = 0; i < covidData.data.length; i++) {
+                        if (
+                            medianAge[covidData.data[i].name.trim()] !== undefined &&
+                            covidData.data[i].latest_data["deaths"] !== 0 &&
+                            covidData.data[i].latest_data["recovered"] !== 0
+                        ) {
+                            let countryName = covidData.data[i].name.trim();
+                            let factor =
+                                Math.round(((covidData.data[i].latest_data["recovered"] + 1e-5) /
+                                    (covidData.data[i].latest_data["deaths"] + 1e-5)) *
+                                    (1 / (medianAge[countryName] / 100)) * 100) / 100;
+                            chance_of_recovery[countryName] = updateRelComp(covidData, i, medianAge, factor);
+                        }
+                    }
+                    chance_of_recovery = this._.orderBy(chance_of_recovery, ["factor"], ["desc"]);
+                    console.log('chance: ', chance_of_recovery);
+                    this.recChartData = {
+                        labels: this._.map(chance_of_recovery, "country"),
+                        datasets: [
+                            {
+                                label: "Recovery Factor",
+                                data: this._.map(chance_of_recovery, "factor"),
+                                borderWidth: 1,
+                                // backgroundColor: gradients
+                            }
+                        ]
+                    };
+                    this.recChartLoaded=true;
+
+                })
 
             } catch (e) {
                 console.error(e)
