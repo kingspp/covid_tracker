@@ -6,8 +6,7 @@
             "grocery_and_pharmacy_percent_change_from_baseline": -21.56140350877193,
             "parks_percent_change_from_baseline": -18.736842105263158,
             "transit_stations_percent_change_from_baseline": -27.56140350877193,
-            "workplaces_percent_change_from_baseline": -24.50877192982456,
-            "residential_percent_change_from_baseline": 11.31578947368421
+            "workplaces_percent_change_from_baseline": -24.50877192982456
         },
         "y": [
             0,
@@ -105,10 +104,9 @@
         "mob": {
             "retail_and_recreation_percent_change_from_baseline": -20.736842105263158,
             "grocery_and_pharmacy_percent_change_from_baseline": -2.6842105263157894,
-            "parks_percent_change_from_baseline": 13.578947368421053,
+            "parks_percent_change_from_baseline": -13.578947368421053,
             "transit_stations_percent_change_from_baseline": -17.736842105263158,
-            "workplaces_percent_change_from_baseline": -6.859649122807017,
-            "residential_percent_change_from_baseline": 7.421052631578948
+            "workplaces_percent_change_from_baseline": -6.859649122807017
         },
         "y": [
             1,
@@ -208,8 +206,7 @@
             "grocery_and_pharmacy_percent_change_from_baseline": 0.9298245614035088,
             "parks_percent_change_from_baseline": -2.263157894736842,
             "transit_stations_percent_change_from_baseline": -17.54385964912281,
-            "workplaces_percent_change_from_baseline": 3.5789473684210527,
-            "residential_percent_change_from_baseline": 3.192982456140351
+            "workplaces_percent_change_from_baseline": -3.5789473684210527
         },
         "y": [
             1,
@@ -309,8 +306,7 @@
             "grocery_and_pharmacy_percent_change_from_baseline": 2.5040148191781246,
             "parks_percent_change_from_baseline": 11.874344389451133,
             "transit_stations_percent_change_from_baseline": -10.432909011520506,
-            "workplaces_percent_change_from_baseline": -15.800939526538885,
-            "residential_percent_change_from_baseline": 6.7075827805379005
+            "workplaces_percent_change_from_baseline": -15.800939526538885
         },
         "y": [
             1,
