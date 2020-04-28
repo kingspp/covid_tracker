@@ -63,12 +63,11 @@
                                     :options="lineChartOptions"/>
                         </div>
                     </div>
-                    <div class="row">
-                        <li>Irrespective of increase in cases, USD remains world's reserve currency</li>
-                        <li>Even crypto-currencies are not spared!</li>
-                        <li>Hold on to your dollars $$!</li>
-                        [Source: Investing]
+                    <div class="row" style="font-size: 28px">
+                        <li>Mobility data suggests that countries - "South Korea", "Taiwan" and "India" are doing better, given the current scenario</li>
+                        <li>Lack of mobility (Lockdown) reduces the rate of transmission</li>
                     </div>
+                    <span style="font-size: 28px">[Source: Statistics]</span>
 
                 </div>
                 <div class="col-md-6">
@@ -86,12 +85,12 @@
                         </div>
 
                     </div>
-                    <div class="row">
-                        <li>Irrespective of increase in cases, USD remains world's reserve currency</li>
-                        <li>Even crypto-currencies are not spared!</li>
-                        <li>Hold on to your dollars $$!</li>
-                        [Source: Investing]
+                    <div class="row" style="font-size: 30px">
+                        <li>Considering population and median age, recovery factor statistics puts "Singapore" and "Australia" at the top</li>
+                        <li>"UK" is the ranked the least and "US" takes the next place</li>
+                        <li>Prevention is better than cure!</li>
                     </div>
+                    <span style="font-size: 28px">[Source: Statistics]</span>
 
                 </div>
             </div>

@@ -2,7 +2,7 @@
     <section class="question">
         <div class="container-fluid h-100">
             <div class="row">
-                <p><b>Wanna know your chances in this pandemic?</b></p>
+                <p><b>Want to know your chances in this pandemic?</b></p>
             </div>
             <div class="row">
                 <div class="col-md-2">
