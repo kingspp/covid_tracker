@@ -224,3 +224,5 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
+
+dashboard/app/src/config.js

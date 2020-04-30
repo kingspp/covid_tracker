@@ -22,14 +22,16 @@ app = FastAPI()
 origins = [
     "http://localhost",
     "http://localhost:8080",
+    "http://0.0.0.0:8877",
+    "http://104.251.210.60:8877"
 ]
 
 app.add_middleware(
-        CORSMiddleware,
-        allow_origins=origins,
-        allow_credentials=True,
-        allow_methods=["*"],
-        allow_headers=["*"],
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 
@@ -115,7 +117,7 @@ def get_currencies():
 
 
 @app.get("/v1/crypto")
-def get_currencies():
+def get_crypto():
     return {'data': json.load(open(COVID19_DATA_PATH + '/' + 'crypto.json'))}
 
 
@@ -207,7 +209,7 @@ def forecast(userdetails: UserDetails):
         if len(ethnic_age_grps) == 0:
             print(f'No data for {fips}')
             raise ValueError(
-                    'Sorry! We have very limited data for your county. At this moment, we will not be able to forecast. Try again later')
+                'Sorry! We have very limited data for your county. At this moment, we will not be able to forecast. Try again later')
         ethnic_age_grps.drop(['STATE', 'COUNTY', 'STNAME', 'CTYNAME', 'fips'], axis=1, inplace=True)
         return ethnic_age_grps
 
@@ -273,8 +275,6 @@ def forecast(userdetails: UserDetails):
     final_json['age_splits'] = age_wise_population
     final_json['ethnicity_splits'] = mask_keys(ethnicity_wise_population)
     return final_json
-    # print(sum(week_predictions.values()))
-    # return sum(week_predictions.values())
 
 
 @app.get('/v1/variable_importance')
