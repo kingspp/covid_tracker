@@ -2,11 +2,11 @@
     {
         "country": "India",
         "mob": {
-            "retail_and_recreation_percent_change_from_baseline": -30.789473684210527,
-            "grocery_and_pharmacy_percent_change_from_baseline": -21.56140350877193,
-            "parks_percent_change_from_baseline": -18.736842105263158,
-            "transit_stations_percent_change_from_baseline": -27.56140350877193,
-            "workplaces_percent_change_from_baseline": -24.50877192982456
+            "Retail and Recreation": -30.789473684210527,
+            "Grocery and Pharmacy": -21.56140350877193,
+            "Parks": -18.736842105263158,
+            "Transit Stations": -27.56140350877193,
+            "Workplaces": -24.50877192982456
         },
         "y": [
             0,
@@ -102,11 +102,11 @@
     {
         "country": "South Korea",
         "mob": {
-            "retail_and_recreation_percent_change_from_baseline": -20.736842105263158,
-            "grocery_and_pharmacy_percent_change_from_baseline": -2.6842105263157894,
-            "parks_percent_change_from_baseline": -13.578947368421053,
-            "transit_stations_percent_change_from_baseline": -17.736842105263158,
-            "workplaces_percent_change_from_baseline": -6.859649122807017
+            "Retail and Recreation": -20.736842105263158,
+            "Grocery and Pharmacy": -2.6842105263157894,
+            "Parks": -13.578947368421053,
+            "Transit Stations": -17.736842105263158,
+            "Workplaces": -6.859649122807017
         },
         "y": [
             1,
@@ -202,11 +202,11 @@
     {
         "country": "Taiwan",
         "mob": {
-            "retail_and_recreation_percent_change_from_baseline": -10.087719298245615,
-            "grocery_and_pharmacy_percent_change_from_baseline": 0.9298245614035088,
-            "parks_percent_change_from_baseline": -2.263157894736842,
-            "transit_stations_percent_change_from_baseline": -17.54385964912281,
-            "workplaces_percent_change_from_baseline": -3.5789473684210527
+            "Retail and Recreation": -10.087719298245615,
+            "Grocery and Pharmacy": 0.9298245614035088,
+            "Parks": -2.263157894736842,
+            "Transit Stations": -17.54385964912281,
+            "Workplaces": -3.5789473684210527
         },
         "y": [
             1,
@@ -302,11 +302,11 @@
     {
         "country": "United States",
         "mob": {
-            "retail_and_recreation_percent_change_from_baseline": -10.092253716461883,
-            "grocery_and_pharmacy_percent_change_from_baseline": 2.5040148191781246,
-            "parks_percent_change_from_baseline": 11.874344389451133,
-            "transit_stations_percent_change_from_baseline": -10.432909011520506,
-            "workplaces_percent_change_from_baseline": -15.800939526538885
+            "Retail and Recreation": -10.092253716461883,
+            "Grocery and Pharmacy": 2.5040148191781246,
+            "Parks": 11.874344389451133,
+            "Transit Stations": -10.432909011520506,
+            "Workplaces": -15.800939526538885
         },
         "y": [
             1,

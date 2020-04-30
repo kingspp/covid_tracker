@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section class="section-dark">
         <div class="container-fluid">
             <div class="row">
                 <div class="col">
@@ -7,14 +7,14 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 card" style="padding: 50px">
                     <h2 class="text-center">Stock Markets</h2>
                     <line-chart
                             v-if="stockChartLoaded"
                             :chartdata="stockChartData"
                             :options="lineChartOptions"/>
                 </div>
-                <div class="col-md-6" style="font-size: 36px">
+                <div class="col-md-5 offset-1" style="font-size: 36px; text-align: justify">
                     <li>On an average the global economy has suffered losses in excess of $36 Trillion (40% of $90
                         Trillion Global GDP)
                     </li>
@@ -33,17 +33,21 @@
                     <li>Hold on to your dollars $$!</li>
                     [Source: Investing]
                 </div>
-                <div class="col-md-4">
-                    <line-chart
-                            v-if="currencyChartLoaded"
-                            :chartdata="currencyChartData"
-                            :options="lineChartOptions"/>
-                </div>
-                <div class="col-md-4">
-                    <line-chart
-                            v-if="cryptoChartLoaded"
-                            :chartdata="cryptoChartData"
-                            :options="lineChartOptions"/>
+                <div class="col-md-8 card" style="padding: 50px">
+                    <div class="row">
+                        <div class="col-6">
+                            <line-chart
+                                    v-if="currencyChartLoaded"
+                                    :chartdata="currencyChartData"
+                                    :options="lineChartOptions"/>
+                        </div>
+                        <div class="col-6">
+                            <line-chart
+                                    v-if="cryptoChartLoaded"
+                                    :chartdata="cryptoChartData"
+                                    :options="lineChartOptions"/>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!--        </div>-->
@@ -51,7 +55,7 @@
             <!--        <div class="container-fluid">-->
             <h2 class="text-center" style="padding-top: 60px">Impact of Social Distancing and Masks</h2>
             <div class="row" style="padding-top: 100px">
-                <div class="col-md-6">
+                <div class="col-md-5 card offset-1" style="padding:50px">
                     <div class="row">
                         <div class="col"><h2 class="text-center">Google Mobility Report</h2></div>
                     </div>
@@ -64,13 +68,15 @@
                         </div>
                     </div>
                     <div class="row" style="font-size: 28px">
-                        <li>Mobility data suggests that countries - "South Korea", "Taiwan" and "India" are doing better, given the current scenario</li>
+                        <li>Mobility data suggests that countries - "South Korea", "Taiwan" and "India" are doing
+                            better, given the current scenario
+                        </li>
                         <li>Lack of mobility (Lockdown) reduces the rate of transmission</li>
                     </div>
                     <span style="font-size: 28px">[Source: Statistics]</span>
 
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-5 card offset-1" style="padding: 40px">
                     <div class="row">
                         <div class="col"><h2 class="text-center;">Recovery Factor</h2></div>
                     </div>
@@ -85,8 +91,10 @@
                         </div>
 
                     </div>
-                    <div class="row" style="font-size: 30px">
-                        <li>Considering population and median age, recovery factor statistics puts "Singapore" and "Australia" at the top</li>
+                    <div class="row" style="font-size: 30px; text-align: justify">
+                        <li>Considering population and median age, recovery factor statistics puts "Singapore" and
+                            "Australia" at the top
+                        </li>
                         <li>"UK" is the ranked the least and "US" takes the next place</li>
                         <li>Prevention is better than cure!</li>
                     </div>
@@ -402,7 +410,7 @@
                             }
                         ]
                     };
-                    this.recChartLoaded=true;
+                    this.recChartLoaded = true;
 
                 })
 
