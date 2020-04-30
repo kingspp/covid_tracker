@@ -44,12 +44,12 @@
     import {library} from '@fortawesome/fontawesome-svg-core'
     import {
         faVirus, faPeopleArrows, faHouseUser, faHandsWash, faHeadSideMask, faCheck, faVirusSlash, faAngleDoubleRight,
-        faChevronCircleDown, faChevronDown
+        faChevronCircleDown, faChevronDown, faChevronRight
     } from '@fortawesome/free-solid-svg-icons'
     import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 
     library.add(faVirus, faPeopleArrows, faHouseUser, faHandsWash, faHeadSideMask, faCheck, faVirusSlash,
-        faAngleDoubleRight, faChevronCircleDown, faChevronDown);
+        faAngleDoubleRight, faChevronCircleDown, faChevronDown, faChevronRight);
     Vue.component('font-awesome-icon', FontAwesomeIcon);
 
     import {dom} from '@fortawesome/fontawesome-svg-core'
