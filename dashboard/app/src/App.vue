@@ -1,9 +1,11 @@
 <template>
-    <div id="app">
+    <div id="app" class="hide-native-scrollbar">
         <NavBar/>
         <Header/>
+        <Disclaimer/>
         <Section1/>
         <Section10/>
+        <TechStack/>
     </div>
 </template>
 
@@ -13,6 +15,8 @@
     import Header from './components/Header.vue'
     import Section1 from './components/Section1.vue'
     import Section10 from './components/Section10.vue'
+    import Disclaimer from './components/Disclaimer.vue'
+    import TechStack from './components/TechStack.vue'
     import Vue from 'vue'
 
     import {BootstrapVue, IconsPlugin} from 'bootstrap-vue'
@@ -44,12 +48,14 @@
     import {library} from '@fortawesome/fontawesome-svg-core'
     import {
         faVirus, faPeopleArrows, faHouseUser, faHandsWash, faHeadSideMask, faCheck, faVirusSlash, faAngleDoubleRight,
-        faChevronCircleDown, faChevronDown, faChevronRight
+        faChevronCircleDown, faChevronDown, faChevronRight, faDatabase,faPalette, faServer
     } from '@fortawesome/free-solid-svg-icons'
+    import { faRProject, faPython } from '@fortawesome/free-brands-svg-icons'
     import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 
     library.add(faVirus, faPeopleArrows, faHouseUser, faHandsWash, faHeadSideMask, faCheck, faVirusSlash,
-        faAngleDoubleRight, faChevronCircleDown, faChevronDown, faChevronRight);
+        faAngleDoubleRight, faChevronCircleDown, faChevronDown, faChevronRight, faPython, faRProject, faDatabase,
+        faPalette, faServer);
     Vue.component('font-awesome-icon', FontAwesomeIcon);
 
     import {dom} from '@fortawesome/fontawesome-svg-core'
@@ -62,7 +68,9 @@
             NavBar,
             Header,
             Section1,
-            Section10
+            Section10,
+            Disclaimer,
+            TechStack
         }
     }
 
@@ -89,6 +97,19 @@
         border-bottom: solid #42b983 5px !important;
         outline: 0 !important;
         font-size: 40px;
+    }
+
+    ::-webkit-scrollbar {display:none;}
+
+
+    .section-dark{
+        background: #F8F8F8
+    }
+
+    .card{
+        border-radius: 5px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)!important;
+        padding: 50px;
     }
 
 
