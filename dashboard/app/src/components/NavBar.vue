@@ -24,7 +24,7 @@
 <!--                        <b-dropdown-item href="#">RU</b-dropdown-item>-->
 <!--                        <b-dropdown-item href="#">FA</b-dropdown-item>-->
 <!--                    </b-nav-item-dropdown>-->
-                    <b-nav-item href="#"><span style="color:white;font-weight: bold; font-size: 20px">@teamcorona</span></b-nav-item>
+                    <b-nav-item href="#"><span style="color:white;font-weight: bold; font-size: 20px">@teamcoronago</span></b-nav-item>
 <!--                    <b-nav-item-dropdown right>-->
                         <!-- Using 'button-content' slot -->
 <!--                        <template v-slot:button-content>-->
