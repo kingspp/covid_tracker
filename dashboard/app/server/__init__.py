@@ -45,3 +45,14 @@ file_exists_check(ethnic_age_splits_file,
                   'Ethnicity and Age groups affected with covid data file not found.')
 ethnic_age_splits_affected = pd.read_csv(ethnic_age_splits_file)
 print(f'Ethnicity and Age groups affected with covid data loaded successfully. Path -> {ethnic_age_splits_file}')
+
+
+age_dict = ["< 18", "18-44", "45-64", "65-74", "75+"]
+
+ethnic_groups = [
+    "American Indian or Alaska Native",
+    "Asian",
+    "Black or African American",
+    "Native Hawaiian or other Pacific Islander",
+    "White",
+    "Other"]
