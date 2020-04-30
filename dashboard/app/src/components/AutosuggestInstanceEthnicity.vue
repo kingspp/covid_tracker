@@ -97,7 +97,7 @@
                 let {name, item} = suggestion;
                 // return name === "hotels" ? item.title : item.name;
                 // console.log(item);
-                this.selectedEthnicity = item.key;
+                this.selectedEthnicity = item.val;
                 this.$emit('ethnicity-selected', this.selectedEthnicity);
                 return item.val;
             }

@@ -54,24 +54,11 @@ def get_county():
 
 @app.get("/v1/age")
 def get_age_group():
-    return {'data': [{'key': '1', 'val': '0-4'},
-                     {'key': '2', 'val': '5-9'},
-                     {'key': '3', 'val': '10-14'},
-                     {'key': '4', 'val': '15-19'},
-                     {'key': '5', 'val': '20-24'},
-                     {'key': '6', 'val': '25-29'},
-                     {'key': '7', 'val': '30-34'},
-                     {'key': '8', 'val': '35-39'},
-                     {'key': '9', 'val': '40-44'},
-                     {'key': '10', 'val': '45-49'},
-                     {'key': '11', 'val': '50-54'},
-                     {'key': '12', 'val': '55-59'},
-                     {'key': '13', 'val': '60-64'},
-                     {'key': '14', 'val': '65-69'},
-                     {'key': '15', 'val': '70-74'},
-                     {'key': '16', 'val': '75-79'},
-                     {'key': '17', 'val': '80-84'},
-                     {'key': '18', 'val': '85'}]}
+    return {'data':[{'key': '1', 'val': '< 18'},
+ {'key': '2', 'val': '18-44'},
+ {'key': '3', 'val': '45-64'},
+ {'key': '4', 'val': '65-74'},
+ {'key': '5', 'val': '75+'}]}
 
 
 @app.get("/v1/ethnicity")
@@ -82,19 +69,12 @@ def get_ethnicity():
     #     counties.append(coll["combined_key"].replace("|", ", "))
     # with open('/Users/prathyushsp/Git/covid19_research/covid19/data/COUNTIES.json', 'w') as f:
     #     json.dump(counties, f, indent=2)
-    return {'data': [{'key': 'WA_MALE', 'val': 'White Male'},
-                     {'key': 'WA_FEMALE', 'val': 'White Female'},
-                     {'key': 'BA_MALE', 'val': 'Black or African Male'},
-                     {'key': 'BA_FEMALE', 'val': 'Black or African Female'},
-                     {'key': 'IA_MALE', 'val': 'American Indian and Alaska Native Male'},
-                     {'key': 'IA_FEMALE', 'val': 'American Indian and Alaska Native Female '},
-                     {'key': 'AA_MALE', 'val': 'Asian Male'},
-                     {'key': 'AA_FEMALE', 'val': 'Asian Female'},
-                     {'key': 'NA_MALE', 'val': 'Native Hawaiian and Other Pacific Islander Male'},
-                     {'key': 'NA_FEMALE',
-                      'val': 'Native Hawaiian and Other Pacific Islander Female'},
-                     {'key': 'H_MALE', 'val': 'Hispanic Male'},
-                     {'key': 'H_FEMALE', 'val': 'Hispanic Female'}]}
+    return {'data': [{'key': '1', 'val': 'American Indian or Alaska Native'},
+ {'key': '2', 'val': 'Asian'},
+ {'key': '3', 'val': 'Black or African American'},
+ {'key': '4', 'val': 'Native Hawaiian or other Pacific Islander'},
+ {'key': '5', 'val': 'White'},
+ {'key': '6', 'val': 'Other'}]}
 
 
 @app.get("/v1/modelVariables")

@@ -48,14 +48,14 @@
     import {library} from '@fortawesome/fontawesome-svg-core'
     import {
         faVirus, faPeopleArrows, faHouseUser, faHandsWash, faHeadSideMask, faCheck, faVirusSlash, faAngleDoubleRight,
-        faChevronCircleDown, faChevronDown, faChevronRight, faDatabase,faPalette, faServer
+        faChevronCircleDown, faChevronDown, faChevronRight, faDatabase,faPalette, faServer, faMale
     } from '@fortawesome/free-solid-svg-icons'
     import { faRProject, faPython } from '@fortawesome/free-brands-svg-icons'
     import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 
     library.add(faVirus, faPeopleArrows, faHouseUser, faHandsWash, faHeadSideMask, faCheck, faVirusSlash,
         faAngleDoubleRight, faChevronCircleDown, faChevronDown, faChevronRight, faPython, faRProject, faDatabase,
-        faPalette, faServer);
+        faPalette, faServer, faMale);
     Vue.component('font-awesome-icon', FontAwesomeIcon);
 
     import {dom} from '@fortawesome/fontawesome-svg-core'

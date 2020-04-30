@@ -38,16 +38,25 @@
                         />
                     </div>
                 </div>
-                <div class="col-md-2" >
-                    <button class="btn" v-on:click="submit"><font-awesome-icon icon="chevron-right" style="color:#42b983; font-size: 80px"/></button>
+                <div class="col-md-2">
+                    <button class="btn" v-on:click="submit">
+                        <font-awesome-icon icon="chevron-right" style="color:#42b983; font-size: 80px"/>
+                    </button>
 
                 </div>
             </div>
 
             <div class="row" style="padding-top: 100px; min-height: 600px">
                 <div class="col-md-2">
-                    <h2>Probability:</h2>
-                    <span style="font-size: 80px">{{probability}}</span>
+                    <h2>Chances:</h2>
+                    <span style="font-size: 80px;" >{{probability}}</span>
+                    <div class="row">
+                        <div class="col">
+                    <span style="font-size: 30px">1 in 100 <font-awesome-icon :icon="['fas', 'male']"
+                                                                              style="font-size: 30px"/>
+                    </span>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-5">
                     <h2>Age Group Population Split:</h2>
@@ -151,6 +160,7 @@
                     '#4D8066', '#809980', '#E6FF80', '#1AFF33', '#999933',
                     '#FF3380', '#CCCC00', '#66E64D', '#4D80CC', '#9900B3',
                     '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#6666FF'],
+                probability_color:'',
                 ethnicitySplitChartLoaded: false,
                 ageSplitChartLoaded: false,
                 casesChartLoaded: false,
@@ -213,6 +223,12 @@
                 if (this.selectedCounty !== "" && this.selectedEthnicity !== "" && this.selectedAge !== "") {
                     let countyStr = this.selectedCounty.split(',');
                     //
+                    console.log({
+                        "state_name": countyStr[1].trim(),
+                        "county_name": countyStr[0].trim(),
+                        "ethnicity": this.selectedEthnicity,
+                        "age_group": this.selectedAge
+                    });
                     const promise = this.$http.post(this.$config.url + 'forecast',
                         {
                             "state_name": countyStr[1].trim(),
@@ -236,7 +252,21 @@
 
                     Promise.all([promise]).then(values => {
                         values = values[0].data;
-                        this.probability = values.p_score.toFixed(2) + "%";
+                        let vs =  values.p_score.toFixed(2);
+                        if (vs>=0.75){
+                            this.probability="High";
+                        }
+                        else if(vs>1 && vs<.75){
+                            this.probability="Moderate";
+                        }
+                        else if(vs<-50){
+                            this.probability="No Data";
+                        }
+                        else{
+                            this.probability="Low";
+                        }
+
+
                         this.ethnicitySplitChartData['datasets'].push({
                             data: Object.values(values.ethnicity_splits),
                             backgroundColor: this.colorArray,
