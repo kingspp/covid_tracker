@@ -7,6 +7,7 @@ import operator
 from covid19 import COUNTIES, ETHNICITIES, COVID19_DATA_PATH
 import random
 from fastapi import FastAPI
+import numpy as np
 
 import uvicorn
 from pydantic import BaseModel
@@ -130,6 +131,35 @@ class UserDetails(BaseModel):
     age_group: str = None  # Eg: "0-5", "10-15"
 
 
+def algorithm2(new_cases, fips, age_grp, ethnicity):
+    percentage_affected_in_group = \
+        ethnic_age_splits_affected[ethnic_age_splits_affected["Ethnicity"] == ethnicity][age_grp].values[
+            0] / \
+        np.sum(ethnic_age_splits_affected[age_dict].values)
+
+    possible_new_cases_in_group = new_cases * percentage_affected_in_group
+
+    county_level = county_ethnicity_n_age_grps_data_new[
+        county_ethnicity_n_age_grps_data_new['fips'] == fips]
+    total_population_in_group = county_level[county_level['cdc_age_groups'] == age_grp][ethnicity].values[0]
+    county_population = np.sum(county_level[ethnic_groups].values)
+
+    percentage_ethnic_age_grp_in_county = total_population_in_group / county_population
+
+    # County total infected count in the county
+    county_demog = county_data[county_data['fips'] == fips]
+    time_series_cols = get_time_series_cols(county_demog)
+    total_infected = county_demog[time_series_cols].sum(axis=1).values[0]
+
+    total_unaffected = county_population - total_infected
+    total_unaffected_in_grp = total_unaffected * percentage_ethnic_age_grp_in_county
+
+    if total_unaffected_in_grp == 0 or possible_new_cases_in_group == 0:
+        return -100
+    else:
+        return possible_new_cases_in_group / total_unaffected_in_grp
+
+
 @app.post("/v1/forecast")
 def forecast(userdetails: UserDetails):
     def dynamic(df):
@@ -169,7 +199,7 @@ def forecast(userdetails: UserDetails):
         total_uninfected = total_population - total_infected
         groups_percentage = calc_group_percentage_against_total_population(ethnic_age_groups_df, age_grp, ethnicity,
                                                                            total_uninfected)
-
+        # print(groups_percentage, new_cases)
         return groups_percentage * new_cases
 
     def fetch_ethnic_age_data(fips):
@@ -213,6 +243,8 @@ def forecast(userdetails: UserDetails):
     ethnicity = userdetails.ethnicity
     county = county_data[county_data.index == state_county]
     if len(county) == 0:
+        # print('No data ', userdetails.county_name)
+        # return 0
         raise ValueError(
                 f'Sorry! We have very limited data for your {userdetails.county_name}. At this moment, we will not be able to forecast. Try again later')
     fips = int(county['fips'])  # Use fips to fetch data from ethnic and age groups file
@@ -230,7 +262,8 @@ def forecast(userdetails: UserDetails):
         county = dynamic(county)
         date = label_col
 
-    mean_pred = algorithm(week_predictions, fips, age_grp, ethnicity)
+    # mean_pred = algorithm(week_predictions, fips, age_grp, ethnicity)
+    mean_pred = algorithm2(sum(week_predictions.values()), fips, age_grp, ethnicity)
     ethics_n_age_groups = fetch_ethnic_age_data(fips)
     age_wise_population = get_population_age_wise(ethics_n_age_groups)
     ethnicity_wise_population = get_population_ethnicity_wise(ethics_n_age_groups)
@@ -240,6 +273,8 @@ def forecast(userdetails: UserDetails):
     final_json['age_splits'] = age_wise_population
     final_json['ethnicity_splits'] = mask_keys(ethnicity_wise_population)
     return final_json
+    # print(sum(week_predictions.values()))
+    # return sum(week_predictions.values())
 
 
 @app.get('/v1/variable_importance')
@@ -251,11 +286,55 @@ def get_variable_importance():
     return {x: y for x, y in imp_dict_sorted}
 
 
-# u = UserDetails
-# u.ethnicity = 'BA_FEMALE'
-# u.age_group = '20-24'
-# u.state_name = 'Massachusetts'
-# u.county_name = 'Worcester'
-# from pprint import pprint
+d = pd.read_csv(
+        f'{COVID19_DATA_PATH}/processed_confirmed_cases_data_apr26th.csv')
+states = list(d['state_county'].values)
+state_count_fips_mapping = {s_c: f for s_c, f in d[['state_county', 'fips']].values}
+age_dict = ["< 18", "18-44", "45-64", "65-74", "75+"]
+
+ethnic_groups = [
+    "American Indian or Alaska Native",
+    "Asian",
+    "Black or African American",
+    "Native Hawaiian or other Pacific Islander",
+    "White",
+    "Other"]
+
+u = UserDetails
+u.ethnicity = 'Black or African American'
+u.age_group = '45-64'
+u.state_name = 'Indiana'
+u.county_name = 'Cass'
+result = forecast(u)
+print(result)
+# score = algorithm2(new_cases_total, state_count_fips_mapping[u.state_name + '_' + u.county_name], u.age_group,
+#                    u.ethnicity)
+# print(score)
+# age_dict = ["< 18", "18-44", "45-64", "65-74", "75+"]
 #
-# pprint(forecast(u), indent=4)
+# ethnic_groups = [
+#     "American Indian or Alaska Native",
+#     "Asian",
+#     "Black or African American",
+#     "Native Hawaiian or other Pacific Islander",
+#     "White",
+#     "Other"]
+# d = pd.read_csv(
+#         f'{COVID19_DATA_PATH}/processed_confirmed_cases_data_apr26th.csv')
+# states = list(d['state_county'].values)
+# state_count_fips_mapping = {s_c: f for s_c, f in d[['state_county', 'fips']].values}
+# all_list = [age_dict, ethnic_groups]
+# all_list = list(itertools.product(*all_list))
+#
+# with open('predictions_county_wise_data.csv', 'w') as op_file:
+#     for i, state_county in enumerate(states):
+#         print(f'Processing {i}/{len(states)}')
+#         user = UserDetails
+#         user.county_name = state_county.split('_')[1]
+#         user.state_name = state_county.split('_')[0]
+#         week_total_cases = forecast(user)
+#         for age_grp, ethnic_grp in all_list:
+#             prob = algorithm2(week_total_cases, state_count_fips_mapping[state_county], age_grp=age_grp,
+#                               ethnicity=ethnic_grp)
+#             print(f'{user.state_name},{user.county_name},{age_grp},{ethnic_grp},{prob}',
+#                   file=op_file)

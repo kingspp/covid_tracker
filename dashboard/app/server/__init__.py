@@ -33,3 +33,15 @@ file_exists_check(county_ethnicity_n_age_grps_file, 'Counties Ethnicity and Age 
 county_ethnicity_n_age_grps_data = pd.read_csv(county_ethnicity_n_age_grps_file)
 print(f'County Ethnicity and Age group data loaded successfully. Path -> {county_ethnicity_n_age_grps_file}')
 
+# Load Ethnicity and Age groups data
+county_ethnicity_n_age_grps_file_new = model_folder_basepath + '/' + ModelConstants.COUNTY_ETHNICITY_AND_AGE_GRPS_NEW
+file_exists_check(county_ethnicity_n_age_grps_file_new, 'Counties Ethnicity and Age groups data file not found.')
+county_ethnicity_n_age_grps_data_new = pd.read_csv(county_ethnicity_n_age_grps_file_new)
+print(f'County Ethnicity and Age group data loaded successfully. Path -> {county_ethnicity_n_age_grps_file_new}')
+
+# Load Ethnicity and Age groups data - affected
+ethnic_age_splits_file = model_folder_basepath + '/' + ModelConstants.ETHNICITY_AGE_GRP_AFFECTED_DATA
+file_exists_check(ethnic_age_splits_file,
+                  'Ethnicity and Age groups affected with covid data file not found.')
+ethnic_age_splits_affected = pd.read_csv(ethnic_age_splits_file)
+print(f'Ethnicity and Age groups affected with covid data loaded successfully. Path -> {ethnic_age_splits_file}')

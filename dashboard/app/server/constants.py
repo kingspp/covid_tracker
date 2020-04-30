@@ -17,3 +17,5 @@ class ModelConstants:
     COUNTY_PROCESSED_DATA: str = "covid19/data/processed_confirmed_cases_data_apr26th.csv"
     TIME_SERIES_LEN = 90
     COUNTY_ETHNICITY_AND_AGE_GRPS = "covid19/data/latest_ethnic_age_county_level_demog.csv"
+    COUNTY_ETHNICITY_AND_AGE_GRPS_NEW = "covid19/data/county_ethnicity_age_groups_new.csv"
+    ETHNICITY_AGE_GRP_AFFECTED_DATA = 'covid19/data/ethnicity_age_groups_affected.csv'
