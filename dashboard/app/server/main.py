@@ -286,27 +286,27 @@ def get_variable_importance():
     return {x: y for x, y in imp_dict_sorted}
 
 
-d = pd.read_csv(
-        f'{COVID19_DATA_PATH}/processed_confirmed_cases_data_apr26th.csv')
-states = list(d['state_county'].values)
-state_count_fips_mapping = {s_c: f for s_c, f in d[['state_county', 'fips']].values}
-age_dict = ["< 18", "18-44", "45-64", "65-74", "75+"]
-
-ethnic_groups = [
-    "American Indian or Alaska Native",
-    "Asian",
-    "Black or African American",
-    "Native Hawaiian or other Pacific Islander",
-    "White",
-    "Other"]
-
-u = UserDetails
-u.ethnicity = 'Black or African American'
-u.age_group = '45-64'
-u.state_name = 'Indiana'
-u.county_name = 'Cass'
-result = forecast(u)
-print(result)
+# d = pd.read_csv(
+#         f'{COVID19_DATA_PATH}/processed_confirmed_cases_data_apr26th.csv')
+# states = list(d['state_county'].values)
+# state_count_fips_mapping = {s_c: f for s_c, f in d[['state_county', 'fips']].values}
+# age_dict = ["< 18", "18-44", "45-64", "65-74", "75+"]
+#
+# ethnic_groups = [
+#     "American Indian or Alaska Native",
+#     "Asian",
+#     "Black or African American",
+#     "Native Hawaiian or other Pacific Islander",
+#     "White",
+#     "Other"]
+#
+# u = UserDetails
+# u.ethnicity = 'Black or African American'
+# u.age_group = '45-64'
+# u.state_name = 'Indiana'
+# u.county_name = 'Cass'
+# result = forecast(u)
+# print(result)
 # score = algorithm2(new_cases_total, state_count_fips_mapping[u.state_name + '_' + u.county_name], u.age_group,
 #                    u.ethnicity)
 # print(score)
