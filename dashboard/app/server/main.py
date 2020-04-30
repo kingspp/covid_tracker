@@ -22,17 +22,16 @@ app = FastAPI()
 origins = [
     "http://localhost",
     "http://localhost:8080",
-    "http://localhost:8877",
     "http://0.0.0.0:8877",
     "http://104.251.210.60:8877"
 ]
 
 app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+        CORSMiddleware,
+        allow_origins=origins,
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
 )
 
 
@@ -156,41 +155,42 @@ def forecast(userdetails: UserDetails):
         pred = rf_model.predict(data)
         return pred
 
-    def algorithm(week_predictions, fips, age_grp, ethnicity):
-
-        def get_total_population(df):
-            population_cols = [col for col in df.columns if 'MALE' in col or 'FEMALE' in col]
-            total_population = df[population_cols].sum()
-            return total_population.values[0]
-
-        def calc_group_percentage_against_total_population(df, age_grp, ethnicity, total_uninfected):
-            grp_population = df[df['AGEGRP'] == age_grp][ethnicity].values[0]
-            return grp_population / total_uninfected
-
-        new_cases = sum(list(week_predictions.values()))
-
-        # County total infected count in the county
-        county_demog = county_data[county_data['fips'] == fips]
-        time_series_cols = get_time_series_cols(county_demog)
-        total_infected = county_demog[time_series_cols].sum(axis=1).values[0]
-
-        # Now get total population from ethnic groups
-        # Depending on this population data is not a good idea as there are cases where
-        # same person is counted in multiple ethnic groups
-        ethnic_age_groups_df = fetch_ethnic_age_data(fips)
-        total_population = get_total_population(ethnic_age_groups_df)
-        total_uninfected = total_population - total_infected
-        groups_percentage = calc_group_percentage_against_total_population(ethnic_age_groups_df, age_grp, ethnicity,
-                                                                           total_uninfected)
-        # print(groups_percentage, new_cases)
-        return groups_percentage * new_cases
+    # def algorithm(week_predictions, fips, age_grp, ethnicity):
+    #
+    #     def get_total_population(df):
+    #         population_cols = [col for col in df.columns if 'MALE' in col or 'FEMALE' in col]
+    #         total_population = df[population_cols].sum()
+    #         return total_population.values[0]
+    #
+    #     def calc_group_percentage_against_total_population(df, age_grp, ethnicity, total_uninfected):
+    #         grp_population = df[df['AGEGRP'] == age_grp][ethnicity].values[0]
+    #         return grp_population / total_uninfected
+    #
+    #     new_cases = sum(list(week_predictions.values()))
+    #
+    #     # County total infected count in the county
+    #     county_demog = county_data[county_data['fips'] == fips]
+    #     time_series_cols = get_time_series_cols(county_demog)
+    #     total_infected = county_demog[time_series_cols].sum(axis=1).values[0]
+    #
+    #     # Now get total population from ethnic groups
+    #     # Depending on this population data is not a good idea as there are cases where
+    #     # same person is counted in multiple ethnic groups
+    #     ethnic_age_groups_df = fetch_ethnic_age_data(fips)
+    #     total_population = get_total_population(ethnic_age_groups_df)
+    #     total_uninfected = total_population - total_infected
+    #     groups_percentage = calc_group_percentage_against_total_population(ethnic_age_groups_df, age_grp, ethnicity,
+    #                                                                        total_uninfected)
+    #     # print(groups_percentage, new_cases)
+    #     return groups_percentage * new_cases
 
     def fetch_ethnic_age_data(fips):
         ethnic_age_grps = county_ethnicity_n_age_grps_data[county_ethnicity_n_age_grps_data['fips'] == fips]
         if len(ethnic_age_grps) == 0:
             print(f'No data for {fips}')
-            raise ValueError(
-                'Sorry! We have very limited data for your county. At this moment, we will not be able to forecast. Try again later')
+            return 0
+            # raise ValueError(
+            #         'Sorry! We have very limited data for your county. At this moment, we will not be able to forecast. Try again later')
         ethnic_age_grps.drop(['STATE', 'COUNTY', 'STNAME', 'CTYNAME', 'fips'], axis=1, inplace=True)
         return ethnic_age_grps
 
@@ -226,10 +226,10 @@ def forecast(userdetails: UserDetails):
     ethnicity = userdetails.ethnicity
     county = county_data[county_data.index == state_county]
     if len(county) == 0:
-        # print('No data ', userdetails.county_name)
-        # return 0
-        raise ValueError(
-                f'Sorry! We have very limited data for your {userdetails.county_name}. At this moment, we will not be able to forecast. Try again later')
+        print('No data ', userdetails.county_name)
+        return {'p_score': -100}
+        # raise ValueError(
+        #         f'Sorry! We have very limited data for your {userdetails.county_name}. At this moment, we will not be able to forecast. Try again later')
     fips = int(county['fips'])  # Use fips to fetch data from ethnic and age groups file
     county.drop('fips', axis=1, inplace=True)
     county = dynamic(county)
@@ -248,6 +248,8 @@ def forecast(userdetails: UserDetails):
     # mean_pred = algorithm(week_predictions, fips, age_grp, ethnicity)
     mean_pred = algorithm2(sum(week_predictions.values()), fips, age_grp, ethnicity)
     ethics_n_age_groups = fetch_ethnic_age_data(fips)
+    if type(ethics_n_age_groups) == int and ethics_n_age_groups == 0:
+        return {'p_score': -100}
     age_wise_population = get_population_age_wise(ethics_n_age_groups)
     ethnicity_wise_population = get_population_ethnicity_wise(ethics_n_age_groups)
     final_json = {}
@@ -255,6 +257,7 @@ def forecast(userdetails: UserDetails):
     final_json['p_score'] = mean_pred
     final_json['age_splits'] = age_wise_population
     final_json['ethnicity_splits'] = mask_keys(ethnicity_wise_population)
+    final_json['total_cases'] = sum(week_predictions.values())
     return final_json
 
 
