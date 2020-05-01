@@ -52,7 +52,7 @@
                     <span style="font-size: 80px;" >{{probability}}</span>
                     <div class="row">
                         <div class="col">
-                    <span style="font-size: 30px">1 in 100 <font-awesome-icon :icon="['fas', 'male']"
+                    <span style="font-size: 30px">1 in {{nCases}} <font-awesome-icon :icon="['fas', 'male']"
                                                                               style="font-size: 30px"/>
                     </span>
                         </div>
@@ -76,7 +76,7 @@
             </div>
 
             <div class="row" style="padding-top: 30px">
-                <div class="col">
+                <div class="col card">
                     <h2>Forecasts for next week:</h2>
                     <line-chart
                             v-if="casesChartLoaded"
@@ -85,7 +85,7 @@
                 </div>
             </div>
 
-            <div class="row" style="height: 400px">
+            <div class="row" style="height: 400px; padding-top: 40px">
                 <span>Variables:</span>
                 <div class="col-md-8 offset-1">
                     <span v-html="variablesUsed" style="font-size: 24px; text-align: justify;"></span>
@@ -160,6 +160,7 @@
                     '#4D8066', '#809980', '#E6FF80', '#1AFF33', '#999933',
                     '#FF3380', '#CCCC00', '#66E64D', '#4D80CC', '#9900B3',
                     '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#6666FF'],
+                nCases:"____",
                 probability_color:'',
                 ethnicitySplitChartLoaded: false,
                 ageSplitChartLoaded: false,
@@ -265,6 +266,8 @@
                         else{
                             this.probability="Low";
                         }
+
+                        this.nCases = values["total_cases"];
 
 
                         this.ethnicitySplitChartData['datasets'].push({

@@ -22,16 +22,17 @@ app = FastAPI()
 origins = [
     "http://localhost",
     "http://localhost:8080",
+    "http://localhost:8877",
     "http://0.0.0.0:8877",
     "http://104.251.210.60:8877"
 ]
 
 app.add_middleware(
-        CORSMiddleware,
-        allow_origins=origins,
-        allow_credentials=True,
-        allow_methods=["*"],
-        allow_headers=["*"],
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 
@@ -53,11 +54,11 @@ def get_county():
 
 @app.get("/v1/age")
 def get_age_group():
-    return {'data':[{'key': '1', 'val': '< 18'},
- {'key': '2', 'val': '18-44'},
- {'key': '3', 'val': '45-64'},
- {'key': '4', 'val': '65-74'},
- {'key': '5', 'val': '75+'}]}
+    return {'data': [{'key': '1', 'val': '< 18'},
+                     {'key': '2', 'val': '18-44'},
+                     {'key': '3', 'val': '45-64'},
+                     {'key': '4', 'val': '65-74'},
+                     {'key': '5', 'val': '75+'}]}
 
 
 @app.get("/v1/ethnicity")
@@ -69,11 +70,11 @@ def get_ethnicity():
     # with open('/Users/prathyushsp/Git/covid19_research/covid19/data/COUNTIES.json', 'w') as f:
     #     json.dump(counties, f, indent=2)
     return {'data': [{'key': '1', 'val': 'American Indian or Alaska Native'},
- {'key': '2', 'val': 'Asian'},
- {'key': '3', 'val': 'Black or African American'},
- {'key': '4', 'val': 'Native Hawaiian or other Pacific Islander'},
- {'key': '5', 'val': 'White'},
- {'key': '6', 'val': 'Other'}]}
+                     {'key': '2', 'val': 'Asian'},
+                     {'key': '3', 'val': 'Black or African American'},
+                     {'key': '4', 'val': 'Native Hawaiian or other Pacific Islander'},
+                     {'key': '5', 'val': 'White'},
+                     {'key': '6', 'val': 'Other'}]}
 
 
 @app.get("/v1/modelVariables")
@@ -268,7 +269,6 @@ def get_variable_importance():
     imp_dict = {x: y for x, y in zip(columns, importances) if '/' not in x}
     imp_dict_sorted = sorted(imp_dict.items(), key=operator.itemgetter(1), reverse=True)
     return {x: y for x, y in imp_dict_sorted}
-
 
 # d = pd.read_csv(
 #         f'{COVID19_DATA_PATH}/processed_confirmed_cases_data_apr26th.csv')
