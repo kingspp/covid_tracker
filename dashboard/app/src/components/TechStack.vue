@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section class="section-dark">
         <div class="container-fluid">
             <h1>Tech Stack</h1>
             <div class="row">
