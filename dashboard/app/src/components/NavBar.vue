@@ -1,7 +1,7 @@
 <template>
     <div>
         <b-navbar toggleable="lg" variant="faded" type="light" fixed="top">
-            <b-navbar-brand href="#" class="navbar-brand">COVID 19<span style="font-size: 12px"> Beta v0.9.3</span></b-navbar-brand>
+            <b-navbar-brand href="#" class="navbar-brand">COVID 19<span style="font-size: 12px"><Version/></span></b-navbar-brand>
 
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -41,8 +41,14 @@
 </template>
 
 <script>
+
+    import Version from "./Version";
+
     export default {
-        name: "NavBar"
+        name: "NavBar",
+        components:{
+            Version
+        }
     }
 </script>
 
