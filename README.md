@@ -1,5 +1,7 @@
 # COVID19 Reseach
 
+![COVID 19 Research](https://raw.githubusercontent.com/kingspp/covid19_research/66dd5fbbbc9619337405a43070943bb33942e24c/dashboard/app/src/assets/demo.png)
+
 #### Requirements:
 1. Python 3.7+
 
