@@ -3,16 +3,13 @@
 </template>
 
 <script>
-
-
-
-
+    import {getCommitVersion, getReleaseVersion} from 'autoversion';
     export default {
         name: "Version",
-        data:function(){
+        data: function () {
             return {
-                version:"Beta  0.9.3",
-                fontsize:"",
+                version: "v"+getCommitVersion('kingspp','covid19_research'),
+                fontsize: "",
             }
         }
     }
