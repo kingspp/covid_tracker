@@ -3,7 +3,7 @@
 </template>
 
 <script>
-    import {getCommitVersion, getReleaseVersion} from 'autoversion';
+    import {getCommitVersion, getReleaseVersion} from 'autoversion-git';
     export default {
         name: "Version",
         data: function () {
