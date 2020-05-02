@@ -6,6 +6,7 @@
         <Section1/>
         <Section10/>
         <TechStack/>
+        <Footer/>
     </div>
 </template>
 
@@ -17,6 +18,7 @@
     import Section10 from './components/Section10.vue'
     import Disclaimer from './components/Disclaimer.vue'
     import TechStack from './components/TechStack.vue'
+    import Footer from './components/Footer.vue'
     import Vue from 'vue'
 
     import {BootstrapVue, IconsPlugin} from 'bootstrap-vue'
@@ -48,14 +50,14 @@
     import {library} from '@fortawesome/fontawesome-svg-core'
     import {
         faVirus, faPeopleArrows, faHouseUser, faHandsWash, faHeadSideMask, faCheck, faVirusSlash, faAngleDoubleRight,
-        faChevronCircleDown, faChevronDown, faChevronRight, faDatabase,faPalette, faServer, faMale
+        faChevronCircleDown, faChevronDown, faChevronRight, faDatabase,faPalette, faServer, faMale, faHeart
     } from '@fortawesome/free-solid-svg-icons'
     import { faRProject, faPython } from '@fortawesome/free-brands-svg-icons'
     import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 
     library.add(faVirus, faPeopleArrows, faHouseUser, faHandsWash, faHeadSideMask, faCheck, faVirusSlash,
         faAngleDoubleRight, faChevronCircleDown, faChevronDown, faChevronRight, faPython, faRProject, faDatabase,
-        faPalette, faServer, faMale);
+        faPalette, faServer, faMale, faHeart);
     Vue.component('font-awesome-icon', FontAwesomeIcon);
 
     import {dom} from '@fortawesome/fontawesome-svg-core'
@@ -70,7 +72,8 @@
             Section1,
             Section10,
             Disclaimer,
-            TechStack
+            TechStack,
+            Footer
         }
     }
 
