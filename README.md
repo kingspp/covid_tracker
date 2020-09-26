@@ -7,7 +7,7 @@
 
 ## Documents
 [Proposal](https://docs.google.com/document/d/10DEj1amBY032zPM7av0jZpFpkQ9IhZFcYuKpy6hm4qo/edit?usp=sharing)
-[BibTex]()
+[Data Sources and Attribute List](https://docs.google.com/spreadsheets/d/1vciQLHLW-a4RZnuwnnPHg9UxHwMUGm2xG9Ui_fUgXug/edit?usp=sharing)
 
 ## Dashboard
 
