@@ -463,8 +463,8 @@
         "Admin2": "",
         "Province_State": "",
         "Country_Region": "Congo (Brazzaville)",
-        "Lat": -4.2634,
-        "Long_": 15.2832,
+        "Lat": -0.228,
+        "Long_": 15.8277,
         "Population": 5518092.0
     },
     {
@@ -476,9 +476,22 @@
         "Admin2": "",
         "Province_State": "",
         "Country_Region": "Congo (Kinshasa)",
-        "Lat": -4.322447,
-        "Long_": 15.307045,
+        "Lat": -4.0383,
+        "Long_": 21.7587,
         "Population": 89561404.0
+    },
+    {
+        "UID": 174,
+        "iso2": "KM",
+        "iso3": "COM",
+        "code3": 174.0,
+        "FIPS": "",
+        "Admin2": "",
+        "Province_State": "",
+        "Country_Region": "Comoros",
+        "Lat": -11.6455,
+        "Long_": 43.3333,
+        "Population": 869595.0
     },
     {
         "UID": 188,
@@ -580,8 +593,8 @@
         "Admin2": "",
         "Province_State": "",
         "Country_Region": "Diamond Princess",
-        "Lat": 0.0,
-        "Long_": 0.0,
+        "Lat": "",
+        "Long_": "",
         "Population": ""
     },
     {
@@ -1222,6 +1235,19 @@
         "Population": 6825442.0
     },
     {
+        "UID": 426,
+        "iso2": "LS",
+        "iso3": "LSO",
+        "code3": 426.0,
+        "FIPS": "",
+        "Admin2": "",
+        "Province_State": "",
+        "Country_Region": "Lesotho",
+        "Lat": -29.61,
+        "Long_": 28.2336,
+        "Population": 2142252.0
+    },
+    {
         "UID": 430,
         "iso2": "LR",
         "iso3": "LBR",
@@ -1401,7 +1427,7 @@
         "Country_Region": "Mexico",
         "Lat": 23.6345,
         "Long_": -102.5528,
-        "Population": 128932753.0
+        "Population": 127792286.0
     },
     {
         "UID": 498,
@@ -1490,8 +1516,8 @@
         "Admin2": "",
         "Province_State": "",
         "Country_Region": "MS Zaandam",
-        "Lat": 0.0,
-        "Long_": 0.0,
+        "Lat": "",
+        "Long_": "",
         "Population": ""
     },
     {
@@ -1950,6 +1976,19 @@
         "Population": 2078932.0
     },
     {
+        "UID": 90,
+        "iso2": "SB",
+        "iso3": "SLB",
+        "code3": 90.0,
+        "FIPS": "",
+        "Admin2": "",
+        "Province_State": "",
+        "Country_Region": "Solomon Islands",
+        "Lat": -9.6457,
+        "Long_": 160.1562,
+        "Population": 652858.0
+    },
+    {
         "UID": 706,
         "iso2": "SO",
         "iso3": "SOM",
@@ -2091,6 +2130,19 @@
         "Lat": 23.7,
         "Long_": 121.0,
         "Population": 23816775.0
+    },
+    {
+        "UID": 762,
+        "iso2": "TJ",
+        "iso3": "TJK",
+        "code3": 762.0,
+        "FIPS": "",
+        "Admin2": "",
+        "Province_State": "",
+        "Country_Region": "Tajikistan",
+        "Lat": 38.861,
+        "Long_": 71.2761,
+        "Population": 9537642.0
     },
     {
         "UID": 834,

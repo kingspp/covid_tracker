@@ -14,7 +14,7 @@ Description:
 class ModelConstants:
     SAVE_PATH: str = "covid19/models/rf_model.pk"
     COUNTY_RANK_MAPPING_FILE: str = "covid19/data/county_ranking_map.json"
-    COUNTY_PROCESSED_DATA: str = "covid19/data/processed_confirmed_cases_data_apr26th.csv"
+    COUNTY_PROCESSED_DATA: str = "covid19/data/processed_confirmed_cases_data_oct19.csv"
     TIME_SERIES_LEN = 90
     COUNTY_ETHNICITY_AND_AGE_GRPS = "covid19/data/latest_ethnic_age_county_level_demog.csv"
     COUNTY_ETHNICITY_AND_AGE_GRPS_NEW = "covid19/data/county_ethnicity_age_groups_new.csv"
