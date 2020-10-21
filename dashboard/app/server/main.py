@@ -271,7 +271,7 @@ def get_variable_importance():
     return {x: y for x, y in imp_dict_sorted}
 
 # d = pd.read_csv(
-#         f'{COVID19_DATA_PATH}/processed_confirmed_cases_data_apr26th.csv')
+#         f'{COVID19_DATA_PATH}/processed_confirmed_cases_data_oct19.csv')
 # states = list(d['state_county'].values)
 # state_count_fips_mapping = {s_c: f for s_c, f in d[['state_county', 'fips']].values}
 # age_dict = ["< 18", "18-44", "45-64", "65-74", "75+"]
@@ -304,7 +304,7 @@ def get_variable_importance():
 #     "White",
 #     "Other"]
 # d = pd.read_csv(
-#         f'{COVID19_DATA_PATH}/processed_confirmed_cases_data_apr26th.csv')
+#         f'{COVID19_DATA_PATH}/processed_confirmed_cases_data_oct19.csv')
 # states = list(d['state_county'].values)
 # state_count_fips_mapping = {s_c: f for s_c, f in d[['state_county', 'fips']].values}
 # all_list = [age_dict, ethnic_groups]

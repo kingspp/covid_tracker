@@ -33,7 +33,7 @@ def prepare_demogs_data():
     # county_demogs = json.load(open('/Users/badgod/badgod_documents/Datasets/covid19/county_demog.json'))
     # result = pd.DataFrame(county_demogs)
     # result.to_csv("/Users/badgod/badgod_documents/Datasets/covid19/county_demog.csv", index=False)
-    county_demog = pd.read_csv("/Users/badgod/badgod_documents/Datasets/covid19/county_demog.csv")
+    county_demog = pd.read_csv("../data/county_demog.csv")
     county_demog_US = county_demog[county_demog['country'] == 'US']
     county_demog_US = county_demog_US.replace('', np.nan)
 
@@ -167,7 +167,7 @@ def save_processed_file(df):
 
     col = df.pop('state_county')
     df.insert(0, col.name, col)
-    df.to_csv('../data/processed_confirmed_cases_data_apr26th.csv', index=False)
+    df.to_csv('../data/processed_confirmed_cases_data_oct19.csv', index=False)
     df.drop('fips', axis=1, inplace=True)
     return df
 

@@ -39,7 +39,7 @@ def read_root():
 #     "H_FEMALE": "Hispanic Female"
 # }
 # d = pd.read_csv(
-#         '/Users/badgod/badgod_documents/github/covid19_research/covid19/data/processed_confirmed_cases_data_apr26th.csv')
+#         '/Users/badgod/badgod_documents/github/covid19_research/covid19/data/processed_confirmed_cases_data_oct19.csv')
 # states = list(d['state_county'].values)
 # all_list = [states, list(age_dict.values()), list(ethnic_groups.keys())]
 # all_list = list(itertools.product(*all_list))
