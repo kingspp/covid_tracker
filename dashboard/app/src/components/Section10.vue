@@ -113,6 +113,65 @@
             <!--                    </div>-->
             <!--                </div>-->
             <!--            </div>-->
+
+            <div class="row" style="padding-top: 30px">
+                <div class="col card">
+                    <h2 class="mb-2">Hospital Capacity Planning</h2>
+                    <div class="row mt-5" style="font-size: 30px">
+                        <div class="col-3 text-left">
+                            <p>County: <span style="font-weight: 600">{{this.selectedCounty}}</span></p>
+                            <p>Total Population: <span style="font-weight: 600">{{this.countyPopulation}}</span></p>
+                            <p>Predicted Cases: <span v-if="total_cases" style="font-weight: 600">{{this.total_cases}}</span></p>
+                            <p>Num Hospitals: <span style="font-weight: 600">{{this.nhospitals}}</span></p>
+                        </div>
+                        <div class="col-7">
+                            <div class="row" style="font-weight: 600">
+                                <div class="col-3">Type</div>
+                                <div class="col-2">Required</div>
+                                <div class="col-2 ml-4">Available</div>
+                                <div class="col-4">Capacity</div>
+                            </div>
+                            <hr/>
+                            <div class="row">
+                                <div class="col-3">Ventilators</div>
+                                <div class="col-2">{{this.bed_requirement['ventilator']}}</div>
+                                <div class="col-2 ml-4">{{this.bed_availability['ventilator']}}</div>
+                                <div class="col-4"><span>{{this.bed_delta['ventilator']}}</span> <span v-if="this.bed_delta_pct" class="ml-2"
+                                                                                                       :style="{'color':this.bed_delta_colors[0], 'font-weight':600}"> ({{this.bed_delta_pct['ventilator']}}%)</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-3">ICU</div>
+                                <div class="col-2">{{this.bed_requirement['icu']}}</div>
+                                <div class="col-2 ml-4">{{this.bed_availability['icu']}}</div>
+                                <div class="col-4"><span>{{this.bed_delta['icu']}}</span> <span v-if="this.bed_delta_pct" class="ml-2"
+                                                                                                :style="{'color':this.bed_delta_colors[1], 'font-weight':600}"> ({{this.bed_delta_pct['icu']}}%)</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-3">Staffed Beds</div>
+                                <div class="col-2">{{this.bed_requirement['hospitalization']}}</div>
+                                <div class="col-2 ml-4">{{this.bed_availability['hospitalization']}}</div>
+                                <div class="col-4"><span>{{this.bed_delta['hospitalization']}}</span> <span v-if="this.bed_delta_pct" class="ml-2"
+                                                                                                            :style="{'color':this.bed_delta_colors[2], 'font-weight':600}"> ({{this.bed_delta_pct['hospitalization']}}%)</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-3">Quarantine</div>
+                                <div class="col-2">{{this.bed_requirement['normal']}}</div>
+                                <div class="col-2 ml-4">
+                                    <font-awesome-icon v-if="this.bed_delta_pct" icon="check" style="font-size: 30px"/>
+                                </div>
+                                <div class="col-4">
+                                    <font-awesome-icon v-if="this.bed_delta_pct" icon="check" style="font-size: 30px"/>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
         </div>
     </section>
 </template>
@@ -126,6 +185,7 @@
     import BarChart from './BarChart'
     import LineChart from './LineChart'
     import {capitalCase} from "change-case";
+    import Humanize from "humanize-plus";
 
     // Vue.component(VueWordCloud.name, VueWordCloud);
 
@@ -162,6 +222,8 @@
                     '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#6666FF'],
                 nCases:"____",
                 probability_color:'',
+                nCases: "____",
+                probability_color: '',
                 ethnicitySplitChartLoaded: false,
                 ageSplitChartLoaded: false,
                 casesChartLoaded: false,
@@ -172,6 +234,14 @@
                 probability: '',
                 variablesUsed: '',
                 timeout: 0,
+                bed_availability: 0,
+                bed_requirement: 0,
+                bed_delta: 0,
+                bed_delta_pct: 0,
+                total_cases:"",
+                nhospitals: "",
+                countyPopulation:"",
+                bed_delta_colors: [],
                 ethnicitySplitChartData: {datasets: [], labels: []},
                 ageSplitChartData: {datasets: [], labels: []},
                 casesChartData: {datasets: [], labels: []},
@@ -253,21 +323,21 @@
 
                     Promise.all([promise]).then(values => {
                         values = values[0].data;
-                        let vs =  values.p_score.toFixed(2);
-                        if (vs>=0.75){
-                            this.probability="High";
+                        let vs = values.p_score.toFixed(2);
+                        if (vs >= 0.75) {
+                            this.probability = "High";
+                        } else if (vs > 1 && vs < .75) {
+                            this.probability = "Moderate";
                         }
-                        else if(vs>1 && vs<.75){
-                            this.probability="Moderate";
-                        }
-                        else if(vs<-50){
-                            this.probability="No Data";
-                        }
-                        else{
-                            this.probability="Low";
+                        // else if (vs < -50) {
+                        //     this.probability = "No Data";
+                        // }
+                        else {
+                            this.probability = "Low";
                         }
 
-                        this.nCases = values["total_cases"];
+                        this.total_cases = values.total_cases;
+                        this.nCases = values["age_cases"];
 
 
                         this.ethnicitySplitChartData['datasets'].push({
@@ -298,6 +368,18 @@
                         this.ethnicitySplitChartLoaded = true;
                         this.ageSplitChartLoaded = true;
                         this.casesChartLoaded = true;
+                        this.bed_availability = values.bed_availability
+                        this.bed_requirement = values.bed_requirement
+                        this.bed_delta = values.bed_delta
+                        this.bed_delta_pct = values.bed_delta_pct
+                        this.nhospitals = values.num_hospitals
+                        this.countyPopulation = Humanize.compactInteger(values.county_population)
+                        this.bed_delta_colors = Object.values(values.bed_delta_pct).map(v => {
+                            if (v < 0) {
+                                return '#C00657'
+                            }
+                            return '#6DD2CE'
+                        })
                     });
                 }
             },

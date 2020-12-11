@@ -7,6 +7,10 @@
             <a href="https://shreeshan.github.io/" style="color: #FFFFFF!important;">Shreesha</a>,
             <a href="https://www.linkedin.com/in/varun-eranki-046642156/" style="color: #FFFFFF!important;">Varun</a> &
             <a href="https://www.linkedin.com/in/priyankaphadnis/" style="color: #FFFFFF!important;">Priyanka</a>
+            <a href="https://shreeshan.github.io/" style="color: #FFFFFF!important;">Kevin</a>,
+            <a href="https://www.linkedin.com/in/varun-eranki-046642156/" style="color: #FFFFFF!important;">Ivy</a>
+<!--            &-->
+<!--            <a href="https://www.linkedin.com/in/priyankaphadnis/" style="color: #FFFFFF!important;">Priyanka</a>-->
         </div>
         <!-- Copyright -->
 
