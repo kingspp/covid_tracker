@@ -221,8 +221,6 @@
                     '#FF3380', '#CCCC00', '#66E64D', '#4D80CC', '#9900B3',
                     '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#6666FF'],
                 nCases:"____",
-                probability_color:'',
-                nCases: "____",
                 probability_color: '',
                 ethnicitySplitChartLoaded: false,
                 ageSplitChartLoaded: false,
