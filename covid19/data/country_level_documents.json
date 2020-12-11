@@ -1391,6 +1391,19 @@
         "Population": 441539.0
     },
     {
+        "UID": 584,
+        "iso2": "MH",
+        "iso3": "MHL",
+        "code3": 584.0,
+        "FIPS": "",
+        "Admin2": "",
+        "Province_State": "",
+        "Country_Region": "Marshall Islands",
+        "Lat": 7.1315,
+        "Long_": 171.1845,
+        "Population": 58413.0
+    },
+    {
         "UID": 478,
         "iso2": "MR",
         "iso3": "MRT",
@@ -1844,6 +1857,19 @@
         "Lat": 12.9843,
         "Long_": -61.2872,
         "Population": 110947.0
+    },
+    {
+        "UID": 882,
+        "iso2": "WS",
+        "iso3": "WSM",
+        "code3": 882.0,
+        "FIPS": "",
+        "Admin2": "",
+        "Province_State": "",
+        "Country_Region": "Samoa",
+        "Lat": -13.759,
+        "Long_": -172.1046,
+        "Population": 196130.0
     },
     {
         "UID": 674,
@@ -2312,6 +2338,19 @@
         "Lat": 41.377491,
         "Long_": 64.585262,
         "Population": 33469199.0
+    },
+    {
+        "UID": 548,
+        "iso2": "VU",
+        "iso3": "VUT",
+        "code3": 548.0,
+        "FIPS": "",
+        "Admin2": "",
+        "Province_State": "",
+        "Country_Region": "Vanuatu",
+        "Lat": -15.3767,
+        "Long_": 166.9592,
+        "Population": 292680.0
     },
     {
         "UID": 862,

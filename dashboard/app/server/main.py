@@ -226,6 +226,7 @@ def forecast(userdetails: UserDetails):
     age_grp = userdetails.age_group
     ethnicity = userdetails.ethnicity
     county = county_data[county_data.index == state_county]
+
     if len(county) == 0:
         print('No data ', userdetails.county_name)
         return {'p_score': -100}
@@ -240,7 +241,7 @@ def forecast(userdetails: UserDetails):
 
     for i in range(7):
         label_col = calc_n_days_after_date(date, n_days=1)
-        test_preds = predict(county.values)
+        test_preds = predict(county.drop('num_hospitals', axis=1).values)
         week_predictions[label_col] = int(test_preds[0])
         county[label_col] = pd.Series(test_preds, dtype=int, index=county.index)
         county = dynamic(county)
@@ -259,6 +260,78 @@ def forecast(userdetails: UserDetails):
     final_json['age_splits'] = age_wise_population
     final_json['ethnicity_splits'] = mask_keys(ethnicity_wise_population)
     final_json['total_cases'] = sum(week_predictions.values())
+
+    age_admission_rate = {
+        "< 18": {
+            "ventilator": 0.7,
+            "icu": 7.3,
+            "hospitalization": 22.8,
+            "normal": 69.2,
+        },
+        "18-44": {
+            "ventilator": 3.1,
+            "icu": 13.7,
+            "hospitalization": 25.4,
+            "normal": 57.8,
+        },
+        "45-64": {
+            "ventilator": 10.5,
+            "icu": 23.7,
+            "hospitalization": 35.1,
+            "normal": 30.7
+        },
+        "65-74": {
+            "ventilator": 15.3,
+            "icu": 28.1,
+            "hospitalization": 45.2,
+            "normal": 11.4
+        },
+        "75+": {
+            "ventilator": 22.5,
+            "icu": 34.1,
+            "hospitalization": 56.2,
+            "normal": 12.8
+        }
+    }
+
+    age_wise_population_list_vals = list(age_wise_population.values())
+    total_population = sum(age_wise_population.values())
+    age_population = {
+        "< 18": sum(age_wise_population_list_vals[:5]) / total_population,
+        "18-44": sum(age_wise_population_list_vals[5:10]) / total_population,
+        "45-64": sum(age_wise_population_list_vals[10:15]) / total_population,
+        "65-74": sum(age_wise_population_list_vals[10:15]) / total_population,
+        "75+": sum(age_wise_population_list_vals[15:]) / total_population,
+    }
+    staffed_beds = county['staffed_beds'][0]
+    licenced_beds = county['licenced_beds'][0]
+    icu_beds = county['icu_beds'][0]
+    ventilators = county['average_ventilator_used_per_hospital'][0] * county['num_hospitals'][0]
+
+    bed_requirement = {"ventilator": 0,
+                       "icu": 0,
+                       "hospitalization": 0,
+                       "normal": 0}
+
+    for k, v in age_admission_rate.items():
+        for k1, v1 in v.items():
+            bed_requirement[k1] += int(final_json['total_cases'] * age_population[k] * (v1 / 100))
+
+    bed_availability = {"ventilator": ventilators,
+                        "icu": icu_beds,
+                        "hospitalization": staffed_beds,
+                        "normal": licenced_beds}
+
+    # print(bed_requirement)
+    # print(bed_availability)
+
+    final_json['bed_requirement'] = bed_requirement
+    final_json['bed_availability'] = bed_availability
+    final_json['bed_delta'] = {k: bed_availability[k] - v for k, v in bed_requirement.items()}
+    final_json['bed_delta_pct'] = {k: round((bed_availability[k] - v) / v * 100,2) for k, v in bed_requirement.items()}
+    final_json['num_hospitals'] = int(county['num_hospitals'][0])
+    final_json['county_population']=total_population
+    final_json['age_cases'] = int(final_json['total_cases'] * age_population[age_grp])
     return final_json
 
 

@@ -1,5 +1,161 @@
 [
     {
+        "UID": 5601,
+        "iso2": "BE",
+        "iso3": "BEL",
+        "code3": 56.0,
+        "FIPS": "",
+        "Admin2": "",
+        "Province_State": "Antwerp",
+        "Country_Region": "Belgium",
+        "Lat": 51.2195,
+        "Long_": 4.4024,
+        "Population": 1857986.0
+    },
+    {
+        "UID": 5602,
+        "iso2": "BE",
+        "iso3": "BEL",
+        "code3": 56.0,
+        "FIPS": "",
+        "Admin2": "",
+        "Province_State": "Brussels",
+        "Country_Region": "Belgium",
+        "Lat": 50.8503,
+        "Long_": 4.3517,
+        "Population": 1208542.0
+    },
+    {
+        "UID": 5603,
+        "iso2": "BE",
+        "iso3": "BEL",
+        "code3": 56.0,
+        "FIPS": "",
+        "Admin2": "",
+        "Province_State": "East Flanders",
+        "Country_Region": "Belgium",
+        "Lat": 51.0362,
+        "Long_": 3.7373,
+        "Population": 1515064.0
+    },
+    {
+        "UID": 5604,
+        "iso2": "BE",
+        "iso3": "BEL",
+        "code3": 56.0,
+        "FIPS": "",
+        "Admin2": "",
+        "Province_State": "Flemish Brabant",
+        "Country_Region": "Belgium",
+        "Lat": 50.9167,
+        "Long_": 4.5833,
+        "Population": 1146175.0
+    },
+    {
+        "UID": 5605,
+        "iso2": "BE",
+        "iso3": "BEL",
+        "code3": 56.0,
+        "FIPS": "",
+        "Admin2": "",
+        "Province_State": "Hainaut",
+        "Country_Region": "Belgium",
+        "Lat": 50.5257,
+        "Long_": 4.0621,
+        "Population": 1344241.0
+    },
+    {
+        "UID": 5606,
+        "iso2": "BE",
+        "iso3": "BEL",
+        "code3": 56.0,
+        "FIPS": "",
+        "Admin2": "",
+        "Province_State": "Liege",
+        "Country_Region": "Belgium",
+        "Lat": 50.4496,
+        "Long_": 5.8492,
+        "Population": 1106992.0
+    },
+    {
+        "UID": 5607,
+        "iso2": "BE",
+        "iso3": "BEL",
+        "code3": 56.0,
+        "FIPS": "",
+        "Admin2": "",
+        "Province_State": "Limburg",
+        "Country_Region": "Belgium",
+        "Lat": 50.9739,
+        "Long_": 5.3420000000000005,
+        "Population": 874048.0
+    },
+    {
+        "UID": 5608,
+        "iso2": "BE",
+        "iso3": "BEL",
+        "code3": 56.0,
+        "FIPS": "",
+        "Admin2": "",
+        "Province_State": "Luxembourg",
+        "Country_Region": "Belgium",
+        "Lat": 50.0547,
+        "Long_": 5.4677,
+        "Population": 284638.0
+    },
+    {
+        "UID": 5609,
+        "iso2": "BE",
+        "iso3": "BEL",
+        "code3": 56.0,
+        "FIPS": "",
+        "Admin2": "",
+        "Province_State": "Namur",
+        "Country_Region": "Belgium",
+        "Lat": 50.331,
+        "Long_": 4.8221,
+        "Population": 494325.0
+    },
+    {
+        "UID": 5610,
+        "iso2": "BE",
+        "iso3": "BEL",
+        "code3": 56.0,
+        "FIPS": "",
+        "Admin2": "",
+        "Province_State": "Unknown",
+        "Country_Region": "Belgium",
+        "Lat": "",
+        "Long_": "",
+        "Population": ""
+    },
+    {
+        "UID": 5611,
+        "iso2": "BE",
+        "iso3": "BEL",
+        "code3": 56.0,
+        "FIPS": "",
+        "Admin2": "",
+        "Province_State": "Walloon Brabant",
+        "Country_Region": "Belgium",
+        "Lat": 50.4,
+        "Long_": 4.35,
+        "Population": 403599.0
+    },
+    {
+        "UID": 5612,
+        "iso2": "BE",
+        "iso3": "BEL",
+        "code3": 56.0,
+        "FIPS": "",
+        "Admin2": "",
+        "Province_State": "West Flanders",
+        "Country_Region": "Belgium",
+        "Lat": 51.0536,
+        "Long_": 3.1458,
+        "Population": 1195796.0
+    },
+    {
         "UID": 7601,
         "iso2": "BR",
         "iso3": "BRA",
@@ -1181,6 +1337,19 @@
         "Lat": 18.0708,
         "Long_": -63.0501,
         "Population": 38659.0
+    },
+    {
+        "UID": 876,
+        "iso2": "WF",
+        "iso3": "WLF",
+        "code3": 876.0,
+        "FIPS": "",
+        "Admin2": "",
+        "Province_State": "Wallis and Futuna",
+        "Country_Region": "France",
+        "Lat": -14.2938,
+        "Long_": -178.1165,
+        "Population": 15289.0
     },
     {
         "UID": 27601,
@@ -6877,6 +7046,19 @@
         "Population": ""
     },
     {
+        "UID": 12416,
+        "iso2": "CA",
+        "iso3": "CAN",
+        "code3": 124.0,
+        "FIPS": "",
+        "Admin2": "",
+        "Province_State": "Nunavut",
+        "Country_Region": "Canada",
+        "Lat": 70.2998,
+        "Long_": -83.1076,
+        "Population": 38780.0
+    },
+    {
         "UID": 15601,
         "iso2": "CN",
         "iso3": "CHN",
@@ -7368,7 +7550,7 @@
         "Country_Region": "US",
         "Lat": 18.2208,
         "Long_": -66.5901,
-        "Population": 2933408.0
+        "Population": 3193694.0
     },
     {
         "UID": 63072001,
@@ -7381,7 +7563,7 @@
         "Country_Region": "US",
         "Lat": 18.180117000000003,
         "Long_": -66.754367,
-        "Population": 19483.0
+        "Population": 17363.0
     },
     {
         "UID": 63072003,
@@ -7394,7 +7576,7 @@
         "Country_Region": "US",
         "Lat": 18.360255,
         "Long_": -67.17513100000001,
-        "Population": 41959.0
+        "Population": 36694.0
     },
     {
         "UID": 63072005,
@@ -7407,7 +7589,7 @@
         "Country_Region": "US",
         "Lat": 18.459681,
         "Long_": -67.12081500000001,
-        "Population": 60949.0
+        "Population": 50265.0
     },
     {
         "UID": 63072007,
@@ -7420,7 +7602,7 @@
         "Country_Region": "US",
         "Lat": 18.251619,
         "Long_": -66.126806,
-        "Population": 28659.0
+        "Population": 24814.0
     },
     {
         "UID": 63072009,
@@ -7433,7 +7615,7 @@
         "Country_Region": "US",
         "Lat": 18.131361,
         "Long_": -66.264131,
-        "Population": 25900.0
+        "Population": 22108.0
     },
     {
         "UID": 63072011,
@@ -7446,7 +7628,7 @@
         "Country_Region": "US",
         "Lat": 18.287985,
         "Long_": -67.120611,
-        "Population": 29261.0
+        "Population": 26161.0
     },
     {
         "UID": 63072013,
@@ -7459,7 +7641,7 @@
         "Country_Region": "US",
         "Lat": 18.406631,
         "Long_": -66.675077,
-        "Population": 96440.0
+        "Population": 81966.0
     },
     {
         "UID": 63072015,
@@ -7472,7 +7654,7 @@
         "Country_Region": "US",
         "Lat": 17.998457000000002,
         "Long_": -66.056546,
-        "Population": 19575.0
+        "Population": 17238.0
     },
     {
         "UID": 63072017,
@@ -7485,7 +7667,7 @@
         "Country_Region": "US",
         "Lat": 18.445532999999998,
         "Long_": -66.56053100000001,
-        "Population": 24816.0
+        "Population": 23727.0
     },
     {
         "UID": 63072019,
@@ -7498,7 +7680,7 @@
         "Country_Region": "US",
         "Lat": 18.201592,
         "Long_": -66.30963,
-        "Population": 30318.0
+        "Population": 27725.0
     },
     {
         "UID": 63072021,
@@ -7511,7 +7693,7 @@
         "Country_Region": "US",
         "Lat": 18.34946,
         "Long_": -66.168435,
-        "Population": 208116.0
+        "Population": 169269.0
     },
     {
         "UID": 63072023,
@@ -7524,7 +7706,7 @@
         "Country_Region": "US",
         "Lat": 18.040993,
         "Long_": -67.154391,
-        "Population": 50917.0
+        "Population": 47515.0
     },
     {
         "UID": 63072025,
@@ -7537,7 +7719,7 @@
         "Country_Region": "US",
         "Lat": 18.211615,
         "Long_": -66.050779,
-        "Population": 142893.0
+        "Population": 124606.0
     },
     {
         "UID": 63072027,
@@ -7550,7 +7732,7 @@
         "Country_Region": "US",
         "Lat": 18.418578,
         "Long_": -66.860206,
-        "Population": 35159.0
+        "Population": 30504.0
     },
     {
         "UID": 63072029,
@@ -7563,7 +7745,7 @@
         "Country_Region": "US",
         "Lat": 18.328802,
         "Long_": -65.887612,
-        "Population": 47648.0
+        "Population": 44674.0
     },
     {
         "UID": 63072031,
@@ -7576,7 +7758,7 @@
         "Country_Region": "US",
         "Lat": 18.374986,
         "Long_": -65.95683100000001,
-        "Population": 176762.0
+        "Population": 146984.0
     },
     {
         "UID": 63072033,
@@ -7589,7 +7771,7 @@
         "Country_Region": "US",
         "Lat": 18.437269,
         "Long_": -66.14330600000001,
-        "Population": 28140.0
+        "Population": 23121.0
     },
     {
         "UID": 63072035,
@@ -7602,7 +7784,7 @@
         "Country_Region": "US",
         "Lat": 18.102851,
         "Long_": -66.14914,
-        "Population": 48119.0
+        "Population": 42409.0
     },
     {
         "UID": 63072037,
@@ -7615,7 +7797,7 @@
         "Country_Region": "US",
         "Lat": 18.251818,
         "Long_": -65.666416,
-        "Population": 13631.0
+        "Population": 10904.0
     },
     {
         "UID": 63072039,
@@ -7628,7 +7810,7 @@
         "Country_Region": "US",
         "Lat": 18.28885,
         "Long_": -66.516475,
-        "Population": 18782.0
+        "Population": 15808.0
     },
     {
         "UID": 63072041,
@@ -7641,7 +7823,7 @@
         "Country_Region": "US",
         "Lat": 18.173559,
         "Long_": -66.161179,
-        "Population": 43480.0
+        "Population": 38307.0
     },
     {
         "UID": 63072043,
@@ -7654,7 +7836,7 @@
         "Country_Region": "US",
         "Lat": 18.097597,
         "Long_": -66.36014,
-        "Population": 40512.0
+        "Population": 38336.0
     },
     {
         "UID": 63072045,
@@ -7667,7 +7849,7 @@
         "Country_Region": "US",
         "Lat": 18.224687,
         "Long_": -66.221622,
-        "Population": 20778.0
+        "Population": 18648.0
     },
     {
         "UID": 63072047,
@@ -7680,7 +7862,7 @@
         "Country_Region": "US",
         "Lat": 18.304264,
         "Long_": -66.327738,
-        "Population": 37142.0
+        "Population": 32293.0
     },
     {
         "UID": 63072049,
@@ -7693,7 +7875,7 @@
         "Country_Region": "US",
         "Lat": 18.31586,
         "Long_": -65.28813000000001,
-        "Population": 1818.0
+        "Population": 1714.0
     },
     {
         "UID": 63072051,
@@ -7706,7 +7888,7 @@
         "Country_Region": "US",
         "Lat": 18.436115,
         "Long_": -66.278669,
-        "Population": 38165.0
+        "Population": 36141.0
     },
     {
         "UID": 63072053,
@@ -7719,7 +7901,7 @@
         "Country_Region": "US",
         "Lat": 18.318373,
         "Long_": -65.666866,
-        "Population": 36993.0
+        "Population": 29454.0
     },
     {
         "UID": 63072054,
@@ -7732,7 +7914,7 @@
         "Country_Region": "US",
         "Lat": 18.373715,
         "Long_": -66.560488,
-        "Population": 12680.0
+        "Population": 11317.0
     },
     {
         "UID": 63072055,
@@ -7745,7 +7927,7 @@
         "Country_Region": "US",
         "Lat": 17.982429,
         "Long_": -66.91964300000001,
-        "Population": 19427.0
+        "Population": 15383.0
     },
     {
         "UID": 63072057,
@@ -7758,7 +7940,7 @@
         "Country_Region": "US",
         "Lat": 18.007516,
         "Long_": -66.13390799999999,
-        "Population": 45362.0
+        "Population": 39465.0
     },
     {
         "UID": 63072059,
@@ -7771,7 +7953,7 @@
         "Country_Region": "US",
         "Lat": 18.039942,
         "Long_": -66.79186,
-        "Population": 21581.0
+        "Population": 17623.0
     },
     {
         "UID": 63072061,
@@ -7784,7 +7966,7 @@
         "Country_Region": "US",
         "Lat": 18.345114000000002,
         "Long_": -66.11452299999999,
-        "Population": 97924.0
+        "Population": 83728.0
     },
     {
         "UID": 63072063,
@@ -7797,7 +7979,7 @@
         "Country_Region": "US",
         "Lat": 18.266461,
         "Long_": -65.97970500000001,
-        "Population": 45369.0
+        "Population": 47093.0
     },
     {
         "UID": 63072065,
@@ -7810,7 +7992,7 @@
         "Country_Region": "US",
         "Lat": 18.410928,
         "Long_": -66.79632600000001,
-        "Population": 41953.0
+        "Population": 39218.0
     },
     {
         "UID": 63072067,
@@ -7823,7 +8005,7 @@
         "Country_Region": "US",
         "Lat": 18.134532,
         "Long_": -67.113972,
-        "Population": 17250.0
+        "Population": 15518.0
     },
     {
         "UID": 63072069,
@@ -7836,7 +8018,7 @@
         "Country_Region": "US",
         "Lat": 18.145211,
         "Long_": -65.810174,
-        "Population": 58466.0
+        "Population": 50653.0
     },
     {
         "UID": 63072071,
@@ -7849,7 +8031,7 @@
         "Country_Region": "US",
         "Lat": 18.44981,
         "Long_": -67.005093,
-        "Population": 45631.0
+        "Population": 40423.0
     },
     {
         "UID": 63072073,
@@ -7862,7 +8044,7 @@
         "Country_Region": "US",
         "Lat": 18.211446,
         "Long_": -66.58878,
-        "Population": 16642.0
+        "Population": 13891.0
     },
     {
         "UID": 63072075,
@@ -7875,7 +8057,7 @@
         "Country_Region": "US",
         "Lat": 18.050764,
         "Long_": -66.49458100000001,
-        "Population": 79897.0
+        "Population": 44679.0
     },
     {
         "UID": 63072077,
@@ -7888,7 +8070,7 @@
         "Country_Region": "US",
         "Lat": 18.223793,
         "Long_": -65.909109,
-        "Population": 40290.0
+        "Population": 38155.0
     },
     {
         "UID": 63072079,
@@ -7901,7 +8083,7 @@
         "Country_Region": "US",
         "Lat": 18.011661,
         "Long_": -67.040585,
-        "Population": 25753.0
+        "Population": 22010.0
     },
     {
         "UID": 63072081,
@@ -7914,7 +8096,7 @@
         "Country_Region": "US",
         "Lat": 18.269035000000002,
         "Long_": -66.867236,
-        "Population": 30753.0
+        "Population": 24276.0
     },
     {
         "UID": 63072083,
@@ -7927,7 +8109,7 @@
         "Country_Region": "US",
         "Lat": 18.23679,
         "Long_": -66.98362,
-        "Population": 9881.0
+        "Population": 7927.0
     },
     {
         "UID": 63072085,
@@ -7940,7 +8122,7 @@
         "Country_Region": "US",
         "Lat": 18.187527,
         "Long_": -65.86946800000001,
-        "Population": 38675.0
+        "Population": 37007.0
     },
     {
         "UID": 63072087,
@@ -7953,7 +8135,7 @@
         "Country_Region": "US",
         "Lat": 18.425688,
         "Long_": -65.89943000000001,
-        "Population": 30060.0
+        "Population": 24553.0
     },
     {
         "UID": 63072089,
@@ -7966,7 +8148,7 @@
         "Country_Region": "US",
         "Lat": 18.342114000000002,
         "Long_": -65.72509699999999,
-        "Population": 20068.0
+        "Population": 17665.0
     },
     {
         "UID": 63072091,
@@ -7979,7 +8161,7 @@
         "Country_Region": "US",
         "Lat": 18.420473,
         "Long_": -66.490461,
-        "Population": 44113.0
+        "Population": 37287.0
     },
     {
         "UID": 63072093,
@@ -7992,7 +8174,7 @@
         "Country_Region": "US",
         "Lat": 18.171795,
         "Long_": -66.942126,
-        "Population": 6276.0
+        "Population": 5430.0
     },
     {
         "UID": 63072095,
@@ -8005,7 +8187,7 @@
         "Country_Region": "US",
         "Lat": 18.017889,
         "Long_": -65.922235,
-        "Population": 12225.0
+        "Population": 10321.0
     },
     {
         "UID": 63072097,
@@ -8018,7 +8200,7 @@
         "Country_Region": "US",
         "Lat": 18.2013,
         "Long_": -67.1452,
-        "Population": 89080.0
+        "Population": 71530.0
     },
     {
         "UID": 63072099,
@@ -8031,7 +8213,7 @@
         "Country_Region": "US",
         "Lat": 18.377805,
         "Long_": -67.080952,
-        "Population": 40109.0
+        "Population": 34891.0
     },
     {
         "UID": 63072101,
@@ -8044,7 +8226,7 @@
         "Country_Region": "US",
         "Lat": 18.316963,
         "Long_": -66.420383,
-        "Population": 32610.0
+        "Population": 30335.0
     },
     {
         "UID": 63072103,
@@ -8057,7 +8239,7 @@
         "Country_Region": "US",
         "Lat": 18.230636999999998,
         "Long_": -65.753897,
-        "Population": 26720.0
+        "Population": 25761.0
     },
     {
         "UID": 63072105,
@@ -8070,7 +8252,7 @@
         "Country_Region": "US",
         "Lat": 18.288019,
         "Long_": -66.252703,
-        "Population": 30402.0
+        "Population": 27349.0
     },
     {
         "UID": 63072107,
@@ -8083,7 +8265,7 @@
         "Country_Region": "US",
         "Lat": 18.215046,
         "Long_": -66.433604,
-        "Population": 23423.0
+        "Population": 20220.0
     },
     {
         "UID": 63072109,
@@ -8096,7 +8278,7 @@
         "Country_Region": "US",
         "Lat": 18.03174,
         "Long_": -66.012242,
-        "Population": 19277.0
+        "Population": 16211.0
     },
     {
         "UID": 63072111,
@@ -8109,7 +8291,7 @@
         "Country_Region": "US",
         "Lat": 18.059645,
         "Long_": -66.721572,
-        "Population": 24282.0
+        "Population": 19249.0
     },
     {
         "UID": 63072113,
@@ -8122,7 +8304,7 @@
         "Country_Region": "US",
         "Lat": 18.059498,
         "Long_": -66.613748,
-        "Population": 166327.0
+        "Population": 131881.0
     },
     {
         "UID": 63072115,
@@ -8135,7 +8317,7 @@
         "Country_Region": "US",
         "Lat": 18.439692,
         "Long_": -66.926113,
-        "Population": 25919.0
+        "Population": 22918.0
     },
     {
         "UID": 63072117,
@@ -8148,7 +8330,7 @@
         "Country_Region": "US",
         "Lat": 18.335442999999998,
         "Long_": -67.23174,
-        "Population": 15200.0
+        "Population": 13656.0
     },
     {
         "UID": 63072119,
@@ -8161,7 +8343,7 @@
         "Country_Region": "US",
         "Lat": 18.346329,
         "Long_": -65.813742,
-        "Population": 54304.0
+        "Population": 48025.0
     },
     {
         "UID": 63072121,
@@ -8174,7 +8356,7 @@
         "Country_Region": "US",
         "Lat": 18.08282,
         "Long_": -66.943758,
-        "Population": 25265.0
+        "Population": 21712.0
     },
     {
         "UID": 63072123,
@@ -8187,7 +8369,7 @@
         "Country_Region": "US",
         "Lat": 18.010386999999998,
         "Long_": -66.256592,
-        "Population": 31078.0
+        "Population": 27128.0
     },
     {
         "UID": 63072125,
@@ -8200,7 +8382,7 @@
         "Country_Region": "US",
         "Lat": 18.111484,
         "Long_": -67.03858100000001,
-        "Population": 35527.0
+        "Population": 30227.0
     },
     {
         "UID": 63072127,
@@ -8213,7 +8395,7 @@
         "Country_Region": "US",
         "Lat": 18.386933,
         "Long_": -66.061128,
-        "Population": 395326.0
+        "Population": 318441.0
     },
     {
         "UID": 63072129,
@@ -8226,7 +8408,7 @@
         "Country_Region": "US",
         "Lat": 18.147987,
         "Long_": -65.976392,
-        "Population": 41058.0
+        "Population": 35989.0
     },
     {
         "UID": 63072131,
@@ -8239,7 +8421,7 @@
         "Country_Region": "US",
         "Lat": 18.328646,
         "Long_": -66.971214,
-        "Population": 42430.0
+        "Population": 35528.0
     },
     {
         "UID": 63072133,
@@ -8252,7 +8434,7 @@
         "Country_Region": "US",
         "Lat": 17.994525,
         "Long_": -66.388913,
-        "Population": 23274.0
+        "Population": 21209.0
     },
     {
         "UID": 63072135,
@@ -8265,7 +8447,7 @@
         "Country_Region": "US",
         "Lat": 18.362406,
         "Long_": -66.246616,
-        "Population": 74066.0
+        "Population": 72025.0
     },
     {
         "UID": 63072137,
@@ -8278,7 +8460,7 @@
         "Country_Region": "US",
         "Lat": 18.431445999999998,
         "Long_": -66.213553,
-        "Population": 89609.0
+        "Population": 74271.0
     },
     {
         "UID": 63072139,
@@ -8291,7 +8473,7 @@
         "Country_Region": "US",
         "Lat": 18.336159,
         "Long_": -65.99888399999999,
-        "Population": 74842.0
+        "Population": 63674.0
     },
     {
         "UID": 63072141,
@@ -8304,7 +8486,7 @@
         "Country_Region": "US",
         "Lat": 18.271214,
         "Long_": -66.702984,
-        "Population": 33149.0
+        "Population": 27395.0
     },
     {
         "UID": 63072143,
@@ -8317,7 +8499,7 @@
         "Country_Region": "US",
         "Lat": 18.409346,
         "Long_": -66.33725,
-        "Population": 39951.0
+        "Population": 36061.0
     },
     {
         "UID": 63072145,
@@ -8330,7 +8512,7 @@
         "Country_Region": "US",
         "Lat": 18.428262,
         "Long_": -66.397924,
-        "Population": 59662.0
+        "Population": 50023.0
     },
     {
         "UID": 63072147,
@@ -8343,7 +8525,7 @@
         "Country_Region": "US",
         "Lat": 18.123276,
         "Long_": -65.44097099999999,
-        "Population": 9301.0
+        "Population": 8386.0
     },
     {
         "UID": 63072149,
@@ -8356,7 +8538,7 @@
         "Country_Region": "US",
         "Lat": 18.127951,
         "Long_": -66.473115,
-        "Population": 26073.0
+        "Population": 21372.0
     },
     {
         "UID": 63072151,
@@ -8369,7 +8551,7 @@
         "Country_Region": "US",
         "Lat": 18.070399,
         "Long_": -65.896289,
-        "Population": 37941.0
+        "Population": 32282.0
     },
     {
         "UID": 63072153,
@@ -8382,7 +8564,7 @@
         "Country_Region": "US",
         "Lat": 18.080374,
         "Long_": -66.858814,
-        "Population": 42043.0
+        "Population": 33575.0
     },
     {
         "UID": 63072888,
@@ -11632,7 +11814,7 @@
         "Country_Region": "US",
         "Lat": 58.74513976,
         "Long_": -156.701064,
-        "Population": 2428.0
+        "Population": 836.0
     },
     {
         "UID": 84002068,
@@ -11775,7 +11957,7 @@
         "Country_Region": "US",
         "Lat": 58.62403337,
         "Long_": -156.21405890000003,
-        "Population": 4020.0
+        "Population": 2428.0
     },
     {
         "UID": 84002170,
@@ -11926,12 +12108,12 @@
         "iso3": "USA",
         "code3": 840.0,
         "FIPS": "2282",
-        "Admin2": "Yakutat",
+        "Admin2": "Yakutat plus Hoonah-Angoon",
         "Province_State": "Alaska",
         "Country_Region": "US",
         "Lat": 59.890980799999994,
         "Long_": -140.36014509999998,
-        "Population": 579.0
+        "Population": 2727.0
     },
     {
         "UID": 84002290,

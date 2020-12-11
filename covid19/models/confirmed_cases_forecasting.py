@@ -247,6 +247,48 @@ def run():
         print('----' * 20)
 
 
+    # Get the assumptions from Kevin
+
+    age_admission_rate = {
+        "< 18": {
+            "ventilator":5,
+            "icu":10,
+            "hospitalization": 60,
+            "normal":25
+        },
+        "18-44": {
+            "ventilator": 5,
+            "icu": 10,
+            "hospitalization": 60,
+            "normal": 25
+        },
+        "44-70": {
+            "ventilator": 5,
+            "icu": 10,
+            "hospitalization": 60,
+            "normal": 25
+        },
+        "70+": {
+            "ventilator": 5,
+            "icu": 10,
+            "hospitalization": 60,
+            "normal": 25
+        }
+    }
+
+    res = {}
+    for age_admission_r, vals in age_admission_rate.items():
+        for stage in vals:
+            res[age_admission_r] = stage*test_preds
+
+
+
+
+
+
+
+
+
 if __name__ == '__main__':
     model_save_name = 'rf_model.pk'
     rows_to_consider = 10
