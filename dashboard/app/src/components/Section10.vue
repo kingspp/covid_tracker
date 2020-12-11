@@ -124,8 +124,8 @@
                             <p>Predicted Cases: <span v-if="total_cases" style="font-weight: 600">{{this.total_cases}}</span></p>
                             <p>Num Hospitals: <span style="font-weight: 600">{{this.nhospitals}}</span></p>
                         </div>
-                        <div class="col-7">
-                            <div class="row" style="font-weight: 600">
+                        <div class="col-9">
+                            <div class="row" style="font-weight: 600; font-size:27px">
                                 <div class="col-3">Type</div>
                                 <div class="col-2">Required</div>
                                 <div class="col-2 ml-4">Available</div>
